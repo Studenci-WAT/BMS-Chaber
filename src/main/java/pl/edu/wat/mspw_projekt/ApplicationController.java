@@ -1,4 +1,4 @@
-package com.example.mspw_projekt;
+package pl.edu.wat.mspw_projekt;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

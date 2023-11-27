@@ -1,4 +1,4 @@
-package com.example.mspw_projekt;
+package pl.edu.wat.mspw_projekt;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

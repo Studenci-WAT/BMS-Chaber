@@ -9,6 +9,6 @@ module com.example.mspw_projekt {
     requires org.kordamp.bootstrapfx.core;
     requires com.almasb.fxgl.all;
 
-    opens com.example.mspw_projekt to javafx.fxml;
-    exports com.example.mspw_projekt;
+    opens pl.edu.wat.mspw_projekt to javafx.fxml;
+    exports pl.edu.wat.mspw_projekt;
 }
