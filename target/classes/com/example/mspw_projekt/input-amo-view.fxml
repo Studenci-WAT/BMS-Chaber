@@ -5,7 +5,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mspw_projekt.SceneController">
+<BorderPane
+        maxHeight="-Infinity"
+        maxWidth="-Infinity"
+        minHeight="-Infinity"
+        minWidth="-Infinity"
+        prefHeight="400.0"
+        prefWidth="600.0"
+        xmlns="http://javafx.com/javafx/17.0.2-ea"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="com.example.mspw_projekt.AmmoFormController"
+>
    <center>
       <ImageView fitHeight="301.0" fitWidth="563.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
@@ -19,7 +29,7 @@
    <top>
       <Pane prefHeight="44.0" prefWidth="608.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="23.0" layoutY="5.0" mnemonicParsing="false" onAction="#switchBackScene" prefHeight="33.0" prefWidth="72.0" text="Wstecz" />
+            <Button layoutX="23.0" layoutY="5.0" mnemonicParsing="false" onAction="#goBackToMainScene" prefHeight="33.0" prefWidth="72.0" text="Wstecz" />
             <Label layoutX="121.0" layoutY="4.0" text="Wprowadzanie nowego rodzaju amunicji">
                <font>
                   <Font size="25.0" />

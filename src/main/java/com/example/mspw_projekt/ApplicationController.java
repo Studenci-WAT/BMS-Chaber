@@ -12,15 +12,19 @@ public class ApplicationController extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("home-view.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        stage.setTitle("Home");
-        stage.setScene(scene);
-        stage.show();
+        Scene scene = new Scene(loader.load());
+        setStage(stage,scene);
     }
 
 
     public static void main(String[] args) {
         launch();
+    }
+
+
+    private void setStage (Stage stage, Scene scene) {
+        stage.setTitle("Home");
+        stage.setScene(scene);
+        stage.show();
     }
 }
