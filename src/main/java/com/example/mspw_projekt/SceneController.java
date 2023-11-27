@@ -1,4 +1,7 @@
 package com.example.mspw_projekt;
+import com.example.mspw_projekt.enums.Views;
+import com.example.mspw_projekt.interfaces.AbstractNavigationController;
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,11 +13,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SceneController {
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
+
     @FXML
     private ChoiceBox<String> choiceBox;
+
 
     @FXML
     public void initialize() {
@@ -39,43 +41,57 @@ public class SceneController {
     }
 
     @FXML
-    private void switchBackScene(ActionEvent event) {
+    public void switchBackScene(ActionEvent event) {
         switchToScene("Home", event);
     }
 
     @FXML
     private void switchToScene(String sceneName, ActionEvent event) {
         try {
-            // Pobranie obiektu Stage z eventu
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-
             String fxmlFile;
-            switch(sceneName) {
-                case "Scena 1":
-                    fxmlFile = "input-amo-view.fxml";
-                    break;
-                case "Scena 2":
-                    fxmlFile = "input-sys-ogn-view.fxml";
-                    break;
-                case "Home":
-                    fxmlFile = "home-view.fxml";
-                    break;
-                default:
-                    fxmlFile = "home-view.fxml";
 
-            }
-            System.out.println("Wybrana wartość fxmlFile: " +fxmlFile);
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
+            fxmlFile = getFxmlNameByScene(sceneName);
+
             loader.setLocation(getClass().getResource(fxmlFile));
-            root = loader.load();
-            scene = new Scene(root);
-            stage.setTitle("Home");
-            stage.setScene(scene);
-            stage.show();
+            Scene scene = new Scene(loader.load());
+
+            if(!fxmlFile.equals(Views.HOMEVIEW.getValue())){
+                setNavigationInstanceForView(loader);
+            }
+
+            setStage(stage,scene);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    private void setNavigationInstanceForView (FXMLLoader loader) {
+
+                AbstractNavigationController controller;
+                controller = loader.getController();
+
+                controller.setSceneManagerController(this);
+    }
+
+    private String getFxmlNameByScene (String sceneName) {
+        switch(sceneName) {
+            case "Scena 1":
+                return Views.AMMOFORMVIEW.getValue();
+            case "Scena 2":
+                return  Views.FIRESYSFORMVIEW.getValue();
+            default:
+                return  Views.HOMEVIEW.getValue();
+
+        }
+    }
+
+    private void setStage (Stage stage, Scene scene) {
+        stage.setTitle("Home");
+        stage.setScene(scene);
+        stage.show();
+    }
 
 }
