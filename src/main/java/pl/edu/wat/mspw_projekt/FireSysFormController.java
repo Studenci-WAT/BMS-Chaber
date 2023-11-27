@@ -1,7 +1,6 @@
-package com.example.mspw_projekt;
+package pl.edu.wat.mspw_projekt;
 
-import com.example.mspw_projekt.interfaces.AbstractNavigationController;
-import javafx.event.ActionEvent;
+import pl.edu.wat.mspw_projekt.interfaces.AbstractNavigationController;
 
-public class FireSysFormController extends NavigationBackController implements AbstractNavigationController{
+public class FireSysFormController extends NavigationBackController implements AbstractNavigationController {
 }

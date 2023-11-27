@@ -1,4 +1,4 @@
-module com.example.mspw_projekt {
+module pl.edu.wat.mspw_projekt {
     requires javafx.controls;
     requires javafx.fxml;
 

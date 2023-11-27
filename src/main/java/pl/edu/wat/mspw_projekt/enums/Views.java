@@ -1,4 +1,4 @@
-package com.example.mspw_projekt.enums;
+package pl.edu.wat.mspw_projekt.enums;
 
 public enum Views {
     HOMEVIEW("home-view.fxml"),

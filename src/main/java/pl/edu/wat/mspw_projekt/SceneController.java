@@ -1,19 +1,15 @@
-<<<<<<< Updated upstream
 package pl.edu.wat.mspw_projekt;
-=======
-package com.example.mspw_projekt;
-import com.example.mspw_projekt.enums.Views;
-import com.example.mspw_projekt.interfaces.AbstractNavigationController;
-import javafx.application.Application;
->>>>>>> Stashed changes
+
+import pl.edu.wat.mspw_projekt.enums.Views;
+import pl.edu.wat.mspw_projekt.interfaces.AbstractNavigationController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.Parent;
 import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 
 public class SceneController {
