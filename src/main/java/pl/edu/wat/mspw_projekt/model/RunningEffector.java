@@ -4,8 +4,7 @@ package pl.edu.wat.mspw_projekt.model;
  * Efektor jezdny
  */
 public class RunningEffector {
-    //TODO
-//    private ChassisType chassisType;
+    private ChassisType chassisType;
     private float roadFuelEkoConsumption;
     private float terrainFuelEkoConsumption;
     private float maxFuelConsumption;
