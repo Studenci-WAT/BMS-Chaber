@@ -5,22 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cd0cd9d-27c0-41c8-892b-2f3158cac233" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/ChassisType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/ClimateType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/ElectronicWarfareEffector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/FireControlSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/FlyingEffector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/Fun_intens_niszcz_nosic_sym.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/Fun_intens_niszcz_nosic_sym_2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/SwimmingEffector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/AmmoFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/AmmoFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/ApplicationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/FireSysFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/FireSysFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/NavigationBackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/NavigationBackController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/SceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/enums/Views.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/enums/Views.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/interfaces/AbstractNavigationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/interfaces/AbstractNavigationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/home-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-amo-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-amo-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-sys-ogn-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-sys-ogn-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/RunningEffector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/RunningEffector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -126,7 +132,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="feature/backend" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
