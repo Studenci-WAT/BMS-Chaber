@@ -14,8 +14,7 @@ public class Ammo {
     private float packageSizeX;
     private float packageSizeY;
     private float packageSizeZ;
-    // TO DO:
-    // KATEG_FK
+    private AmmoCategory category;
     private WarheadType warhead;
     private WarheadGuidedType warheadGuided;
     private GuidanceType guidance;
