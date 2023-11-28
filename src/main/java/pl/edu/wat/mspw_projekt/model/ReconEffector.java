@@ -1,6 +1,7 @@
 package pl.edu.wat.mspw_projekt.model;
 /**
  * Efektor zdolności rozpoznawczych
+ * efektor_rozpoz
  */
 public class ReconEffector {
 

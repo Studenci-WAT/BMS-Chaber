@@ -1,5 +1,8 @@
 package pl.edu.wat.mspw_projekt.model;
-
+/**
+ * Efektor walki elektronicznej
+ * efektor_we
+ */
 public class ElectronicWarfareEffector {
     private int targetingRadius;
     private int minTargetingFrequency;

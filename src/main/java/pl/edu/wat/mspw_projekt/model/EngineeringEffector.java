@@ -2,6 +2,7 @@ package pl.edu.wat.mspw_projekt.model;
 
 /**
  * Efektor zdolności inżynieryjnych
+ * efektor_inz
  */
 
 public class EngineeringEffector {

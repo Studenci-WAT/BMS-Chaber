@@ -2,6 +2,7 @@ package pl.edu.wat.mspw_projekt.model;
 
 /**
  * Efektor jezdny
+ * efektor_jezdny
  */
 public class RunningEffector {
     private ChassisType chassisType;

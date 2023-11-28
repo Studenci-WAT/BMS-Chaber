@@ -1,5 +1,8 @@
 package pl.edu.wat.mspw_projekt.model;
-
+/**
+ * Efektor latania
+ * efektor_latania
+ */
 public class FlyingEffector {
     private float minVelocity;
     private float ekoVelocity;

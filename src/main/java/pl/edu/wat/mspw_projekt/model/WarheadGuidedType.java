@@ -1,9 +1,9 @@
 package pl.edu.wat.mspw_projekt.model;
 /**
- * Typ widocznosci terenu
- * e_typ_terenu_widocz
+ * Typ głowicy bojowej
+ * e_rodzaj_glowicy_naprow
  */
-public class TerrainVisibility {
+public class WarheadGuidedType {
     private int id;
     private String name;
     private String shortcut;

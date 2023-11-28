@@ -1,9 +1,9 @@
 package pl.edu.wat.mspw_projekt.model;
 /**
- * Typ widocznosci terenu
- * e_typ_terenu_widocz
+ * Rodzaj naprowadzania
+ * e_rodzaj_naprow
  */
-public class TerrainVisibility {
+public class GuidanceType {
     private int id;
     private String name;
     private String shortcut;
