@@ -1,12 +1,12 @@
 package pl.edu.wat.mspw_projekt.model;
 
 /**
- * Poziom oddziaływania ogniowego
- * e_poziom_oddzial_ogn
+ * Materiały pędne i smary
+ * mps
  */
-
-public class FireUnitLevel {
+public class PropellantAndLubricant {
     private int id;
     private String name;
     private String shortcut;
+    private String code;
 }
