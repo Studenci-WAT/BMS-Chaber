@@ -1,7 +1,7 @@
 package pl.edu.wat.mspw_projekt.model;
 
 /**
- * Poziom oddziału ogniowego
+ * Poziom oddziaływania ogniowego
  * e_poziom_oddzial_ogn
  */
 

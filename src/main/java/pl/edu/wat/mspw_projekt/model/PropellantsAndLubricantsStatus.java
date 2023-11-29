@@ -1,6 +1,12 @@
 package pl.edu.wat.mspw_projekt.model;
 
-public class StanMpsSpW {
+/**
+ * Stan materiałów pędnych i smarów SpW
+ * stan_mps_spw
+ */
+public class PropellantsAndLubricantsStatus {
     private int id;
-    q
+    private MilitaryEquipment militaryEquipment;
+    private PropellantAndLubricant propellantAndLubricant;
+    private float normativeState;
 }
