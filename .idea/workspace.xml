@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cd0cd9d-27c0-41c8-892b-2f3158cac233" name="Changes" comment="Model Implementations + Descriptions of used tabels names">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/AmoEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/Ammo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/Ammo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/mspw_projekt/input-amo-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/mspw_projekt/input-fire-sys-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-sys-ogn-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-sys-ogn-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/WarheadGuidedType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/WarheadGuidedType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
