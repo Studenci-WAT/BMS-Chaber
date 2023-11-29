@@ -4,12 +4,11 @@ package pl.edu.wat.mspw_projekt.model;
  * amo
  */
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
 import java.io.Serializable;
 
 @Data
@@ -50,8 +49,8 @@ public class Ammo implements Serializable {
     @Column(name = "WYM_PACZKI_Z")
     private float packageSizeZ;
 
-    @Column(name = "KATEG_FK")
-    @ManyToMany
+    @ManyToOne()
+    @JoinColumn(name = "KATEG_FK")
     private AmmoCategory category;
 
     @ManyToOne
@@ -63,6 +62,6 @@ public class Ammo implements Serializable {
     private WarheadGuidedType warheadGuided;
 
     @ManyToOne
-    @JoinColumn(name = "RODZAJ_GLOWICY_NAPROW_FK")
+    @JoinColumn(name = "RODZAJ_NAPROW_FK")
     private GuidanceType guidance;
 }

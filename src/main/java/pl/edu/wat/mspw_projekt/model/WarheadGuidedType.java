@@ -1,13 +1,22 @@
 package pl.edu.wat.mspw_projekt.model;
 
-import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import jakarta.persistence.*;
 
 /**
  * Typ głowicy bojowej
  * e_rodzaj_glowicy_naprow
  */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
-@Table(name = "e_rodzaj_glowicy_napraw")
+@Table(name = "e_rodzaj_glowicy_naprow")
 public class WarheadGuidedType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

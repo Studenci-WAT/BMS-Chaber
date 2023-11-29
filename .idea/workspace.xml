@@ -5,9 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cd0cd9d-27c0-41c8-892b-2f3158cac233" name="Changes" comment="Model Implementations + Descriptions of used tabels names">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/SessionFactoryMaker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/edu/wat/mspw_projekt/model/AmmoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSPW_PROJEKT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MSPW_PROJEKT.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/Ammo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/Ammo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/AmmoCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/AmmoCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/GuidanceType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/GuidanceType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/WarheadGuidedType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/WarheadGuidedType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/WarheadType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/model/WarheadType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -64,9 +76,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "feature/backend",
     "ignore.virus.scanning.warn.message": "true",
     "last_directory_selection": "C:/Users/wojci/IdeaProjects/BMS-Chaber/src/main/java/pl/edu/wat/mspw_projekt",
+    "last_opened_file_path": "C:/Users/wojci/IdeaProjects/BMS-Chaber/src/test/java",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -85,11 +100,23 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wojci\IdeaProjects\BMS-Chaber\src\test\java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wojci\IdeaProjects\BMS-Chaber\src\main\java\META-INF" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="pl.edu.wat.mspw_projekt.model" />
+    </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="pl.edu.wat.mspw_projekt" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Unnamed">
+  <component name="RunManager" selected="JUnit.AmmoTest.test1">
     <configuration name="ApplicationController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pl.edu.wat.mspw_projekt.ApplicationController" />
       <module name="MSPW_PROJEKT" />
@@ -110,12 +137,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AmmoTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MSPW_PROJEKT" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.edu.wat.mspw_projekt.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.edu.wat.mspw_projekt.model" />
+      <option name="MAIN_CLASS_NAME" value="pl.edu.wat.mspw_projekt.model.AmmoTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Unnamed" />
       <item itemvalue="Application.ApplicationController" />
+      <item itemvalue="JUnit.AmmoTest.test1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AmmoTest.test1" />
         <item itemvalue="Application.ApplicationController" />
       </list>
     </recent_temporary>
