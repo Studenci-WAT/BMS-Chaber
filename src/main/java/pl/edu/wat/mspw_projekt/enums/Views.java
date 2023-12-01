@@ -1,9 +1,8 @@
 package pl.edu.wat.mspw_projekt.enums;
 
 public enum Views {
-    HOMEVIEW("home-view.fxml"),
     AMMOFORMVIEW("input-amo-view.fxml"),
-    FIRESYSFORMVIEW("input-fire-sys-view.fxml");
+    INPUTTEMPLATEVIEW("input-template-view.fxml");
 
 
     private final String value;

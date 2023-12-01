@@ -1,36 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane
-        maxHeight="-Infinity"
-        maxWidth="-Infinity"
-        minHeight="-Infinity"
-        minWidth="-Infinity"
-        prefHeight="400.0"
-        prefWidth="600.0"
-        xmlns="http://javafx.com/javafx/17.0.2-ea"
-        xmlns:fx="http://javafx.com/fxml/1"
-        fx:controller="pl.edu.wat.mspw_projekt.AmmoFormController"
->
-   <center>
-      <ImageView fitHeight="301.0" fitWidth="563.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-         <image>
-            <Image url="@pictures/logo_symulator.png" />
-         </image>
-      </ImageView>
-   </center>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="648.0" prefWidth="998.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.edu.wat.mspw_projekt.InputAmmoController">
    <left>
-      <Pane prefHeight="351.0" prefWidth="292.0" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="604.0" prefWidth="1016.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane layoutX="25.0" layoutY="33.0" prefHeight="462.0" prefWidth="273.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="228.0" minWidth="10.0" prefWidth="158.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="251.0" minWidth="10.0" prefWidth="208.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="KALIBER" GridPane.rowIndex="4" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <Label text="SZTUK W PACZCE" GridPane.rowIndex="5" />
+                  <Label text="MASA SZTUKI" GridPane.rowIndex="6" />
+                  <Label text="WYM PACZKI X" GridPane.rowIndex="7" />
+                  <Label text="WYM PACZKI Y" GridPane.rowIndex="8" />
+                  <Label text="WYM PACZKI Z" GridPane.rowIndex="9" />
+                  <Label text="KATEGORIA" GridPane.rowIndex="10" />
+                  <Label text="R GŁOW BOJ" GridPane.rowIndex="11" />
+                  <Label text="R GŁOW NAPROW" GridPane.rowIndex="12" />
+                  <Label text="RODZAJ NAPROW" GridPane.rowIndex="13" />
+                  <ChoiceBox prefHeight="25.0" prefWidth="241.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <ChoiceBox prefHeight="25.0" prefWidth="244.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <ChoiceBox prefHeight="25.0" prefWidth="244.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <ChoiceBox prefHeight="25.0" prefWidth="242.0" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField prefWidth="225.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField GridPane.columnIndex="1" />
+                  <Label text="NAZWA" />
+                  <Label text="SKRÓT" GridPane.rowIndex="1" />
+                  <Label text="KOD" GridPane.rowIndex="2" />
+                  <Label text="KOD NATO" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+            <Button layoutX="137.0" layoutY="532.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="161.0" text="DODAJ" />
+            <TableView layoutX="322.0" layoutY="33.0" prefHeight="465.0" prefWidth="647.0">
+              <columns>
+                <TableColumn prefWidth="54.0" text="NAZWA" />
+                <TableColumn prefWidth="55.0" text="SKROT" />
+                  <TableColumn prefWidth="37.0" text="KOD" />
+                  <TableColumn prefWidth="78.0" text="KOD_NATO" />
+                  <TableColumn prefWidth="37.0" text="KALIBER" />
+                  <TableColumn prefWidth="41.0" text="SZTUK_W_PACZCE" />
+                  <TableColumn prefWidth="38.0" text="MASA_SZTUKI" />
+                  <TableColumn prefWidth="42.0" text="WYM_PACZKI_X" />
+                  <TableColumn prefWidth="43.0" text="WYM_PACZKI_Y" />
+                  <TableColumn prefWidth="44.0" text="WYM_PACZKI_Z" />
+                  <TableColumn prefWidth="44.0" text="KATEG_FK" />
+                  <TableColumn prefWidth="44.0" text="RODZAJ_GLOWICY_BOJ" />
+                  <TableColumn prefWidth="44.0" text="RODZAJ_GLOWICY_NAPROW" />
+                  <TableColumn prefWidth="44.0" text="RODZAJ_NAPROW" />
+              </columns>
+            </TableView>
+         </children></Pane>
    </left>
    <top>
       <Pane prefHeight="44.0" prefWidth="608.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="23.0" layoutY="5.0" mnemonicParsing="false" onAction="#goBackToMainScene" prefHeight="33.0" prefWidth="72.0" text="Wstecz" />
-            <Label layoutX="121.0" layoutY="4.0" text="Wprowadzanie nowego rodzaju amunicji">
+            <Label layoutX="290.0" layoutY="4.0" text="Wprowadzanie nowego rodzaju amunicji">
                <font>
                   <Font size="25.0" />
                </font>
