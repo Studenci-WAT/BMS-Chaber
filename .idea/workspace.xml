@@ -4,24 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cd0cd9d-27c0-41c8-892b-2f3158cac233" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/input-template-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/main-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="7cd0cd9d-27c0-41c8-892b-2f3158cac233" name="Changes" comment="Refactored template and navigation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/AmmoFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/InputAmmoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/ApplicationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/FireSysFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/InputTemplateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/NavigationBackController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/MainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/InputAmmoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/InputTemplateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/InputTemplateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/MainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/enums/Views.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/enums/Views.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/interfaces/AbstractNavigationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/input-amo-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/input-amo-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/input-fire-sys-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/input-sys-ogn-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-amo-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-amo-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-fire-sys-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-sys-ogn-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/home-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/input-amo-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/input-template-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/input-template-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/main-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/home-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-amo-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-template-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-template-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/main-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,8 +148,31 @@
       <workItem from="1701430064582" duration="345000" />
       <workItem from="1701430410647" duration="1690000" />
       <workItem from="1701432119348" duration="731000" />
-      <workItem from="1701432863008" duration="5091000" />
+      <workItem from="1701432863008" duration="5516000" />
+      <workItem from="1701439766341" duration="944000" />
+      <workItem from="1701448604252" duration="1070000" />
+      <workItem from="1701637202929" duration="323000" />
+      <workItem from="1701677480801" duration="4100000" />
+      <workItem from="1701681594477" duration="223000" />
+      <workItem from="1701681832328" duration="2253000" />
     </task>
+    <task id="LOCAL-00001" summary="Refactored template and navigation">
+      <option name="closed" value="true" />
+      <created>1701439412544</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701439412544</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Refactored template and navigation">
+      <option name="closed" value="true" />
+      <created>1701439591692</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701439591692</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +206,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Refactored template and navigation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored template and navigation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

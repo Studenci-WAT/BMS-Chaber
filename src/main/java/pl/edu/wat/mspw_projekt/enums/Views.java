@@ -1,7 +1,6 @@
 package pl.edu.wat.mspw_projekt.enums;
 
 public enum Views {
-    AMMOFORMVIEW("input-amo-view.fxml"),
     INPUTTEMPLATEVIEW("input-template-view.fxml");
 
 
