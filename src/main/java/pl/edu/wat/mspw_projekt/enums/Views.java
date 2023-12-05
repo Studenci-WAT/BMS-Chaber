@@ -1,7 +1,11 @@
 package pl.edu.wat.mspw_projekt.enums;
 
 public enum Views {
-    INPUTTEMPLATEVIEW("input-template-view.fxml");
+    INPUTTEMPLATEVIEW("inputviews/input-template-view.fxml"),
+    INPUTAMOVIEW("inputviews/input-amo-view.fxml"),
+    INPUTSYSOGNVIEW("inputviews/input-sys-ogn-view.fxml"),
+    INPUTSPWVIEW("inputviews/input-spw-view.fxml"),
+    INPUTMPSVIEW("inputviews/input-mps-view.fxml");
 
 
     private final String value;

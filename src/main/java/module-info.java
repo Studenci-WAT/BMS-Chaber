@@ -11,4 +11,6 @@ module pl.edu.wat.mspw_projekt {
 
     opens pl.edu.wat.mspw_projekt to javafx.fxml;
     exports pl.edu.wat.mspw_projekt;
+    exports pl.edu.wat.mspw_projekt.inputcontrollers;
+    opens pl.edu.wat.mspw_projekt.inputcontrollers to javafx.fxml;
 }

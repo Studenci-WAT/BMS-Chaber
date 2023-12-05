@@ -28,7 +28,10 @@ public class MainViewController {
         // Tworzenie przycisków dynamicznie w pierwszej zakładce
         GridPane firstTabGridPane = (GridPane) ((AnchorPane) tabPane.getTabs().get(0).getContent()).getChildren().get(0);
         generateNavigationButton(firstTabGridPane, "TEMPLATE VIEW", "templateInputNavigator", 0);
-        generateNavigationButton(firstTabGridPane, "TEMPLATE VIEW", "templateInputNavigator", 1);
+        generateNavigationButton(firstTabGridPane, "RODZAJ AMUNICJI", "amoInputNavigator", 1);
+        generateNavigationButton(firstTabGridPane, "SYSTEM OGNIA", "sysOgnInputNavigator", 2);
+        generateNavigationButton(firstTabGridPane, "SPW", "spwInputNavigator", 3);
+        generateNavigationButton(firstTabGridPane, "MPS", "mpsInputNavigator", 4);
         // Dodaj więcej przycisków w pierwszej zakładce, jeśli jest to potrzebne
     }
     public void loadView(String fxmlPath) {
@@ -71,6 +74,18 @@ public class MainViewController {
         switch(clickedButton.getId()){
             case "templateInputNavigator":
                 loadView(Views.INPUTTEMPLATEVIEW.getValue());
+                break;
+            case "amoInputNavigator":
+                loadView(Views.INPUTAMOVIEW.getValue());
+                break;
+            case "sysOgnInputNavigator":
+                loadView(Views.INPUTSYSOGNVIEW.getValue());
+                break;
+            case "spwInputNavigator":
+                loadView(Views.INPUTSPWVIEW.getValue());
+                break;
+            case "mpsInputNavigator":
+                loadView(Views.INPUTMPSVIEW.getValue());
                 break;
 
         }

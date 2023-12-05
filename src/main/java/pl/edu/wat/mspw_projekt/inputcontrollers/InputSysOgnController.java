@@ -1,4 +1,4 @@
-package pl.edu.wat.mspw_projekt;
+package pl.edu.wat.mspw_projekt.inputcontrollers;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -11,7 +11,7 @@ import javafx.scene.layout.GridPane;
 import java.util.Arrays;
 import java.util.List;
 
-public class InputTemplateController{
+public class InputSysOgnController {
 
     @FXML
     private GridPane inputGridPane;
@@ -21,69 +21,37 @@ public class InputTemplateController{
 
     public void initialize() {
         // ustawienie tytulu strony
-        labelTitle.setText("Wprowadzanie nowego rodzaju amunicji");
+        labelTitle.setText("Wprowadzanie nowego rodzaju systemu ognia");
         labelTitle.setAlignment(Pos.CENTER); // Ustawienie wyrównania tekstu na środek
 
         // generowanie kontrolek
         generateTextField("NAZWA", 0);
         generateTextField("SKRÓT", 1);
-        generateTextField("KOD", 2);
-        generateTextField("KOD NATO", 3);
-        generateTextField("KALIBER", 4);
-        generateTextField("SZTUK W PACZCE", 5);
-        generateTextField("MASA SZTUKI", 6);
-        generateTextField("WYM PACZKI X", 7);
-        generateTextField("WYM PACZKI Y", 8);
-        generateTextField("WYM PACZKI Z", 9);
+        generateTextField("SZYBKOSTRZELNOŚĆ 1/MIN", 2);
+        generateTextField("KALIBER", 3);
+        generateTextField("DŁUGOŚĆ SERII", 4);
+        generateTextField("CZAS CELOWANIA", 5);
+        generateTextField("KLASA PRZYRZ OC", 6);
+        generateTextField("LICZBA KAN CEL", 7);
 
+        // TODO TE OPCJE TRZEBA BRAĆ Z TABEL SŁOWNIKOWYCH
         List<String> options1 = Arrays.asList(
-                "NABÓJ",
-                "POCISK RAKIETOWY",
-                "GRANAT",
-                "BOMBA",
-                "TORPEDA",
-                "MINA LĄDOWA",
-                "MINA MORSKA"
+                "ARMATA",
+                "ARMATOHAUBICA",
+                "HAUBICA",
+                "MOŹDZIEŻ",
+                "GRANATNIK",
+                "DZIAŁKO",
+                "KARABIN",
+                "WYRZUTNIA PK",
+                "WYRZUTNIA PNK",
+                "ZASOBNIK BOMB K",
+                "ZASOBNIK BOMB NK",
+                "WYRZUTNIA TORPED",
+                "STAWIACZ MIN"
         );
-        generateChoiceBox("KATEGORIA", 10, options1);
+        generateChoiceBox("RODZAJ SYS OGN", 8, options1);
 
-        List<String> options2 = Arrays.asList(
-                "PRZEBIJAJĄCA",
-                "KUMULACYJNA",
-                "ODŁAMKOWA",
-                "ODŁAMKOWO BURZĄCA",
-                "BURZĄCA",
-                "DYMNA",
-                "OŚWIETLAJĄCA",
-                "ZAKŁÓCAJĄCA",
-                "ZAPALAJĄCA",
-                "CHEMICZNA",
-                "MINUJĄCA"
-        );
-        generateChoiceBox("R GŁOWYCY BOJ", 11, options2);
-
-        List<String> options3 = Arrays.asList(
-                "BRAK",
-                "RADAROWE",
-                "TERMICZNE",
-                "LASEROWE",
-                "OPTYCZNE",
-                "GPS",
-                "INERCYJNE",
-                "DUALNA IR UV",
-                "GPS INERCYJNE"
-        );
-        generateChoiceBox("R GŁOWICY NAPR", 12, options3);
-
-        List<String> options4 = Arrays.asList(
-                "BRAK",
-                "RADIOWE",
-                "PRZEWODOWE",
-                "SAMONAPROWADZANIE PASYWNE",
-                "SAMONAPROWADZANIE POLAKTYWNE",
-                "SAMONAPROWADZANIE AKTYWNE"
-        );
-        generateChoiceBox("R NAPR", 13, options4);
     }
 
     private void generateTextField(String name, int row) {
