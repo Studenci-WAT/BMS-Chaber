@@ -10,7 +10,7 @@ import java.util.List;
 
 class MainDao {
 
-    private static SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
 
     public MainDao() {
         initializeSessionFactory();
@@ -85,14 +85,14 @@ class MainDao {
     }
 
 
-    private static void initializeSessionFactory() {
+    private void initializeSessionFactory() {
         if(sessionFactory == null)
         {
             sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
         }
     }
 
-    private static void closeSessionFactory() {
+    private void closeSessionFactory() {
         if (sessionFactory != null && !sessionFactory.isClosed()) {
             sessionFactory.close();
         }
