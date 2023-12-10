@@ -2,6 +2,7 @@ package pl.edu.wat.mspw_projekt;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -10,22 +11,23 @@ import java.io.IOException;
 public class ApplicationController extends Application {
 
     @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("home-view.fxml"));
-        Scene scene = new Scene(loader.load());
-        setStage(stage, scene);
+    public void start(Stage primaryStage) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("main-view.fxml"));
+        Parent root = loader.load();
+
+        MainViewController controller = loader.getController();
+
+        // Ładowanie Widoku 1 na starcie
+//        controller.loadView("home-view.fxml");
+
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
     }
 
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 
-
-    private void setStage(Stage stage, Scene scene) {
-        stage.setTitle("Home");
-        stage.setScene(scene);
-        stage.show();
-    }
 }
