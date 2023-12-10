@@ -7,32 +7,35 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import pl.edu.wat.mspw_projekt.enums.Views;
+import pl.edu.wat.mspw_projekt.interfaces.ControlGenerator;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class InputSysOgnController {
 
+    // ODNOŚNIK DO GRIDPANE W PLIKU FXML - STATYCZNIE STWORZONY
     @FXML
     private GridPane inputGridPane;
 
     @FXML
     private Label labelTitle;
-
+    private ControlGenerator controller = new ControlGenerator();
     public void initialize() {
         // ustawienie tytulu strony
         labelTitle.setText("Wprowadzanie nowego rodzaju systemu ognia");
         labelTitle.setAlignment(Pos.CENTER); // Ustawienie wyrównania tekstu na środek
 
         // generowanie kontrolek
-        generateTextField("NAZWA", 0);
-        generateTextField("SKRÓT", 1);
-        generateTextField("SZYBKOSTRZELNOŚĆ 1/MIN", 2);
-        generateTextField("KALIBER", 3);
-        generateTextField("DŁUGOŚĆ SERII", 4);
-        generateTextField("CZAS CELOWANIA", 5);
-        generateTextField("KLASA PRZYRZ OC", 6);
-        generateTextField("LICZBA KAN CEL", 7);
+        controller.generateTextField(inputGridPane,"NAZWA","NAZWA", 0);
+        controller.generateTextField(inputGridPane,"SKROT","SKROT", 1);
+        controller.generateTextField(inputGridPane,"SZYBKOSTRZELNOSC", "SZYBKOSTRZELNOŚĆ 1/MIN",2);
+        controller.generateTextField(inputGridPane,"KALIBER", "KALIBER",3);
+        controller.generateTextField(inputGridPane,"DLUG_SERII", "DLUG_SERII", 4);
+        controller.generateTextField(inputGridPane,"CZAS_CELOWANIA", "CZAS_CELOWANIA", 5);
+        controller.generateTextField(inputGridPane,"KLASA_PRZYRZ_OC","KLASA PRZYRZ OC", 6);
+        controller.generateTextField(inputGridPane,"LICZBA_KAN_CEL", "LICZBA_KAN_CEL", 7);
 
         // TODO TE OPCJE TRZEBA BRAĆ Z TABEL SŁOWNIKOWYCH
         List<String> options1 = Arrays.asList(
@@ -50,39 +53,10 @@ public class InputSysOgnController {
                 "WYRZUTNIA TORPED",
                 "STAWIACZ MIN"
         );
-        generateChoiceBox("RODZAJ SYS OGN", 8, options1);
-
+        controller.generateChoiceBox(inputGridPane,"RODZAJ_SYSTEMU_OGN_FK", "RODZAJ_SYSTEMU_OGN_FK", 8, options1);
+        controller.generateButton(inputGridPane, "RODZAJ_SYSTEMU_OGN_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 8);
     }
 
-    private void generateTextField(String name, int row) {
-        Label label = new Label(name);
-        TextField textField = new TextField();
-
-        // Nadanie identyfikatorów
-        label.setId("label" + row);
-        textField.setId("textField" + row);
-
-        // Dodajemy kontrolki do GridPane
-        inputGridPane.add(label, 0, row); // Kolumna 0, wiersz row
-        inputGridPane.add(textField, 1, row); // Kolumna 1, wiersz row
-    }
-
-
-    private void generateChoiceBox(String name, int row, List<String> choices) {
-        Label label = new Label(name);
-        ChoiceBox<String> choiceBox = new ChoiceBox<>();
-
-        // Nadanie identyfikatorów
-        label.setId("labelChoice" + row);
-        choiceBox.setId("choiceBox" + row);
-
-        // Ustawienie opcji wyboru w ChoiceBox
-        choiceBox.setItems(FXCollections.observableArrayList(choices));
-
-        // Dodajemy kontrolki do GridPane
-        inputGridPane.add(label, 0, row); // Kolumna 0, wiersz row
-        inputGridPane.add(choiceBox, 1, row); // Kolumna 1, wiersz row
-    }
     @FXML
     private void addButton(){
         // Kod, który ma zostać wykonany, gdy użytkownik kliknie przycisk "DODAJ"

@@ -4,22 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cd0cd9d-27c0-41c8-892b-2f3158cac233" name="Changes" comment="Refactored template and navigation - dynamic create">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/inputcontrollers/InputAmoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/inputcontrollers/InputMpsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/inputcontrollers/InputSpwController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/inputcontrollers/InputSysOgnController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-amo-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-mps-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-spw-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-sys-ogn-view.fxml" afterDir="false" />
+    <list default="true" id="7cd0cd9d-27c0-41c8-892b-2f3158cac233" name="Changes" comment="Created new scenes">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/interfaces/ControlGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/InputTemplateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/inputcontrollers/InputTemplateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/MainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/enums/Views.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/enums/Views.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/input-template-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-template-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-template-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/inputcontrollers/InputAmoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/inputcontrollers/InputAmoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/inputcontrollers/InputMpsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/inputcontrollers/InputMpsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/inputcontrollers/InputSpwController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/inputcontrollers/InputSpwController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/inputcontrollers/InputSysOgnController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/inputcontrollers/InputSysOgnController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/inputcontrollers/InputTemplateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/inputcontrollers/InputTemplateController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -65,29 +60,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/backend&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Users/podla/IdeaProjects/BMS-Chaber/src/main/resources/pl/edu/wat/mspw_projekt/inputviews&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "feature/backend",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Users/podla/IdeaProjects/BMS-Chaber/src/main/resources/pl/edu/wat/mspw_projekt",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Users\podla\IdeaProjects\BMS-Chaber\src\main\resources\pl\edu\wat\mspw_projekt\inputviews" />
       <recent name="D:\Users\podla\IdeaProjects\BMS-Chaber\src\main\resources\pl\edu\wat\mspw_projekt" />
+      <recent name="D:\Users\podla\IdeaProjects\BMS-Chaber\src\main\resources\pl\edu\wat\mspw_projekt\inputviews" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Users\podla\IdeaProjects\BMS-Chaber\src\main\resources\pl\edu\wat\mspw_projekt\inputviews" />
@@ -163,7 +158,13 @@
       <workItem from="1701681594477" duration="223000" />
       <workItem from="1701681832328" duration="3233000" />
       <workItem from="1701763758072" duration="2339000" />
-      <workItem from="1701766111366" duration="1309000" />
+      <workItem from="1701766111366" duration="1378000" />
+      <workItem from="1701776016785" duration="187000" />
+      <workItem from="1701786339117" duration="237000" />
+      <workItem from="1701788370906" duration="169000" />
+      <workItem from="1701794819428" duration="440000" />
+      <workItem from="1701862898966" duration="1255000" />
+      <workItem from="1702227637755" duration="9422000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored template and navigation">
       <option name="closed" value="true" />
@@ -189,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701684351892</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Created new scenes">
+      <option name="closed" value="true" />
+      <created>1701767474197</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701767474197</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +236,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refactored template and navigation" />
     <MESSAGE value="Refactored template and navigation - dynamic create" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored template and navigation - dynamic create" />
+    <MESSAGE value="Created new scenes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created new scenes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

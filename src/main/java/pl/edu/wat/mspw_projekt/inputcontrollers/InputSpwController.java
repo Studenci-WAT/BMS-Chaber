@@ -8,6 +8,8 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import pl.edu.wat.mspw_projekt.enums.Views;
+import pl.edu.wat.mspw_projekt.interfaces.ControlGenerator;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22,16 +24,53 @@ public class InputSpwController {
     private GridPane inputGridPane3;
     @FXML
     private Label labelTitle;
-
+    private ControlGenerator controller = new ControlGenerator();
     public void initialize() {
         // ustawienie tytulu strony
         labelTitle.setText("Wprowadzanie nowego SPW");
         labelTitle.setAlignment(Pos.CENTER); // Ustawienie wyrównania tekstu na środek
 
         // generowanie kontrolek
-        generateTextField(inputGridPane,"NAZWA", 0);
-        generateTextField(inputGridPane,"SKRÓT", 1);
-        generateTextField(inputGridPane,"KOD", 2);
+        controller.generateTextField(inputGridPane,"NAZWA","NAZWA",  0);
+        controller.generateTextField(inputGridPane,"SKROT", "SKRÓT",1);
+        controller.generateTextField(inputGridPane,"KOD","KOD", 2);
+        controller.generateTextField(inputGridPane,"KLASA","KLASA",  3);
+
+        controller.generateTextField(inputGridPane,"OBSLUGA","OBSLUGA", 4);
+        controller.generateTextField(inputGridPane,"KOSZT_JEDN_CYKLU_ZYCIA","KOSZT_JEDN_CYKLU_ZYCIA",  5);
+        controller.generateTextField(inputGridPane,"KOSZT_JEDN_NABYCIA","KOSZT_JEDN_NABYCIA", 6);
+        controller.generateTextField(inputGridPane,"KOSZT_JEDN_UTRZYM_WYSZK_PERSON", "KOSZT_JEDN_UTRZYM_WYSZK_PERSON", 7);
+        controller.generateTextField(inputGridPane,"MASA", "MASA", 8);
+        controller.generateTextField(inputGridPane,"DLUG","DŁUGOOŚĆ", 9);
+        controller.generateTextField(inputGridPane,"SZEROK","SZEROKOŚĆ", 10);
+        controller.generateTextField(inputGridPane,"WYSOK","WYSOKOŚĆ", 11);
+        controller.generateTextField(inputGridPane,"POTENCJAL_BOJ", "POTENCJAL_BOJ",12);
+        controller.generateTextField(inputGridPane,"VALUE", "VALUE",13);
+        controller.generateTextField(inputGridPane2,"POJEM_ZBIOR_PALIWA","POJEM_ZBIOR_PALIWA",  0);
+        controller.generateTextField(inputGridPane2,"POJEM_ZBIOR_PALIWA_DODAT", "POJEM_ZBIOR_PALIWA_DODAT",1);
+        controller.generateTextField(inputGridPane2,"POJEM_AKUMULATOROW", "POJEM_AKUMULATOROW", 2);
+        controller.generateCheckBox(inputGridPane2,"JEZDZACY", "JEŻDŻĄCY",3);
+        controller.generateCheckBox(inputGridPane2,"LATAJACY","LATAJĄCY",4);
+        controller.generateCheckBox(inputGridPane2,"PLYWAJACY","PŁYWAJĄCY",5);
+        controller.generateCheckBox(inputGridPane2,"PRZENOSNY","PRZENOŚNY",6);
+        controller.generateCheckBox(inputGridPane2,"CIAGNIONY","CIĄGNIONY",7);
+        controller.generateCheckBox(inputGridPane2,"OPANCERZONY","OPANCERZONY",8);
+        controller.generateTextField(inputGridPane2,"EFEKTOR_LACZN_FK", "EFEKTOR_LACZN_FK", 9);
+        controller.generateButton(inputGridPane2, "EFEKTOR_LACZN_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 9);
+        controller.generateTextField(inputGridPane2,"RODZAJ_SRODOW_FK","RODZAJ_SRODOW_FK",  10);
+        controller.generateButton(inputGridPane2, "RODZAJ_SRODOW_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 10);
+        controller.generateTextField(inputGridPane2,"EFEKTOR_JEZDNY_FK", "EFEKTOR_JEZDNY_FK", 11);
+        controller.generateButton(inputGridPane2, "EFEKTOR_JEZDNY_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 11);
+        controller.generateTextField(inputGridPane2,"EFEKTOR_PLYWANIA_FK", "EFEKTOR_PLYWANIA_FK", 12);
+        controller.generateButton(inputGridPane2, "EFEKTOR_PLYWANIA_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 12);
+        controller.generateTextField(inputGridPane2,"EFEKTOR_INZ_FK", "EFEKTOR_INZ_FK", 13);
+        controller.generateButton(inputGridPane2, "EFEKTOR_INZ_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 13);
+        controller.generateTextField(inputGridPane3,"EFEKTOR_WE_FK", "EFEKTOR_WE_FK", 0);
+        controller.generateButton(inputGridPane3, "EFEKTOR_WE_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 0);
+        controller.generateTextField(inputGridPane3,"PARAM_KADLUBA_FK","PARAM_KADLUBA_FK", 1);
+        controller.generateButton(inputGridPane3, "PARAM_KADLUBA_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 1);
+        controller.generateTextField(inputGridPane3,"EFEKTOR_TRANSP_FK","EFEKTOR_TRANSP_FK", 2);
+        controller.generateButton(inputGridPane3, "EFEKTOR_TRANSP_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 2);
         // TODO TE OPCJE TRZEBA BRAĆ Z TABEL SŁOWNIKOWYCH
         List<String> options1 = Arrays.asList(
                 "NIEOKREŚLONA",
@@ -56,87 +95,20 @@ public class InputSpwController {
                 "PRZYCZEPA",
                 "NACZEPA"
         );
-        generateChoiceBox(inputGridPane,"KLASA", 3, options1);
-
-        generateTextField(inputGridPane,"OBSŁUGA", 4);
-        generateTextField(inputGridPane,"KOSZT JEDN CYKLU ŻYCIA", 5);
-        generateTextField(inputGridPane,"KOSZT JEDN NABYCIA", 6);
-        generateTextField(inputGridPane,"KOSZT JEDN UTRZYM WYSZK PERSO", 7);
-        generateTextField(inputGridPane,"MASA", 8);
-        generateTextField(inputGridPane,"DŁUGOOŚĆ", 9);
-        generateTextField(inputGridPane,"SZEROKOŚĆ", 10);
-        generateTextField(inputGridPane,"WYSOKOŚĆ", 11);
-        generateTextField(inputGridPane,"POTENCJAŁ BOJ", 12);
-        generateTextField(inputGridPane,"VALUE", 13);
-        generateTextField(inputGridPane2,"POJEM ZBIOR PALIWA", 0);
-        generateTextField(inputGridPane2,"POJEM ZBIOR PALIWA +", 1);
-        generateTextField(inputGridPane2,"POJEM AKUMULATORÓW", 2);
-        generateCheckBox(inputGridPane2,"JEŻDŻĄCY",3);
-        generateCheckBox(inputGridPane2,"LATAJĄCY",4);
-        generateCheckBox(inputGridPane2,"PŁYWAJĄCY",5);
-        generateCheckBox(inputGridPane2,"PRZENOŚNY",6);
-        generateCheckBox(inputGridPane2,"CIĄGNIKOWY",7);
-        generateCheckBox(inputGridPane2,"OPANCERZONY",8);
-        generateTextField(inputGridPane2,"EFEKTOR ŁĄCZN FK", 9);
-        generateTextField(inputGridPane2,"RODZAJ ŚRODOW FK", 10);
-        generateTextField(inputGridPane2,"EFEKTOR JEZDNY FK", 11);
-        generateTextField(inputGridPane2,"EFEKTOR PŁYWANIA FK", 12);
-        generateTextField(inputGridPane2,"EFEKTOR INŻ FK", 13);
-        generateTextField(inputGridPane3,"EFEKTOR WE FK", 0);
-        generateTextField(inputGridPane3,"PARAM KADŁUBA FK", 1);
-        generateTextField(inputGridPane3,"EFEKTOR TRANSP FK", 2);
-        generateTextField(inputGridPane3,"KATEGORIA FK", 3);
-        generateTextField(inputGridPane3,"EFEKTOR LATANIA FK", 4);
-        generateTextField(inputGridPane3,"EFEKTOR ROZPOZ FK", 5);
-        generateTextField(inputGridPane3,"MOC [HP]", 6);
-        generateTextField(inputGridPane3,"KLASA PRZYRZ OC", 7);
-        generateTextField(inputGridPane3,"ZUZ PALIWA PRACA", 8);
+        controller.generateChoiceBox(inputGridPane3,"KATEG_FK","KATEG_FK",  3, options1);
+        controller.generateButton(inputGridPane3, "KATEG_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 3);
+        controller.generateTextField(inputGridPane3,"EFEKTOR_LATANIA_FK","EFEKTOR_LATANIA_FK", 4);
+        controller.generateButton(inputGridPane3, "EFEKTOR_LATANIA_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 4);
+        controller.generateTextField(inputGridPane3,"EFEKTOR_ROZPOZ_FK","EFEKTOR_ROZPOZ_FK",  5);
+        controller.generateButton(inputGridPane3, "EFEKTOR_ROZPOZ_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 5);
+        controller.generateTextField(inputGridPane3,"MOC","MOC [HP]", 6);
+        controller.generateTextField(inputGridPane3,"KLASA_PRZYRZ_OC", "KLASA_PRZYRZ_OC",7);
+        controller.generateTextField(inputGridPane3,"ZUZ_PALIWA_PRACA", "ZUZ_PALIWA_PRACA",8);
 
 
 
     }
 
-    private void generateTextField(GridPane inputGridPane, String name, int row) {
-        Label label = new Label(name);
-        TextField textField = new TextField();
-
-        // Nadanie identyfikatorów
-        label.setId("label" + row);
-        textField.setId("textField" + row);
-
-        // Dodajemy kontrolki do GridPane
-        inputGridPane.add(label, 0, row); // Kolumna 0, wiersz row
-        inputGridPane.add(textField, 1, row); // Kolumna 1, wiersz row
-    }
-    private void generateCheckBox(GridPane inputGridPane, String name, int row) {
-        Label label = new Label(name);
-        CheckBox checkBox = new CheckBox();
-
-        // Nadanie identyfikatorów
-        label.setId("labelCheckBox" + row);
-        checkBox.setId("checkBox" + row);
-
-        // Dodajemy kontrolki do GridPane
-        inputGridPane.add(label, 0, row); // Kolumna 0, wiersz row
-        inputGridPane.add(checkBox, 1, row); // Kolumna 1, wiersz row
-    }
-
-
-    private void generateChoiceBox(GridPane inputGridPane, String name, int row, List<String> choices) {
-        Label label = new Label(name);
-        ChoiceBox<String> choiceBox = new ChoiceBox<>();
-
-        // Nadanie identyfikatorów
-        label.setId("labelChoice" + row);
-        choiceBox.setId("choiceBox" + row);
-
-        // Ustawienie opcji wyboru w ChoiceBox
-        choiceBox.setItems(FXCollections.observableArrayList(choices));
-
-        // Dodajemy kontrolki do GridPane
-        inputGridPane.add(label, 0, row); // Kolumna 0, wiersz row
-        inputGridPane.add(choiceBox, 1, row); // Kolumna 1, wiersz row
-    }
     @FXML
     private void addButton(){
         // Kod, który ma zostać wykonany, gdy użytkownik kliknie przycisk "DODAJ"

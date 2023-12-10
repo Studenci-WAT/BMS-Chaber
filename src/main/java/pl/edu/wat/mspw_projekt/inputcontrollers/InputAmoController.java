@@ -7,6 +7,8 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import pl.edu.wat.mspw_projekt.enums.Views;
+import pl.edu.wat.mspw_projekt.interfaces.ControlGenerator;
 
 import java.util.Arrays;
 import java.util.List;
@@ -18,23 +20,23 @@ public class InputAmoController {
 
     @FXML
     private Label labelTitle;
-
+    private ControlGenerator controller = new ControlGenerator();
     public void initialize() {
         // ustawienie tytulu strony
         labelTitle.setText("Wprowadzanie nowego rodzaju amunicji");
         labelTitle.setAlignment(Pos.CENTER); // Ustawienie wyrównania tekstu na środek
 
         // generowanie kontrolek
-        generateTextField("NAZWA", 0);
-        generateTextField("SKRÓT", 1);
-        generateTextField("KOD", 2);
-        generateTextField("KOD NATO", 3);
-        generateTextField("KALIBER", 4);
-        generateTextField("SZTUK W PACZCE", 5);
-        generateTextField("MASA SZTUKI", 6);
-        generateTextField("WYM PACZKI X", 7);
-        generateTextField("WYM PACZKI Y", 8);
-        generateTextField("WYM PACZKI Z", 9);
+        controller.generateTextField(inputGridPane,"NAZWA","NAZWA", 0);
+        controller.generateTextField(inputGridPane,"SKROT","SKROT", 1);
+        controller.generateTextField(inputGridPane,"KOD","KOD", 2);
+        controller.generateTextField(inputGridPane,"KOD_NATO", "KOD_NATO", 3);
+        controller.generateTextField(inputGridPane,"KALIBER", "KALIBER",4);
+        controller.generateTextField(inputGridPane,"SZTUK_W_PACZCE","SZTUK_W_PACZCE", 5);
+        controller.generateTextField(inputGridPane,"MASA SZTUKI","MASA SZTUKI",  6);
+        controller.generateTextField(inputGridPane,"WYM_PACZKI_X","WYM_PACZKI_X", 7);
+        controller.generateTextField(inputGridPane,"WYM_PACZKI_Y", "WYM_PACZKI_Y", 8);
+        controller.generateTextField(inputGridPane,"WYM_PACZKI_Z", "WYM_PACZKI_Z",9);
         // TODO TE OPCJE TRZEBA BRAĆ Z TABEL SŁOWNIKOWYCH
         List<String> options1 = Arrays.asList(
                 "NABÓJ",
@@ -45,7 +47,8 @@ public class InputAmoController {
                 "MINA LĄDOWA",
                 "MINA MORSKA"
         );
-        generateChoiceBox("KATEGORIA", 10, options1);
+        controller.generateChoiceBox(inputGridPane,"KATEG_FK", "KATEGORIA", 10, options1);
+        controller.generateButton(inputGridPane, "KATEG_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 10);
         // TODO TE OPCJE TRZEBA BRAĆ Z TABEL SŁOWNIKOWYCH
         List<String> options2 = Arrays.asList(
                 "PRZEBIJAJĄCA",
@@ -60,7 +63,8 @@ public class InputAmoController {
                 "CHEMICZNA",
                 "MINUJĄCA"
         );
-        generateChoiceBox("R GŁOWYCY BOJ", 11, options2);
+        controller.generateChoiceBox(inputGridPane,"RODZAJ_GLOWICY_BOJ_FK","RODZAJ_GLOWICY_BOJ_FK", 11, options2);
+        controller.generateButton(inputGridPane, "RODZAJ_GLOWICY_BOJ_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 11);
         // TODO TE OPCJE TRZEBA BRAĆ Z TABEL SŁOWNIKOWYCH
         List<String> options3 = Arrays.asList(
                 "BRAK",
@@ -73,7 +77,8 @@ public class InputAmoController {
                 "DUALNA IR UV",
                 "GPS INERCYJNE"
         );
-        generateChoiceBox("R GŁOWICY NAPR", 12, options3);
+        controller.generateChoiceBox(inputGridPane,"RODZAJ_GLOWICY_NAPROW_FK", "RODZAJ_GLOWICY_NAPROW_FK",12, options3);
+        controller.generateButton(inputGridPane, "RODZAJ_GLOWICY_NAPROW_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 12);
         // TODO TE OPCJE TRZEBA BRAĆ Z TABEL SŁOWNIKOWYCH
         List<String> options4 = Arrays.asList(
                 "BRAK",
@@ -83,38 +88,10 @@ public class InputAmoController {
                 "SAMONAPROWADZANIE POLAKTYWNE",
                 "SAMONAPROWADZANIE AKTYWNE"
         );
-        generateChoiceBox("R NAPR", 13, options4);
+        controller.generateChoiceBox(inputGridPane,"RODZAJ_NAPROW_FK","RODZAJ_NAPROW_FK", 13, options4);
+        controller.generateButton(inputGridPane, "RODZAJ_NAPROW_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 13);
     }
 
-    private void generateTextField(String name, int row) {
-        Label label = new Label(name);
-        TextField textField = new TextField();
-
-        // Nadanie identyfikatorów
-        label.setId("label" + row);
-        textField.setId("textField" + row);
-
-        // Dodajemy kontrolki do GridPane
-        inputGridPane.add(label, 0, row); // Kolumna 0, wiersz row
-        inputGridPane.add(textField, 1, row); // Kolumna 1, wiersz row
-    }
-
-
-    private void generateChoiceBox(String name, int row, List<String> choices) {
-        Label label = new Label(name);
-        ChoiceBox<String> choiceBox = new ChoiceBox<>();
-
-        // Nadanie identyfikatorów
-        label.setId("labelChoice" + row);
-        choiceBox.setId("choiceBox" + row);
-
-        // Ustawienie opcji wyboru w ChoiceBox
-        choiceBox.setItems(FXCollections.observableArrayList(choices));
-
-        // Dodajemy kontrolki do GridPane
-        inputGridPane.add(label, 0, row); // Kolumna 0, wiersz row
-        inputGridPane.add(choiceBox, 1, row); // Kolumna 1, wiersz row
-    }
     @FXML
     private void addButton(){
         // Kod, który ma zostać wykonany, gdy użytkownik kliknie przycisk "DODAJ"
