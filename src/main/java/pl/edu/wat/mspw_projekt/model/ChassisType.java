@@ -7,21 +7,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Typ widocznosci terenu
- * e_typ_terenu_widocz
- */
+* Typ podwozia
+ * e_rodzaj_podwozia
+* */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "e_typ_terenu_widocz")
-public class TerrainVisibility {
+@Table(name = "e_rodzaj_podwozia")
+public class ChassisType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Column(name = "NAZWA")
     private String name;
+
     @Column(name = "SKROT")
     private String shortcut;
 }

@@ -14,7 +14,11 @@
         prefWidth="600.0"
         xmlns="http://javafx.com/javafx/17.0.2-ea"
         xmlns:fx="http://javafx.com/fxml/1"
-        fx:controller="com.example.mspw_projekt.AmmoFormController"
+<<<<<<<< HEAD:src/main/resources/pl/edu/wat/mspw_projekt/input-sys-ogn-view.fxml
+        fx:controller="pl.edu.wat.mspw_projekt.FireSysFormController"
+========
+        fx:controller="com.example.mspw_projekt.FireSysFormController"
+>>>>>>>> origin/develop:src/main/resources/pl/edu/wat/mspw_projekt/input-fire-sys-view.fxml
 >
    <center>
       <ImageView fitHeight="301.0" fitWidth="563.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
@@ -30,7 +34,7 @@
       <Pane prefHeight="44.0" prefWidth="608.0" BorderPane.alignment="CENTER">
          <children>
             <Button layoutX="23.0" layoutY="5.0" mnemonicParsing="false" onAction="#goBackToMainScene" prefHeight="33.0" prefWidth="72.0" text="Wstecz" />
-            <Label layoutX="121.0" layoutY="4.0" text="Wprowadzanie nowego rodzaju amunicji">
+            <Label layoutX="136.0" layoutY="4.0" text="Wprowadzanie nowego systemu ognia">
                <font>
                   <Font size="25.0" />
                </font>

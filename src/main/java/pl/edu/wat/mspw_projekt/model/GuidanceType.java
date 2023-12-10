@@ -1,22 +1,23 @@
 package pl.edu.wat.mspw_projekt.model;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import jakarta.persistence.*;
+
 /**
- * Typ widocznosci terenu
- * e_typ_terenu_widocz
+ * Rodzaj naprowadzania
+ * e_rodzaj_naprow
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "e_typ_terenu_widocz")
-public class TerrainVisibility {
+@Table(name = "e_rodzaj_naprow")
+public class GuidanceType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

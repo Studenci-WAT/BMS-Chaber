@@ -7,21 +7,24 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Typ widocznosci terenu
- * e_typ_terenu_widocz
+ * Poziom oddziaływania ogniowego
+ * e_poziom_oddzial_ogn
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "e_typ_terenu_widocz")
-public class TerrainVisibility {
+@Table(name = "e_poziom_oddzial_ogn")
+public class FireUnitLevel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Column(name = "NAZWA")
     private String name;
+
     @Column(name = "SKROT")
     private String shortcut;
 }
