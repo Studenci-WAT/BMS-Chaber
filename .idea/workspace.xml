@@ -106,7 +106,7 @@
       <recent name="pl.edu.wat.mspw_projekt" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Unnamed">
+  <component name="RunManager" selected="Application.ApplicationController">
     <configuration name="ApplicationController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pl.edu.wat.mspw_projekt.ApplicationController" />
       <module name="MSPW_PROJEKT" />
