@@ -22,7 +22,6 @@ class MainDao {
         return instance;
     }
 
-
     public <T> void createRecord(T obj) {
         try (Session session = sessionFactory.openSession()) {
             // Rozpoczęcie transakcji
