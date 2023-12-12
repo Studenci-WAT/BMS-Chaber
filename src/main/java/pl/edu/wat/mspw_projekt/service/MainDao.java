@@ -1,4 +1,4 @@
-package pl.edu.wat.mspw_projekt.model;
+package pl.edu.wat.mspw_projekt.service;
 
 
 import org.hibernate.Session;
@@ -11,10 +11,17 @@ import java.util.List;
 class MainDao {
 
     private SessionFactory sessionFactory;
-
-    public MainDao() {
+    private static MainDao instance;
+    private MainDao() {
         initializeSessionFactory();
+    };
+    public static MainDao getInstance() {
+        if ( instance == null ) {
+            instance = new MainDao();
+        }
+        return instance;
     }
+
 
     public <T> void createRecord(T obj) {
         try (Session session = sessionFactory.openSession()) {
