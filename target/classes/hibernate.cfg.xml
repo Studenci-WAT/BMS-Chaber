@@ -3,8 +3,12 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
+        <property name="hibernate.transaction.jta.platform">
+            org.hibernate.service.jta.platform.internal.SunOneJtaPlatform
+        </property>
+
         <property name="hbm2ddl.auto">
-            create
+            create-drop
         </property>
 
         <!-- Assume test is the database name -->
@@ -20,5 +24,11 @@
         <property name = "hibernate.connection.password">
             wcy19il1s0
         </property>
+
+        <mapping class="pl.edu.wat.mspw_projekt.model.PropellantAndLubricant"/>
+        <mapping class="pl.edu.wat.mspw_projekt.model.AmmoCategory"/>
+<!--        <mapping class="pl.edu.wat.mspw_projekt.model.Ammo"/>-->
+        <mapping class="pl.edu.wat.mspw_projekt.model.GuidanceType"/>
+        <mapping class="pl.edu.wat.mspw_projekt.model.WarheadType"/>
     </session-factory>
 </hibernate-configuration>

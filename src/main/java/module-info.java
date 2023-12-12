@@ -12,6 +12,7 @@ module pl.edu.wat.mspw_projekt {
     requires jakarta.persistence;
     requires lombok;
     requires org.hibernate.orm.core;
+    requires java.naming;
 
     opens pl.edu.wat.mspw_projekt to javafx.fxml, org.hibernate.orm.core;
     opens pl.edu.wat.mspw_projekt.model to org.hibernate.orm.core;

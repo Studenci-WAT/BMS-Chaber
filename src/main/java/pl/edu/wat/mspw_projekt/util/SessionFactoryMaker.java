@@ -19,6 +19,7 @@ public class SessionFactoryMaker {
         try {
             factory = new WildCardConfiguration()
                     .addPackage("pl.edu.wat.mspw_projekt.model")
+                    .addAnnotatedClass(PropellantAndLubricant.class)
                     .configure().buildSessionFactory();
         } catch (Throwable ex) {
             System.err.println("Failed to create sessionFactory object." + ex);

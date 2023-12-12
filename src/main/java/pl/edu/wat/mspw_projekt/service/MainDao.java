@@ -5,15 +5,16 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import pl.edu.wat.mspw_projekt.util.SessionFactoryMaker;
 
 import java.util.List;
 
-class MainDao {
+public class MainDao {
 
     private SessionFactory sessionFactory;
     private static MainDao instance;
     private MainDao() {
-        initializeSessionFactory();
+        sessionFactory = SessionFactoryMaker.getFactory();
     };
     public static MainDao getInstance() {
         if ( instance == null ) {
