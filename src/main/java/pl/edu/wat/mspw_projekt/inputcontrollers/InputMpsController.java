@@ -1,19 +1,14 @@
 package pl.edu.wat.mspw_projekt.inputcontrollers;
 
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import pl.edu.wat.mspw_projekt.interfaces.ControlGenerator;
 import pl.edu.wat.mspw_projekt.model.PropellantAndLubricant;
-import pl.edu.wat.mspw_projekt.service.MainDao;
-
-import java.util.Arrays;
-import java.util.List;
+import pl.edu.wat.mspw_projekt.util.MainDao;
 
 public class InputMpsController {
 

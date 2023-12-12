@@ -75,7 +75,7 @@ public class Fun_intens_niszcz_nosic_sym_2 {
     @Column(name = "WSP_A")
     private float WSP_A;
 
-    @Column(name = "WSP_A")
+    @Column(name = "WSP_B")
     private float WSP_B;
 
     @Column(name = "ZASIEG_MIN")

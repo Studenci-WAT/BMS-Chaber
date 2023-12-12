@@ -6,9 +6,9 @@
         <property name="hibernate.transaction.jta.platform">
             org.hibernate.service.jta.platform.internal.SunOneJtaPlatform
         </property>
-
+        <property name="hibernate.connection.autocommit">true</property>
         <property name="hbm2ddl.auto">
-            create-drop
+            create
         </property>
 
         <!-- Assume test is the database name -->
