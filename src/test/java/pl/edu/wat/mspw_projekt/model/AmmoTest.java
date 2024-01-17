@@ -1,7 +1,13 @@
 package pl.edu.wat.mspw_projekt.model;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.junit.jupiter.api.Test;
-import pl.edu.wat.mspw_projekt.util.MainDao;
+import pl.edu.wat.mspw_backend.model.Ammo;
+import pl.edu.wat.mspw_backend.model.AmmoCategory;
+import pl.edu.wat.mspw_backend.util.MainDao;
+import pl.edu.wat.mspw_backend.util.SessionFactoryMaker;
 
 class AmmoTest {
     @Test

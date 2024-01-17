@@ -1,0 +1,195 @@
+Index: target/classes/com/example/mspw_projekt/input-fire-sys-view.fxml
+===================================================================
+diff --git a/target/classes/com/example/mspw_projekt/input-fire-sys-view.fxml b/target/classes/com/example/mspw_projekt/input-fire-sys-view.fxml
+deleted file mode 100644
+--- a/target/classes/com/example/mspw_projekt/input-fire-sys-view.fxml	(revision acd57f685d1a22bb7e3f885227ed0d7f55d0904c)
++++ /dev/null	(revision acd57f685d1a22bb7e3f885227ed0d7f55d0904c)
+@@ -1,41 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import javafx.scene.control.*?>
+-<?import javafx.scene.image.*?>
+-<?import javafx.scene.layout.*?>
+-<?import javafx.scene.text.*?>
+-
+-<BorderPane
+-        maxHeight="-Infinity"
+-        maxWidth="-Infinity"
+-        minHeight="-Infinity"
+-        minWidth="-Infinity"
+-        prefHeight="400.0"
+-        prefWidth="600.0"
+-        xmlns="http://javafx.com/javafx/17.0.2-ea"
+-        xmlns:fx="http://javafx.com/fxml/1"
+-        fx:controller="com.example.mspw_projekt.FireSysFormController"
+->
+-   <center>
+-      <ImageView fitHeight="301.0" fitWidth="563.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+-         <image>
+-            <Image url="@pictures/logo_symulator.png" />
+-         </image>
+-      </ImageView>
+-   </center>
+-   <left>
+-      <Pane prefHeight="351.0" prefWidth="292.0" BorderPane.alignment="CENTER" />
+-   </left>
+-   <top>
+-      <Pane prefHeight="44.0" prefWidth="608.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Button layoutX="23.0" layoutY="5.0" mnemonicParsing="false" onAction="#goBackToMainScene" prefHeight="33.0" prefWidth="72.0" text="Wstecz" />
+-            <Label layoutX="136.0" layoutY="4.0" text="Wprowadzanie nowego systemu ognia">
+-               <font>
+-                  <Font size="25.0" />
+-               </font>
+-            </Label>
+-         </children>
+-      </Pane>
+-   </top>
+-</BorderPane>
+Index: target/classes/com/example/mspw_projekt/input-amo-view.fxml
+===================================================================
+diff --git a/target/classes/com/example/mspw_projekt/input-amo-view.fxml b/target/classes/com/example/mspw_projekt/input-amo-view.fxml
+deleted file mode 100644
+--- a/target/classes/com/example/mspw_projekt/input-amo-view.fxml	(revision acd57f685d1a22bb7e3f885227ed0d7f55d0904c)
++++ /dev/null	(revision acd57f685d1a22bb7e3f885227ed0d7f55d0904c)
+@@ -1,41 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import javafx.scene.control.*?>
+-<?import javafx.scene.image.*?>
+-<?import javafx.scene.layout.*?>
+-<?import javafx.scene.text.*?>
+-
+-<BorderPane
+-        maxHeight="-Infinity"
+-        maxWidth="-Infinity"
+-        minHeight="-Infinity"
+-        minWidth="-Infinity"
+-        prefHeight="400.0"
+-        prefWidth="600.0"
+-        xmlns="http://javafx.com/javafx/17.0.2-ea"
+-        xmlns:fx="http://javafx.com/fxml/1"
+-        fx:controller="com.example.mspw_projekt.AmmoFormController"
+->
+-   <center>
+-      <ImageView fitHeight="301.0" fitWidth="563.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+-         <image>
+-            <Image url="@pictures/logo_symulator.png" />
+-         </image>
+-      </ImageView>
+-   </center>
+-   <left>
+-      <Pane prefHeight="351.0" prefWidth="292.0" BorderPane.alignment="CENTER" />
+-   </left>
+-   <top>
+-      <Pane prefHeight="44.0" prefWidth="608.0" BorderPane.alignment="CENTER">
+-         <children>
+-            <Button layoutX="23.0" layoutY="5.0" mnemonicParsing="false" onAction="#goBackToMainScene" prefHeight="33.0" prefWidth="72.0" text="Wstecz" />
+-            <Label layoutX="121.0" layoutY="4.0" text="Wprowadzanie nowego rodzaju amunicji">
+-               <font>
+-                  <Font size="25.0" />
+-               </font>
+-            </Label>
+-         </children>
+-      </Pane>
+-   </top>
+-</BorderPane>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"7cd0cd9d-27c0-41c8-892b-2f3158cac233\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/AmmoFormController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/AmmoFormController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/ApplicationController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/ApplicationController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/FireSysFormController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/FireSysFormController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/NavigationBackController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/NavigationBackController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/SceneController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/SceneController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/enums/Views.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/enums/Views.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/interfaces/AbstractNavigationController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/interfaces/AbstractNavigationController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/home-view.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/home-view.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-amo-view.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-amo-view.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-sys-ogn-view.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-sys-ogn-view.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHome\" value=\"Use Maven wrapper\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2YfqkLvMXmSkNxQJsiGWRNkKWIE\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;feature/backend&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\"Application.Unnamed\">\r\n    <configuration name=\"ApplicationController\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"pl.edu.wat.mspw_projekt.ApplicationController\" />\r\n      <module name=\"MSPW_PROJEKT\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"pl.edu.wat.mspw_projekt.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Unnamed\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"pl.edu.wat.mspw_projekt.ApplicationController\" />\r\n      <module name=\"MSPW_PROJEKT\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.Unnamed\" />\r\n      <item itemvalue=\"Application.ApplicationController\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.ApplicationController\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"7cd0cd9d-27c0-41c8-892b-2f3158cac233\" name=\"Changes\" comment=\"\" />\r\n      <created>1700927123785</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1700927123785</updated>\r\n      <workItem from=\"1700927125141\" duration=\"1173000\" />\r\n      <workItem from=\"1700928320028\" duration=\"379000\" />\r\n      <workItem from=\"1701105515642\" duration=\"932000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"UnknownFeatures\">\r\n    <option featureType=\"dependencySupport\" implementationName=\"executable:docker\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"java:com.google.protobuf:protobuf-java\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"java:org.openjfx:javafx-base\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"executable:kubectl\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.ClassNotFoundException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision acd57f685d1a22bb7e3f885227ed0d7f55d0904c)
++++ b/.idea/workspace.xml	(date 1702242160536)
+@@ -6,16 +6,8 @@
+   <component name="ChangeListManager">
+     <list default="true" id="7cd0cd9d-27c0-41c8-892b-2f3158cac233" name="Changes" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/AmmoFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/AmmoFormController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/ApplicationController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/FireSysFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/FireSysFormController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/NavigationBackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/NavigationBackController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/SceneController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/enums/Views.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/enums/Views.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/interfaces/AbstractNavigationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_projekt/interfaces/AbstractNavigationController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/home-view.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-amo-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-amo-view.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-sys-ogn-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/input-sys-ogn-view.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/example/mspw_projekt/input-amo-view.fxml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/example/mspw_projekt/input-fire-sys-view.fxml" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -49,25 +41,25 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;feature/backend&quot;,
+-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "WebServerToolWindowFactoryState": "false",
++    "git-widget-placeholder": "develop",
++    "ignore.virus.scanning.warn.message": "true",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "project.structure.last.edited": "Project",
++    "project.structure.proportion": "0.0",
++    "project.structure.side.proportion": "0.0",
++    "vue.rearranger.settings.migration": "true"
+   }
+-}</component>
+-  <component name="RunManager" selected="Application.Unnamed">
++}]]></component>
++  <component name="RunManager">
+     <configuration name="ApplicationController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="pl.edu.wat.mspw_projekt.ApplicationController" />
+       <module name="MSPW_PROJEKT" />
+@@ -81,17 +73,6 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="pl.edu.wat.mspw_projekt.ApplicationController" />
+-      <module name="MSPW_PROJEKT" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <list>
+-      <item itemvalue="Application.Unnamed" />
+-      <item itemvalue="Application.ApplicationController" />
+-    </list>
+     <recent_temporary>
+       <list>
+         <item itemvalue="Application.ApplicationController" />
+@@ -109,6 +90,7 @@
+       <workItem from="1700927125141" duration="1173000" />
+       <workItem from="1700928320028" duration="379000" />
+       <workItem from="1701105515642" duration="932000" />
++      <workItem from="1702240901244" duration="782000" />
+     </task>
+     <servers />
+   </component>
