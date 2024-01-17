@@ -17,9 +17,11 @@ services:
       - db_data:/var/lib/mysql
       - ./populate.sql:/data/import.sql
     ports:
-      - "3306:3306"
+      - 3306:3306
 
   adminer:
+    depends_on:
+      - db
     container_name: adminer
     image: adminer
     restart: always
