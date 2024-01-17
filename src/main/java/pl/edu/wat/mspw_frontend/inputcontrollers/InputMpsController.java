@@ -2,8 +2,12 @@ package pl.edu.wat.mspw_frontend.inputcontrollers;
 
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import pl.edu.wat.mspw_backend.model.MpsEntity;
+import pl.edu.wat.mspw_backend.util.MainDao;
 import pl.edu.wat.mspw_frontend.interfaces.ControlGenerator;
 
 public class InputMpsController {
@@ -33,5 +37,25 @@ public class InputMpsController {
         // - Komunikacja z bazą danych
         // - itp.
 
+//        MainDao.getInstance().createRecord(
+//
+//                MpsEntity.builder()
+//                        .kod(getControlString(1))
+//                        .skrot(getControlString(2))
+//                        .kod(getControlString(3))
+//                        .build()
+//        );
     }
+
+//    private String getControlString ( int index) {
+//        Node node = inputGridPane.getChildren().get(index);
+//        if(node instanceof  TextField) {
+//            TextField textField = (TextField) node;
+//            return textField.getText();
+//        } else if (node instanceof  Label) {
+//            Label label = (Label) node;
+//            return label.getText();
+//        }
+//        return "";
+//    }
 }
