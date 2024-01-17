@@ -8,7 +8,7 @@
         </property>
         <property name="hibernate.connection.autocommit">true</property>
         <property name="hbm2ddl.auto">
-            create
+            update
         </property>
 
         <!-- Assume test is the database name -->
@@ -18,7 +18,7 @@
         </property>
 
         <property name = "hibernate.connection.username">
-            root
+            mspwUser
         </property>
 
         <property name = "hibernate.connection.password">
