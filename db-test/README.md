@@ -8,3 +8,6 @@ serwer: db
 uzytkownik: mspwUser
 hasło: wcy19il1s0
 baza danych: mspwTest
+
+## Porady
+Zalecane by nie łączyć się z serwerem bazodanowym od razu (dać mu z 2 minuty na pełne uruchomienie się) ponieważ występują później błędy z połączeniem.

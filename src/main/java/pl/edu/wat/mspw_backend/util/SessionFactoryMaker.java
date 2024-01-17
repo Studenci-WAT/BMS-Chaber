@@ -21,11 +21,11 @@ public class SessionFactoryMaker {
     {
         try {
             factory = new WildCardConfiguration()
-                    .addAnnotatedClass(Ammo.class)
-                    .addAnnotatedClass(AmmoCategory.class)
-                    .addAnnotatedClass(GuidanceType.class)
-                    .addAnnotatedClass(WarheadType.class)
-                    .addAnnotatedClass(WarheadGuidedType.class)
+                    .addAnnotatedClass(AmoEntity.class)
+                    .addAnnotatedClass(KategoriaAmoEntity.class)
+                    .addAnnotatedClass(RodzajNaprowEntity.class)
+                    .addAnnotatedClass(RodzajGlowicyBojEntity.class)
+                    .addAnnotatedClass(RodzajGlowicyNaprowEntity.class)
                     .configure().buildSessionFactory();
         } catch (Throwable ex) {
             System.err.println("Failed to create sessionFactory object." + ex);

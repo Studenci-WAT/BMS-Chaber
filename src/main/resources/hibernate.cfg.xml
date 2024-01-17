@@ -25,10 +25,10 @@
             wcy19il1s0
         </property>
 
-        <mapping class="pl.edu.wat.mspw_projekt.model.PropellantAndLubricant"/>
-        <mapping class="pl.edu.wat.mspw_projekt.model.AmmoCategory"/>
-<!--        <mapping class="pl.edu.wat.mspw_projekt.model.Ammo"/>-->
-        <mapping class="pl.edu.wat.mspw_projekt.model.GuidanceType"/>
-        <mapping class="pl.edu.wat.mspw_projekt.model.WarheadType"/>
+        <mapping class="pl.edu.wat.mspw_backend.model.MpsEntity"/>
+        <mapping class="pl.edu.wat.mspw_backend.model.KategoriaAmoEntity"/>
+        <mapping class="pl.edu.wat.mspw_backend.model.RodzajGlowicyNaprowEntity"/>
+        <mapping class="pl.edu.wat.mspw_backend.model.RodzajGlowicyBojEntity"/>
+
     </session-factory>
 </hibernate-configuration>

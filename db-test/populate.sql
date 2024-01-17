@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `amo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `amo` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `NAZWA` varchar(50) DEFAULT NULL,
   `SKROT` varchar(20) DEFAULT NULL,
   `KOD` varchar(30) DEFAULT NULL,
@@ -59,7 +59,7 @@ DROP TABLE IF EXISTS `e_kategoria_amo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `e_kategoria_amo` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `NAZWA` varchar(20) DEFAULT NULL,
   `SKROT` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`ID`)
@@ -84,7 +84,7 @@ DROP TABLE IF EXISTS `e_kategoria_celu_razenia`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `e_kategoria_celu_razenia` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `NAZWA` varchar(20) DEFAULT NULL,
   `SKROT` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`ID`)
@@ -109,7 +109,7 @@ DROP TABLE IF EXISTS `e_kategoria_spw`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `e_kategoria_spw` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `KATEG_CELU_RAZENIA_FK` int(11) DEFAULT NULL,
   `NAZWA` varchar(30) DEFAULT NULL,
   `SKROT` varchar(10) DEFAULT NULL,
@@ -135,7 +135,7 @@ DROP TABLE IF EXISTS `e_poziom_oddzial_ogn`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `e_poziom_oddzial_ogn` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `NAZWA` varchar(20) DEFAULT NULL,
   `SKROT` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`ID`)
@@ -160,7 +160,7 @@ DROP TABLE IF EXISTS `e_rodzaj_glowicy_boj`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `e_rodzaj_glowicy_boj` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `NAZWA` varchar(20) DEFAULT NULL,
   `SKROT` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`ID`)
@@ -185,7 +185,7 @@ DROP TABLE IF EXISTS `e_rodzaj_glowicy_naprow`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `e_rodzaj_glowicy_naprow` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `NAZWA` varchar(20) DEFAULT NULL,
   `SKROT` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`ID`)
@@ -210,7 +210,7 @@ DROP TABLE IF EXISTS `e_rodzaj_naprow`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `e_rodzaj_naprow` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `NAZWA` varchar(20) DEFAULT NULL,
   `SKROT` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`ID`)
@@ -235,7 +235,7 @@ DROP TABLE IF EXISTS `e_rodzaj_podwozia`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `e_rodzaj_podwozia` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `NAZWA` varchar(20) DEFAULT NULL,
   `SKROT` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`ID`)
@@ -260,7 +260,7 @@ DROP TABLE IF EXISTS `e_rodzaj_systemu_ogn`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `e_rodzaj_systemu_ogn` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `NAZWA` varchar(20) DEFAULT NULL,
   `SKROT` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`ID`)
@@ -285,7 +285,7 @@ DROP TABLE IF EXISTS `e_typ_klimatu`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `e_typ_klimatu` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `NAZWA` varchar(20) DEFAULT NULL,
   `SKROT` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`ID`)
@@ -310,7 +310,7 @@ DROP TABLE IF EXISTS `e_typ_terenu_widocz`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `e_typ_terenu_widocz` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `NAZWA` varchar(20) DEFAULT NULL,
   `SKROT` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`ID`)
@@ -335,7 +335,7 @@ DROP TABLE IF EXISTS `efektor_inz`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `efektor_inz` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `DO_PRAC_ZIEMNYCH` bit(1) DEFAULT NULL,
   `ELEMENT_PRZEPR_PROM` bit(1) DEFAULT NULL,
   `ELEMENT_PRZEPR_MOST` bit(1) DEFAULT NULL,
@@ -362,7 +362,7 @@ DROP TABLE IF EXISTS `efektor_jezdny`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `efektor_jezdny` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `RODZAJ_PODWOZIA_FK` int(11) DEFAULT NULL,
   `ZUZYCIE_PALIWA_PREDK_EKO_DROGA` float DEFAULT NULL,
   `ZUZYCIE_PALIWA_PREDK_EKO_TEREN` float DEFAULT NULL,
@@ -395,7 +395,7 @@ DROP TABLE IF EXISTS `efektor_laczn`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `efektor_laczn` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `LICZBA_TRAKTOW_KABL` int(11) DEFAULT NULL,
   `LICZBA_TRAKTOW_RADIOL` int(11) DEFAULT NULL,
   `LICZBA_SIECI_CNR_DO_PRZYLACZ` int(11) DEFAULT NULL,
@@ -424,7 +424,7 @@ DROP TABLE IF EXISTS `efektor_latania`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `efektor_latania` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `PREDK_MIN` float DEFAULT NULL,
   `PREDK_EKO` float DEFAULT NULL,
   `PREDK_MAX` float DEFAULT NULL,
@@ -456,7 +456,7 @@ DROP TABLE IF EXISTS `efektor_plywania`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `efektor_plywania` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `PREDK_MAX_NA_WODZIE` float DEFAULT NULL,
   `PREDK_EKO_NA_WODZIE` float DEFAULT NULL,
   `PREDK_MAX_POD_WODA` float DEFAULT NULL,
@@ -487,7 +487,7 @@ DROP TABLE IF EXISTS `efektor_rozpoz`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `efektor_rozpoz` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `ROZPOZ_AKUST` bit(1) DEFAULT NULL,
   `ROZPOZ_AKUST_PROMIEN` float DEFAULT NULL,
   `ROZPOZ_TERMICZ` bit(1) DEFAULT NULL,
@@ -519,7 +519,7 @@ DROP TABLE IF EXISTS `efektor_transp`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `efektor_transp` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `DESANT` int(11) DEFAULT NULL,
   `LADOW_MASA` float DEFAULT NULL,
   `LADOW_WYM_X` float DEFAULT NULL,
@@ -549,7 +549,7 @@ DROP TABLE IF EXISTS `efektor_we`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `efektor_we` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `NAMIERZ_PROMIEN` int(11) DEFAULT NULL,
   `NAMIERZ_CZESTOTLMIN` int(11) DEFAULT NULL,
   `NAMIERZ_CZESTOTL_MAX` int(11) DEFAULT NULL,
@@ -579,7 +579,7 @@ DROP TABLE IF EXISTS `fun_intens_niszcz_nosic_sym`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `fun_intens_niszcz_nosic_sym` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `TYP_TERENU_WIDOCZ_FK` int(11) DEFAULT NULL,
   `TYP_KLIMATU_FK` int(11) DEFAULT NULL,
   `TYP_OPERACJI_FK` int(11) DEFAULT NULL,
@@ -619,7 +619,7 @@ DROP TABLE IF EXISTS `fun_intens_niszcz_nosic_sym_2`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `fun_intens_niszcz_nosic_sym_2` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `TYP_TERENU_WIDOCZ_FK` int(11) DEFAULT NULL,
   `TYP_KLIMATU_FK` int(11) DEFAULT NULL,
   `TYP_OPERACJI_FK` int(11) DEFAULT NULL,
@@ -660,7 +660,7 @@ DROP TABLE IF EXISTS `fun_intens_strzel_op`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `fun_intens_strzel_op` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `KATEG_STRZEL_FK` int(11) DEFAULT NULL,
   `KLASA_STRZEL` int(11) DEFAULT NULL,
   `KATEG_CELU_FK` int(11) DEFAULT NULL,
@@ -691,7 +691,7 @@ DROP TABLE IF EXISTS `fun_niszcz_ob_sym`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `fun_niszcz_ob_sym` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `SPW_STRZEL_FK` int(11) DEFAULT NULL,
   `SYS_OGN_FK` int(11) DEFAULT NULL,
   `AMO_FK` int(11) DEFAULT NULL,
@@ -727,7 +727,7 @@ DROP TABLE IF EXISTS `fun_pstwo_zniszcz_op`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `fun_pstwo_zniszcz_op` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `POZIOM_FORT_CELU` int(11) DEFAULT NULL,
   `KATEG_STRZEL_FK` int(11) DEFAULT NULL,
   `KLASA_STRZEL` int(11) DEFAULT NULL,
@@ -759,7 +759,7 @@ DROP TABLE IF EXISTS `fun_pstwo_zniszcz_traf_ob`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `fun_pstwo_zniszcz_traf_ob` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `SYS_OGN_FK` int(11) DEFAULT NULL,
   `AMO_FK` int(11) DEFAULT NULL,
   `SPW_CEL_FK` int(11) DEFAULT NULL,
@@ -788,7 +788,7 @@ DROP TABLE IF EXISTS `fun_wsp_mobil_dla_strzel`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `fun_wsp_mobil_dla_strzel` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `WSP` float DEFAULT NULL,
   `MOBIL_CELU_ISTOTNA` bit(1) DEFAULT NULL,
   `MOBIL_STRZEL_ISTOTNA` bit(1) DEFAULT NULL,
@@ -816,7 +816,7 @@ DROP TABLE IF EXISTS `fun_wsp_mobil_dla_wykr`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `fun_wsp_mobil_dla_wykr` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `WSP` float DEFAULT NULL,
   `MOBIL_CELU_ISTOTNA` bit(1) DEFAULT NULL,
   `MOBIL_STRZEL_ISTOTNA` bit(1) DEFAULT NULL,
@@ -843,7 +843,7 @@ DROP TABLE IF EXISTS `fun_wsp_obezwlad`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `fun_wsp_obezwlad` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `POZIOM_ODDZIAL_OGN_FK` int(11) DEFAULT NULL,
   `WSP` float DEFAULT NULL,
   `STRZEL_OPANC` bit(1) DEFAULT NULL,
@@ -870,7 +870,7 @@ DROP TABLE IF EXISTS `fun_wsp_ukrycia`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `fun_wsp_ukrycia` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `TYP_TERENU_WIDOCZ_FK` int(11) DEFAULT NULL,
   `WSP` float DEFAULT NULL,
   `POZIOM_FORT` int(11) DEFAULT NULL,
@@ -896,7 +896,7 @@ DROP TABLE IF EXISTS `fun_wsp_widocz_dla_strzel`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `fun_wsp_widocz_dla_strzel` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `TYP_PRZYRZADOW_OC_FK` int(11) DEFAULT NULL,
   `WSP` float DEFAULT NULL,
   `POZIOM_ZADYM_ISTOTNY` bit(1) DEFAULT NULL,
@@ -928,7 +928,7 @@ DROP TABLE IF EXISTS `fun_wsp_widocz_dla_wykr`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `fun_wsp_widocz_dla_wykr` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `WSP` float DEFAULT NULL,
   `TYP_TERENU_WIDOCZ_FK` int(11) DEFAULT NULL,
   `POZIOM_ZADYM_ISTOTNY` bit(1) DEFAULT NULL,
@@ -961,7 +961,7 @@ DROP TABLE IF EXISTS `kadlub`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `kadlub` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `PANCERZ_BOK_KINET_RHA` float DEFAULT NULL,
   `PANCERZ_BOK_KUMUL_RHA` float DEFAULT NULL,
   `PANCERZ_FRONT_KINET_RHA` float DEFAULT NULL,
@@ -994,7 +994,7 @@ DROP TABLE IF EXISTS `miara_zdolnosci_razenia`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `miara_zdolnosci_razenia` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `NOSICIEL_ZDOLN_FK` int(11) DEFAULT NULL,
   `ZDOLN_RAZ_PANC_OPANC_ZASIEG_BLISKI` float DEFAULT NULL,
   `ZDOLN_RAZ_SRODK_OGN_ZASIEG_BLISKI` float DEFAULT NULL,
@@ -1023,7 +1023,7 @@ DROP TABLE IF EXISTS `mps`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `mps` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `NAZWA` varchar(50) DEFAULT NULL,
   `SKROT` varchar(20) DEFAULT NULL,
   `KOD` varchar(30) DEFAULT NULL,
@@ -1049,7 +1049,7 @@ DROP TABLE IF EXISTS `param_strzel_og_bezp`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `param_strzel_og_bezp` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `AMO_FK` int(11) DEFAULT NULL,
   `SYSTEM_OGN_FK` int(11) DEFAULT NULL,
   `ODLEG` float DEFAULT NULL,
@@ -1079,7 +1079,7 @@ DROP TABLE IF EXISTS `param_strzel_og_posr`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `param_strzel_og_posr` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `AMO_FK` int(11) DEFAULT NULL,
   `SYSTEM_OGN_FK` int(11) DEFAULT NULL,
   `ODLEG` float DEFAULT NULL,
@@ -1107,7 +1107,7 @@ DROP TABLE IF EXISTS `przebijal_panc_rha`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `przebijal_panc_rha` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `AMO_FK` int(11) DEFAULT NULL,
   `PREDK_POCISKU` float DEFAULT NULL,
   `PRZEBIJAL_POCISKU` float DEFAULT NULL,
@@ -1133,7 +1133,7 @@ DROP TABLE IF EXISTS `sprzet_woj`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sprzet_woj` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `NAZWA` varchar(50) DEFAULT NULL,
   `SKROT` varchar(20) DEFAULT NULL,
   `KOD` varchar(30) DEFAULT NULL,
@@ -1193,7 +1193,7 @@ DROP TABLE IF EXISTS `spw_sys_ogn`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `spw_sys_ogn` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `LICZBA` int(11) DEFAULT NULL,
   `SPW_FK` int(11) DEFAULT NULL,
   `SYSTEM_OGN_FK` int(11) DEFAULT NULL,
@@ -1219,7 +1219,7 @@ DROP TABLE IF EXISTS `stan_amo_spw`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `stan_amo_spw` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `SPW_FK` int(11) DEFAULT NULL,
   `AMO_FK` int(11) DEFAULT NULL,
   `STAN_NORMATYW` int(11) DEFAULT NULL,
@@ -1245,7 +1245,7 @@ DROP TABLE IF EXISTS `stan_mps_spw`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `stan_mps_spw` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `SPW_FK` int(11) DEFAULT NULL,
   `MPS_FK` int(11) DEFAULT NULL,
   `STAN_NORMATYW` float DEFAULT NULL,
@@ -1271,7 +1271,7 @@ DROP TABLE IF EXISTS `strefa_razenia_sily_zywej`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `strefa_razenia_sily_zywej` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `AMO_FK` int(11) DEFAULT NULL,
   `ODLEG_STRZEL` float DEFAULT NULL,
   `POW_RAZ_ODKR` float DEFAULT NULL,
@@ -1299,7 +1299,7 @@ DROP TABLE IF EXISTS `strefa_razenia_spw`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `strefa_razenia_spw` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `AMO_FK` int(11) DEFAULT NULL,
   `POW_RAZ_CEL_ODKR` float DEFAULT NULL,
   `POW_RAZ_CEL_ZAKR` float DEFAULT NULL,
@@ -1327,7 +1327,7 @@ DROP TABLE IF EXISTS `system_ogn`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `system_ogn` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `NAZWA` varchar(50) DEFAULT NULL,
   `SKROT` varchar(25) DEFAULT NULL,
   `SZYBKOSTRZELNOSC` float DEFAULT NULL,
@@ -1359,7 +1359,7 @@ DROP TABLE IF EXISTS `wagi_wsp_usred_intens_niszcz`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `wagi_wsp_usred_intens_niszcz` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) NOT NULL AUTO_INCREMENT AUTO_INCREMENT,
   `TYP_KLIMATU_FK` int(11) DEFAULT NULL,
   `TYP_OPERACJI_PKA_FK` int(11) DEFAULT NULL,
   `DZIEN` bit(1) DEFAULT NULL,

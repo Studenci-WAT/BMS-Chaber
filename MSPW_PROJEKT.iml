@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module version="4">
   <component name="FacetManager">
-    <facet type="hibernate" name="Hibernate">
+    <facet type="jpa" name="JPA">
       <configuration>
-        <datasource-map>
-          <unit-entry name="hibernate.cfg.xml" value="db03a44e-7687-40bb-8730-89796f15d61b" />
-        </datasource-map>
+        <setting name="validation-enabled" value="true" />
+        <setting name="provider-name" value="Hibernate" />
+        <datasource-mapping>
+          <factory-entry name="noname-a.xml@0" value="2c55e0cb-2ba3-4b8e-946e-c7682bee9229" />
+        </datasource-mapping>
         <naming-strategy-map />
-        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/hibernate.cfg.xml" />
       </configuration>
     </facet>
   </component>

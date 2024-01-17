@@ -1,52 +1,58 @@
 package pl.edu.wat.mspw_backend.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name = "amo", schema = "mspw", catalog = "")
+@Table(name = "amo", schema = "mspwTest", catalog = "")
 public class AmoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "ID")
+    @Column(name = "ID", nullable = false)
     private int id;
     @Basic
-    @Column(name = "NAZWA")
+    @Column(name = "NAZWA", nullable = true, length = 50)
     private String nazwa;
     @Basic
-    @Column(name = "SKROT")
+    @Column(name = "SKROT", nullable = true, length = 20)
     private String skrot;
     @Basic
-    @Column(name = "KOD")
+    @Column(name = "KOD", nullable = true, length = 30)
     private String kod;
     @Basic
-    @Column(name = "KALIBER")
+    @Column(name = "KALIBER", nullable = true, precision = 0)
     private Double kaliber;
     @Basic
-    @Column(name = "SZTUK_W_PACZCE")
+    @Column(name = "SZTUK_W_PACZCE", nullable = true)
     private Integer sztukWPaczce;
     @Basic
-    @Column(name = "MASA_SZTUKI")
+    @Column(name = "MASA_SZTUKI", nullable = true)
     private Integer masaSztuki;
     @Basic
-    @Column(name = "WYM_PACZKI_X")
+    @Column(name = "WYM_PACZKI_X", nullable = true, precision = 0)
     private Double wymPaczkiX;
     @Basic
-    @Column(name = "WYM_PACZKI_Y")
+    @Column(name = "WYM_PACZKI_Y", nullable = true, precision = 0)
     private Double wymPaczkiY;
     @Basic
-    @Column(name = "WYM_PACZKI_Z")
+    @Column(name = "WYM_PACZKI_Z", nullable = true, precision = 0)
     private Double wymPaczkiZ;
     @Basic
-    @Column(name = "KATEG_FK")
+    @Column(name = "KATEG_FK", nullable = true)
     private Integer kategFk;
     @Basic
-    @Column(name = "RODZAJ_GLOWICY_BOJ_FK")
+    @Column(name = "RODZAJ_GLOWICY_BOJ_FK", nullable = true)
     private Integer rodzajGlowicyBojFk;
     @Basic
-    @Column(name = "RODZAJ_GLOWICY_NAPROW_FK")
+    @Column(name = "RODZAJ_GLOWICY_NAPROW_FK", nullable = true)
     private Integer rodzajGlowicyNaprowFk;
     @Basic
-    @Column(name = "RODZAJ_NAPROW_FK")
+    @Column(name = "RODZAJ_NAPROW_FK", nullable = true)
     private Integer rodzajNaprowFk;
 
     public int getId() {

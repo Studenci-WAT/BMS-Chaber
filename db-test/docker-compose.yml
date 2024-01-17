@@ -7,7 +7,7 @@ services:
     container_name: db
     restart: always
     image: mysql:latest
-    build: ../../../Documents/rulka
+    build: .
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: yes
       MYSQL_DATABASE: mspwTest
