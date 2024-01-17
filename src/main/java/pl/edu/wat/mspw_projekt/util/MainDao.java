@@ -1,4 +1,4 @@
-package pl.edu.wat.mspw_projekt.model;
+package pl.edu.wat.mspw_projekt.util;
 
 
 import org.hibernate.Session;
@@ -8,26 +8,39 @@ import org.hibernate.cfg.Configuration;
 
 import java.util.List;
 
-class MainDao {
+public class MainDao {
 
     private SessionFactory sessionFactory;
 
-    public MainDao() {
-        initializeSessionFactory();
+    private static MainDao instance;
+    public static MainDao getInstance() {
+        if ( instance == null ) {
+            instance = new MainDao();
+            instance.configureFactory();
+        }
+        return instance;
+    }
+    private void configureFactory()
+    {
+        try {
+            sessionFactory = new WildCardConfiguration()
+                    .addPackage("pl.edu.wat.mspw_projekt.model")
+                    .configure().buildSessionFactory();
+        } catch (Throwable ex) {
+            System.err.println("Failed to create sessionFactory object." + ex);
+            throw new ExceptionInInitializerError(ex);
+        }
     }
 
     public <T> void createRecord(T obj) {
         try (Session session = sessionFactory.openSession()) {
             // Rozpoczęcie transakcji
             Transaction transaction = session.beginTransaction();
-
-            session.save(obj);
-
-            // Commit transakcji
+            session.persist(obj);
+//            session.save(obj);
             transaction.commit();
 
         }
-        closeSessionFactory();// do wyjebania
     }
 
     public <T> T readRecordByID(Class<T> entityClass, int id) {
@@ -40,8 +53,6 @@ class MainDao {
                 System.out.println("Obiekt o danym identyfikatorze nie istnieje.");
             }
 
-            closeSessionFactory();// do wyjebania
-
             return entity;
 
         }
@@ -53,8 +64,6 @@ class MainDao {
 
             String queryString = "FROM " + entityClass.getSimpleName();
             List<T> records = session.createQuery(queryString, entityClass).list();
-
-            closeSessionFactory();// do wyjebania
 
             return records;
         }
