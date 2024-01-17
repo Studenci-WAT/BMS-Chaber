@@ -67,6 +67,8 @@ public class InputSpwController {
         controller.generateButton(inputGridPane3, "PARAM_KADLUBA_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 1);
         controller.generateTextField(inputGridPane3,"EFEKTOR_TRANSP_FK","EFEKTOR_TRANSP_FK", 2);
         controller.generateButton(inputGridPane3, "EFEKTOR_TRANSP_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 2);
+
+
         // TODO TE OPCJE TRZEBA BRAĆ Z TABEL SŁOWNIKOWYCH
         List<String> options1 = Arrays.asList(
                 "NIEOKREŚLONA",

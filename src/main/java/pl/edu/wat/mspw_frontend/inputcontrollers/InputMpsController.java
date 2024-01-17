@@ -7,10 +7,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import pl.edu.wat.mspw_backend.model.MpsEntity;
+import pl.edu.wat.mspw_backend.service.MpsService;
 import pl.edu.wat.mspw_backend.util.MainDao;
 import pl.edu.wat.mspw_frontend.interfaces.ControlGenerator;
+import pl.edu.wat.mspw_frontend.model.MpsDto;
 
 public class InputMpsController {
+    private MpsService mpsService ;
 
     @FXML
     private GridPane inputGridPane;
@@ -27,6 +30,8 @@ public class InputMpsController {
         controller.generateTextField(inputGridPane,"NAZWA", "NAZWA",0);
         controller.generateTextField(inputGridPane,"SKROT","SKRÓT", 1);
         controller.generateTextField(inputGridPane,"KOD", "KOD",2);
+
+        mpsService = new MpsService();
     }
 
     @FXML
@@ -37,25 +42,25 @@ public class InputMpsController {
         // - Komunikacja z bazą danych
         // - itp.
 
-//        MainDao.getInstance().createRecord(
-//
-//                MpsEntity.builder()
-//                        .kod(getControlString(1))
-//                        .skrot(getControlString(2))
-//                        .kod(getControlString(3))
-//                        .build()
-//        );
+          mpsService.create(
+                  MpsDto.builder()
+                          .nazwa(getControlString(1))
+                          .skrot(getControlString(3))
+                          .kod(getControlString(5))
+                          .build()
+          );
+
     }
 
-//    private String getControlString ( int index) {
-//        Node node = inputGridPane.getChildren().get(index);
-//        if(node instanceof  TextField) {
-//            TextField textField = (TextField) node;
-//            return textField.getText();
-//        } else if (node instanceof  Label) {
-//            Label label = (Label) node;
-//            return label.getText();
-//        }
-//        return "";
-//    }
+    private String getControlString ( int index) {
+        Node node = inputGridPane.getChildren().get(index);
+        if(node instanceof  TextField) {
+            TextField textField = (TextField) node;
+            return textField.getText();
+        } else if (node instanceof  Label) {
+            Label label = (Label) node;
+            return label.getText();
+        }
+        return "";
+    }
 }
