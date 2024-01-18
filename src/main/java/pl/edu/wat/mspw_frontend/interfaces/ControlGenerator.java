@@ -2,6 +2,7 @@ package pl.edu.wat.mspw_frontend.interfaces;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -31,8 +32,8 @@ public class ControlGenerator {
         TextField textField = new TextField();
 
         // Nadanie identyfikatorów
-        label.setId(namePrefix);
-        textField.setId(namePrefix);
+        label.setId(namePrefix + "Label");
+        textField.setId(namePrefix + "TextField");
 
         // Dodajemy kontrolki do GridPane
         gridPane.add(label, 0, row); // Kolumna 0, wiersz row
@@ -84,5 +85,14 @@ public class ControlGenerator {
         } catch (IOException e) {
             e.printStackTrace(); // Logowanie błędów
         }
+    }
+
+    public Node findControlById(GridPane gridPane, String controlId) {
+        for (Node node : gridPane.getChildren()) {
+            if (controlId.equals(node.getId())) {
+                return node;
+            }
+        }
+        return null;
     }
 }

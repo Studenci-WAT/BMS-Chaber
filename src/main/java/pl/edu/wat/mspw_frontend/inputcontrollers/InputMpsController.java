@@ -1,16 +1,20 @@
 package pl.edu.wat.mspw_frontend.inputcontrollers;
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
-import pl.edu.wat.mspw_backend.model.MpsEntity;
 import pl.edu.wat.mspw_backend.service.MpsService;
-import pl.edu.wat.mspw_backend.util.MainDao;
 import pl.edu.wat.mspw_frontend.interfaces.ControlGenerator;
 import pl.edu.wat.mspw_frontend.model.MpsDto;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class InputMpsController {
     private MpsService mpsService ;
@@ -20,6 +24,15 @@ public class InputMpsController {
 
     @FXML
     private Label labelTitle;
+
+    @FXML
+    private TableView<MpsDto> mpsTable;
+    @FXML
+    private TableColumn<MpsDto, String> skrot;
+    @FXML
+    private TableColumn<MpsDto, String> nazwa;
+    @FXML
+    private TableColumn<MpsDto, String> kod;
     private ControlGenerator controller = new ControlGenerator();
     public void initialize() {
         // ustawienie tytulu strony
@@ -32,6 +45,7 @@ public class InputMpsController {
         controller.generateTextField(inputGridPane,"KOD", "KOD",2);
 
         mpsService = new MpsService();
+        populateTable();
     }
 
     @FXML
@@ -41,26 +55,33 @@ public class InputMpsController {
         // - Dodawanie danych do listy lub tabeli
         // - Komunikacja z bazą danych
         // - itp.
+        TextField nazwaTextField = (TextField) controller.findControlById(inputGridPane, "NAZWATextField");
+        TextField skrotTextField = (TextField) controller.findControlById(inputGridPane, "SKROTTextField");
+        TextField kodTextField = (TextField) controller.findControlById(inputGridPane, "KODTextField");
 
-          mpsService.create(
-                  MpsDto.builder()
-                          .nazwa(getControlString(1))
-                          .skrot(getControlString(3))
-                          .kod(getControlString(5))
-                          .build()
-          );
+        if(nazwaTextField.getText() != null || skrotTextField.getText() != null || kodTextField.getText() != null) {
+            mpsService.create(
+                    MpsDto.builder()
+                            .nazwa(nazwaTextField.getText())
+                            .skrot(skrotTextField.getText())
+                            .kod(kodTextField.getText())
+                            .build()
+            );
+        }
+        updateTable();
+    }
+
+    private void populateTable() {
+        skrot.setCellValueFactory(new PropertyValueFactory<>("skrot"));
+        nazwa.setCellValueFactory(new PropertyValueFactory<>("nazwa"));
+        kod.setCellValueFactory(new PropertyValueFactory<>("kod"));
+        updateTable();
 
     }
 
-    private String getControlString ( int index) {
-        Node node = inputGridPane.getChildren().get(index);
-        if(node instanceof  TextField) {
-            TextField textField = (TextField) node;
-            return textField.getText();
-        } else if (node instanceof  Label) {
-            Label label = (Label) node;
-            return label.getText();
-        }
-        return "";
+    private void updateTable(){
+        List<MpsDto> mpsDtoList = mpsService.getAll();
+        ArrayList<MpsDto> mpsDtoArrayList = new ArrayList<>(mpsDtoList);
+        mpsTable.setItems(FXCollections.observableArrayList(mpsDtoArrayList));
     }
 }

@@ -25,4 +25,5 @@ module pl.edu.wat.mspw_projekt {
     opens pl.edu.wat.mspw_frontend to javafx.fxml, org.hibernate.orm.core;
     exports pl.edu.wat;
     opens pl.edu.wat to javafx.fxml, org.hibernate.orm.core;
+    opens pl.edu.wat.mspw_frontend.model to javafx.base;
 }
