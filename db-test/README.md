@@ -8,3 +8,8 @@
 * uzytkownik: mspwUser
 * hasło: wcy19il1s0
 * baza danych: mspwTest
+
+## Problem z importem bazy
+Znany jest problem z importem dumpa, który wynika z ustawień gita, 
+dlatego jeżeli po wykonaniu kroku 3 nie widzisz danych w aplikacji adminer
+wykonaj nastepujące polecenie w konsoli projektu "git config core.autocrlf false" i wykonaj polecenia z instrukcji raz jeszcze.
