@@ -5,9 +5,9 @@ name: mspw-db
 services:
   db:
     container_name: db
+    build: .
     restart: always
     image: mysql:latest
-    build: .
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: yes
       MYSQL_DATABASE: mspwTest
@@ -16,6 +16,7 @@ services:
     volumes:
       - db_data:/var/lib/mysql
       - ./populate.sql:/data/import.sql
+#      - ./import-database.sh:/docker-entrypoint-initdb.d/import-database.sh
     ports:
       - 3306:3306
 
