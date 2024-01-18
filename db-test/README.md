@@ -1,3 +1,7 @@
+## Problem z importem bazy
+Znany jest problem z importem dumpa, który wynika z ustawień gita, dlatego aby wszystko wykonało się prawidłowo należy
+przejść do pliku ./script/import-database.sh i upewnić się że Line Separator jest ustawiony na "LF" (prawy dolny róg okna intellij).
+
 ## Uruchomienie lokalnej bazy danych
 1. Przejdź w konsoli do folderu w którym znajduje się tak instrukcja.
 2. Uruchom polecenie "docker-compose up -d --build"
@@ -8,8 +12,3 @@
 * uzytkownik: mspwUser
 * hasło: wcy19il1s0
 * baza danych: mspwTest
-
-## Problem z importem bazy
-Znany jest problem z importem dumpa, który wynika z ustawień gita, 
-dlatego jeżeli po wykonaniu kroku 3 nie widzisz danych w aplikacji adminer
-wykonaj nastepujące polecenie w konsoli projektu "git config core.autocrlf false" i wykonaj polecenia z instrukcji raz jeszcze.
