@@ -14,6 +14,8 @@ module pl.edu.wat.mspw_projekt {
     requires org.hibernate.orm.core;
     requires java.naming;
 
+    exports pl.edu.wat.mspw_frontend.readcontrollers;
+    opens pl.edu.wat.mspw_frontend.readcontrollers to javafx.fxml;
     opens pl.edu.wat.mspw_projekt to javafx.fxml, org.hibernate.orm.core;
     exports pl.edu.wat.mspw_frontend.inputcontrollers;
     opens pl.edu.wat.mspw_frontend.inputcontrollers to javafx.fxml;

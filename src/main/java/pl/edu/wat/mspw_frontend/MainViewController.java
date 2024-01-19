@@ -32,17 +32,29 @@ public class MainViewController {
         generateNavigationButton(firstTabGridPane, "SYSTEM OGNIA", "sysOgnInputNavigator", 2);
         generateNavigationButton(firstTabGridPane, "SPW", "spwInputNavigator", 3);
         generateNavigationButton(firstTabGridPane, "MPS", "mpsInputNavigator", 4);
-        // Dodaj więcej przycisków w pierwszej zakładce, jeśli jest to potrzebne
+        // Tworzenie przycisków dynamicznie w drugiej zakładce
+        GridPane secondTabGridPane = (GridPane) ((AnchorPane) tabPane.getTabs().get(1).getContent()).getChildren().get(0);
+        generateNavigationButton(secondTabGridPane, "TABLES", "tablesNavigator", 0);
     }
     public void loadView(String fxmlPath) {
         try {
             Node view = FXMLLoader.load(getClass().getResource(fxmlPath));
-            contentArea.getChildren().setAll(view);
+
+            // Utworzenie AnchorPane i dodanie do niego załadowanego widoku
+            AnchorPane anchorPane = new AnchorPane(view);
+            AnchorPane.setTopAnchor(view, 0.0);
+            AnchorPane.setBottomAnchor(view, 0.0);
+            AnchorPane.setLeftAnchor(view, 0.0);
+            AnchorPane.setRightAnchor(view, 0.0);
+
+            // Ustawienie AnchorPane jako zawartości contentArea
+            contentArea.getChildren().setAll(anchorPane);
         } catch (IOException e) {
             e.printStackTrace();
             // Obsługa błędu
         }
     }
+
     private void generateNavigationButton(GridPane gridPane, String text, String id, int rowIndex) {
         Button button = new Button(text);
         button.setId(id);
@@ -86,6 +98,9 @@ public class MainViewController {
                 break;
             case "mpsInputNavigator":
                 loadView(Views.INPUTMPSVIEW.getValue());
+                break;
+            case "tablesNavigator":
+                loadView(Views.READTABLES.getValue());
                 break;
 
         }

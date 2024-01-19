@@ -76,7 +76,8 @@ public class InputMpsController {
     private void deleteButtonAction() {
         MpsDto selectedMps = mpsTable.getSelectionModel().getSelectedItem();
         if (selectedMps != null) {
-            mpsService.delete(selectedMps);
+            // Przekazanie ID do metody delete
+            mpsService.delete(Long.valueOf(selectedMps.getId()));
             updateTable();
         } else {
             // Pokaż komunikat, że nie wybrano rekordu
