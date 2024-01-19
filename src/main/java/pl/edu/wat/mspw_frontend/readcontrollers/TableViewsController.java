@@ -20,12 +20,19 @@ public class TableViewsController {
         Tab tab1 = new Tab("MPS");
         Tab tab2 = new Tab("Amo");
         Tab tab3 = new Tab("Spw");
+        Tab tab4 = new Tab("Kadlub");
         // Dodawanie zakładek do TabPane
-        tabPane.getTabs().addAll(tab1, tab2, tab3);
+        tabPane.getTabs().addAll(
+                tab1,
+                tab2,
+                tab3,
+                tab4)
+        ;
 
         loadViewToTab(tab1, Views.MPSTABVIEW.getValue());
         loadViewToTab(tab2, Views.AMOTABVIEW.getValue());
         loadViewToTab(tab3, Views.SPWTABVIEW.getValue());
+        loadViewToTab(tab4, Views.KADLUBTABVIEW.getValue());
     }
 
     private void loadViewToTab(Tab tab, String fxmlPath) {
