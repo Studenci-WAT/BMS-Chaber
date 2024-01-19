@@ -9,6 +9,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.lang.reflect.Field;
 import java.util.List;
 
+import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
+
 public abstract class AbstractTableController<T, S> {
     @FXML
     protected TableView<T> tableView;
@@ -22,7 +24,10 @@ public abstract class AbstractTableController<T, S> {
         initializeService();
         createTableColumns();
         populateTable();
-        tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        // chwilowo tutaj tak ustawiam bo nie moge sobie poradzic z tymi tabelami i ich rozmiarem, wysuwaja sie strasznie
+        tableView.setPrefHeight(USE_COMPUTED_SIZE);
+        tableView.setPrefWidth(USE_COMPUTED_SIZE);
+        tableView.setColumnResizePolicy(TableView.UNCONSTRAINED_RESIZE_POLICY);
 
     }
 
@@ -34,10 +39,14 @@ public abstract class AbstractTableController<T, S> {
         }
     }
 
-    private void populateTable() {
+    public void populateTable() {
         List<T> dataList = fetchData();
         tableView.setItems(FXCollections.observableArrayList(dataList));
     }
 
     protected abstract Class<T> getGenericTypeClass();
+
+    public TableView<T> getTableView() {
+        return tableView;
+    }
 }
