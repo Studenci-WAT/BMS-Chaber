@@ -19,8 +19,8 @@ public class ControlGenerator {
         CheckBox checkBox = new CheckBox();
 
         // Nadanie identyfikatorów
-        label.setId(namePrefix);
-        checkBox.setId(namePrefix);
+        label.setId(namePrefix+ "Label");
+        checkBox.setId(namePrefix+ "CheckBox");
 
         // Dodajemy kontrolki do GridPane
         gridPane.add(label, 0, row); // Kolumna 0, wiersz row
@@ -45,8 +45,8 @@ public class ControlGenerator {
         ChoiceBox<String> choiceBox = new ChoiceBox<>();
 
         // Nadanie identyfikatorów
-        label.setId(namePrefix);
-        choiceBox.setId(namePrefix);
+        label.setId(namePrefix+ "Label");
+        choiceBox.setId(namePrefix+ "ChoiceBox");
 
         // Ustawienie opcji wyboru w ChoiceBox
         choiceBox.setItems(FXCollections.observableArrayList(choices));

@@ -28,6 +28,8 @@ public class InputMpsController {
     @FXML
     private TableView<MpsDto> mpsTable;
     @FXML
+    private TableColumn<MpsDto, Integer> id;
+    @FXML
     private TableColumn<MpsDto, String> skrot;
     @FXML
     private TableColumn<MpsDto, String> nazwa;
@@ -49,7 +51,7 @@ public class InputMpsController {
     }
 
     @FXML
-    private void addButton(){
+    private void addButtonAction(){
         // Kod, który ma zostać wykonany, gdy użytkownik kliknie przycisk "DODAJ"
         // - Walidacja danych wejściowych
         // - Dodawanie danych do listy lub tabeli
@@ -70,8 +72,19 @@ public class InputMpsController {
         }
         updateTable();
     }
+    @FXML
+    private void deleteButtonAction() {
+        MpsDto selectedMps = mpsTable.getSelectionModel().getSelectedItem();
+        if (selectedMps != null) {
+            mpsService.delete(selectedMps);
+            updateTable();
+        } else {
+            // Pokaż komunikat, że nie wybrano rekordu
+        }
+    }
 
     private void populateTable() {
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
         skrot.setCellValueFactory(new PropertyValueFactory<>("skrot"));
         nazwa.setCellValueFactory(new PropertyValueFactory<>("nazwa"));
         kod.setCellValueFactory(new PropertyValueFactory<>("kod"));

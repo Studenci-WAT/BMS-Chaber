@@ -19,12 +19,22 @@ public class MpsService {
         );
     }
 
+    public void delete(MpsDto mps) {
+        if (mps != null) {
+            // Usunięcie rekordu z bazy danych.
+            MainDao.getInstance().deleteByID(MpsEntity.class, mps.getId());
+        } else {
+            // Opcjonalnie: obsługa sytuacji, gdy rekord nie został znaleziony.
+        }
+    }
+
     public List<MpsDto> getAll() {
         return MainDao.getInstance()
                 .readAllRecords(MpsEntity.class)
                 .stream()
                 .map(e ->
                         MpsDto.builder()
+                                .id(e.getId())
                                 .nazwa(e.getNazwa())
                                 .skrot(e.getSkrot())
                                 .kod(e.getKod())

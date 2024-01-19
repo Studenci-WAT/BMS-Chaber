@@ -75,7 +75,6 @@ public class MainDao {
             session.update(updatedEntity);
             transaction.commit();
         }
-        closeSessionFactory();// do wyjebania
     }
 
     public <T> void deleteByID(Class<T> entityClass, int entityIdToDelete) {
@@ -90,7 +89,6 @@ public class MainDao {
             }
             transaction.commit();
         }
-        closeSessionFactory();// do wyjebania
     }
 
 

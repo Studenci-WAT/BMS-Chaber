@@ -12,10 +12,12 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MpsDto implements Serializable {
+    private Integer id;
 
     private String nazwa;
 
     private String skrot;
 
     private String kod;
+
 }
