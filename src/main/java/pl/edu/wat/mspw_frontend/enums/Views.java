@@ -9,7 +9,8 @@ public enum Views {
     READTABLES("/pl/edu/wat/mspw_projekt/readviews/table-read-view.fxml"),
     MPSTABVIEW("/pl/edu/wat/mspw_projekt/readviews/table-mps-view.fxml"),
     AMOTABVIEW("/pl/edu/wat/mspw_projekt/readviews/table-amo-view.fxml"),
-    SPWTABVIEW("/pl/edu/wat/mspw_projekt/readviews/table-spw-view.fxml");
+    SPWTABVIEW("/pl/edu/wat/mspw_projekt/readviews/table-spw-view.fxml"),
+    KADLUBTABVIEW("/pl/edu/wat/mspw_projekt/readviews/table-kadlub-view.fxml");
     private final String value;
 
     Views(String value) {
