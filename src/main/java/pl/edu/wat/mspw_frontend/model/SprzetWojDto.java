@@ -87,4 +87,49 @@ public class SprzetWojDto implements Serializable {
 
     private Double zuzyciePaliwaPraca;
 
+    @Override
+    public String toString() {
+        return "SprzetWojDto{" +
+                "id=" + id +
+                ", nazwa='" + nazwa + '\'' +
+                ", skrot='" + skrot + '\'' +
+                ", kod='" + kod + '\'' +
+                ", kategoriaFk=" + kategoriaFk +
+                ", klasa=" + klasa +
+                ", obsluga=" + obsluga +
+                ", opancerzony=" + opancerzony +
+                ", kosztJednCykluZycia=" + kosztJednCykluZycia +
+                ", kosztJednNabycia=" + kosztJednNabycia +
+                ", kosztJednUtrzymWyszkPerson=" + kosztJednUtrzymWyszkPerson +
+                ", masa=" + masa +
+                ", dlug=" + dlug +
+                ", szerok=" + szerok +
+                ", wysok=" + wysok +
+                ", potencjalBoj=" + potencjalBoj +
+                ", value=" + value +
+                ", pojemZbiorPaliwa=" + pojemZbiorPaliwa +
+                ", pojemZbiorPaliwaDodat=" + pojemZbiorPaliwaDodat +
+                ", pojemAkumulatorow=" + pojemAkumulatorow +
+                ", jezdzacy=" + jezdzacy +
+                ", latajacy=" + latajacy +
+                ", plywajacy=" + plywajacy +
+                ", przenosny=" + przenosny +
+                ", ciagniony=" + ciagniony +
+                ", efektorLacznFk=" + efektorLacznFk +
+                ", rodzajSrodowFk=" + rodzajSrodowFk +
+                ", efektorJezdnyFk=" + efektorJezdnyFk +
+                ", efektorPlywaniaFk=" + efektorPlywaniaFk +
+                ", efektorInzFk=" + efektorInzFk +
+                ", efektorWeFk=" + efektorWeFk +
+                ", paramKadlubaFk=" + paramKadlubaFk +
+                ", efektorTranspFk=" + efektorTranspFk +
+                ", efektorLataniaFk=" + efektorLataniaFk +
+                ", efektorRozpozFk=" + efektorRozpozFk +
+                ", klasaPrzyrzOc=" + klasaPrzyrzOc +
+                ", moc=" + moc +
+                ", zuzyciePaliwaPraca=" + zuzyciePaliwaPraca +
+                '}';
+    }
+
 }
+

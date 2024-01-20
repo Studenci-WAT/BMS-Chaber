@@ -29,4 +29,8 @@ public class EfektorWeDto implements Serializable {
 
     private Integer zaklocCzestotlMax;
 
+    public String getNazwa() {
+        return "Namierz: " + namierzPromien + " (Min: " + namierzCzestotlmin + ", Max: " + namierzCzestotlMax + ", Czas: " + namierzCzas + ", Szybkość przeszukiwania: " + namierzSzybkoscPrzeszuk + ") | Zakłóć: " + zaklocPromien + " (Min: " + zaklocCzestotlMin + ", Max: " + zaklocCzestotlMax + ")";
+    }
+
 }

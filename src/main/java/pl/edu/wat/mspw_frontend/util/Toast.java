@@ -36,8 +36,8 @@ public class Toast {
         toastStage.initOwner(ownerStage);
         toastStage.initStyle(StageStyle.TRANSPARENT); // Ustawienie przezroczystego stylu stage
         toastStage.setScene(scene);
-        toastStage.setX(ownerStage.getX() + ownerStage.getWidth()/2 - root.getWidth()/2);
-        toastStage.setY(ownerStage.getY() + ownerStage.getHeight()/2 - root.getHeight()/2);
+        toastStage.setX(ownerStage.getX() + ownerStage.getWidth()*0.2);
+        toastStage.setY(ownerStage.getY() + ownerStage.getHeight()*0.1);
 
         toastStage.show();
 

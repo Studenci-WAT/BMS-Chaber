@@ -5,15 +5,16 @@ import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import pl.edu.wat.mspw_backend.service.KategoriaSpwService;
-import pl.edu.wat.mspw_backend.service.SprzetWojService;
+import pl.edu.wat.mspw_backend.service.*;
 import pl.edu.wat.mspw_frontend.enums.Views;
 import pl.edu.wat.mspw_frontend.interfaces.ControlGenerator;
 import pl.edu.wat.mspw_frontend.interfaces.Item;
 import pl.edu.wat.mspw_frontend.model.SprzetWojDto;
 import pl.edu.wat.mspw_frontend.util.Toast;
 
+import java.io.Console;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class InputSpwController {
@@ -30,6 +31,15 @@ public class InputSpwController {
     private ControlGenerator controller = new ControlGenerator();
     private final SprzetWojService spwService = new SprzetWojService();
     private final KategoriaSpwService kategoriaSpwService = new KategoriaSpwService();
+    private final EfektorLacznService efektorLacznService = new EfektorLacznService();
+    private final EfektorJezdnyService efektorJezdnyService = new EfektorJezdnyService();
+    private final EfektorPlywaniaService efektorPlywaniaService = new EfektorPlywaniaService();
+    private final EfektorInzService efektorInzService = new EfektorInzService();
+    private final EfektorWeService efektorWeService = new EfektorWeService();
+    private final KadlubService kadlubService = new KadlubService();
+    private final EfektorTranspService efektorTranspService = new EfektorTranspService();
+    private final EfektorLataniaService efektorLataniaService = new EfektorLataniaService();
+    private final EfektorRozpozService efektorRozpozService = new EfektorRozpozService();
     public void initialize() {
         // ustawienie tytulu strony
         labelTitle.setText("Wprowadzanie nowego SPW");
@@ -38,6 +48,44 @@ public class InputSpwController {
         List<Item> kategoryList = kategoriaSpwService.getAll().stream()
                 .map(object -> new Item(object.getId(), object.getNazwa()))
                 .collect(Collectors.toList());
+        List<Item> efektorLacznList = efektorLacznService.getAll().stream()
+                .map(object -> new Item(object.getId(), object.getNazwa()))
+                .collect(Collectors.toList());
+
+        List<Item> efektorJezdbyList = efektorJezdnyService.getAll().stream()
+                .map(object -> new Item(object.getId(), object.getNazwa()))
+                .collect(Collectors.toList());
+
+        List<Item> efektorPlywaniaList = efektorPlywaniaService.getAll().stream()
+                .map(object -> new Item(object.getId(), object.getNazwa()))
+                .collect(Collectors.toList());
+
+        List<Item> efektorInzList = efektorInzService.getAll().stream()
+                .map(object -> new Item(object.getId(), object.getNazwa()))
+                .collect(Collectors.toList());
+
+        List<Item> efektorWeList = efektorWeService.getAll().stream()
+                .map(object -> new Item(object.getId(), object.getNazwa()))
+                .collect(Collectors.toList());
+
+        List<Item> kadlubList = kadlubService.getAll().stream()
+                .map(object -> new Item(object.getId(), object.getNazwa()))
+                .collect(Collectors.toList());
+
+        List<Item> efektorTranspList = efektorTranspService.getAll().stream()
+                .map(object -> new Item(object.getId(), object.getNazwa()))
+                .collect(Collectors.toList());
+
+        List<Item> efektorLataniaList = efektorLataniaService.getAll().stream()
+                .map(object -> new Item(object.getId(), object.getNazwa()))
+                .collect(Collectors.toList());
+
+        List<Item> efektorRozpozList = efektorRozpozService.getAll().stream()
+                .map(object -> new Item(object.getId(), object.getNazwa()))
+                .collect(Collectors.toList());
+
+
+
 
         // generowanie kontrolek
         controller.generateTextField(inputGridPane,"NAZWA","NAZWA",  0);
@@ -64,27 +112,27 @@ public class InputSpwController {
         controller.generateCheckBox(inputGridPane2,"PRZENOSNY","PRZENOŚNY",6);
         controller.generateCheckBox(inputGridPane2,"CIAGNIONY","CIĄGNIONY",7);
         controller.generateCheckBox(inputGridPane2,"OPANCERZONY","OPANCERZONY",8);
-        controller.generateTextField(inputGridPane2,"EFEKTOR_LACZN_FK", "EFEKTOR_LACZN_FK", 9);
+        controller.generateChoiceBox(inputGridPane2,"EFEKTOR_LACZN_FK", "EFEKTOR_LACZN_FK", 9, efektorLacznList);
         controller.generateButton(inputGridPane2, "EFEKTOR_LACZN_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 9);
-        controller.generateTextField(inputGridPane2,"RODZAJ_SRODOW_FK","RODZAJ_SRODOW_FK",  10);
-        controller.generateButton(inputGridPane2, "RODZAJ_SRODOW_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 10);
-        controller.generateTextField(inputGridPane2,"EFEKTOR_JEZDNY_FK", "EFEKTOR_JEZDNY_FK", 11);
+//        controller.generateChoiceBox(inputGridPane2,"RODZAJ_SRODOW_FK","RODZAJ_SRODOW_FK",  10,);
+//        controller.generateButton(inputGridPane2, "RODZAJ_SRODOW_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 10);
+        controller.generateChoiceBox(inputGridPane2,"EFEKTOR_JEZDNY_FK", "EFEKTOR_JEZDNY_FK", 11, efektorJezdbyList);
         controller.generateButton(inputGridPane2, "EFEKTOR_JEZDNY_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 11);
-        controller.generateTextField(inputGridPane2,"EFEKTOR_PLYWANIA_FK", "EFEKTOR_PLYWANIA_FK", 12);
+        controller.generateChoiceBox(inputGridPane2,"EFEKTOR_PLYWANIA_FK", "EFEKTOR_PLYWANIA_FK", 12,efektorPlywaniaList);
         controller.generateButton(inputGridPane2, "EFEKTOR_PLYWANIA_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 12);
-        controller.generateTextField(inputGridPane2,"EFEKTOR_INZ_FK", "EFEKTOR_INZ_FK", 13);
+        controller.generateChoiceBox(inputGridPane2,"EFEKTOR_INZ_FK", "EFEKTOR_INZ_FK", 13, efektorInzList);
         controller.generateButton(inputGridPane2, "EFEKTOR_INZ_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 13);
-        controller.generateTextField(inputGridPane3,"EFEKTOR_WE_FK", "EFEKTOR_WE_FK", 0);
+        controller.generateChoiceBox(inputGridPane3,"EFEKTOR_WE_FK", "EFEKTOR_WE_FK", 0, efektorWeList);
         controller.generateButton(inputGridPane3, "EFEKTOR_WE_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 0);
-        controller.generateTextField(inputGridPane3,"PARAM_KADLUBA_FK","PARAM_KADLUBA_FK", 1);
+        controller.generateChoiceBox(inputGridPane3,"PARAM_KADLUBA_FK","PARAM_KADLUBA_FK", 1, kadlubList);
         controller.generateButton(inputGridPane3, "PARAM_KADLUBA_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 1);
-        controller.generateTextField(inputGridPane3,"EFEKTOR_TRANSP_FK","EFEKTOR_TRANSP_FK", 2);
+        controller.generateChoiceBox(inputGridPane3,"EFEKTOR_TRANSP_FK","EFEKTOR_TRANSP_FK", 2, efektorTranspList);
         controller.generateButton(inputGridPane3, "EFEKTOR_TRANSP_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 2);
         controller.generateChoiceBox(inputGridPane3,"KATEG_FK","KATEG_FK",  3, kategoryList);
         controller.generateButton(inputGridPane3, "KATEG_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 3);
-        controller.generateTextField(inputGridPane3,"EFEKTOR_LATANIA_FK","EFEKTOR_LATANIA_FK", 4);
+        controller.generateChoiceBox(inputGridPane3,"EFEKTOR_LATANIA_FK","EFEKTOR_LATANIA_FK", 4, efektorLataniaList);
         controller.generateButton(inputGridPane3, "EFEKTOR_LATANIA_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 4);
-        controller.generateTextField(inputGridPane3,"EFEKTOR_ROZPOZ_FK","EFEKTOR_ROZPOZ_FK",  5);
+        controller.generateChoiceBox(inputGridPane3,"EFEKTOR_ROZPOZ_FK","EFEKTOR_ROZPOZ_FK",  5, efektorRozpozList);
         controller.generateButton(inputGridPane3, "EFEKTOR_ROZPOZ_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 5);
         controller.generateTextField(inputGridPane3,"MOC","MOC [HP]", 6);
         controller.generateTextField(inputGridPane3,"KLASA_PRZYRZ_OC", "KLASA_PRZYRZ_OC",7);
@@ -101,22 +149,58 @@ public class InputSpwController {
         // - Dodawanie danych do listy lub tabeli
         // - Komunikacja z bazą danych
         // - itp.
-        SprzetWojDto item = getValueFromControls();
+        SprzetWojDto item;
         Stage stage = (Stage) button.getScene().getWindow();
 
         try {
+            item = getValueFromControls();
             spwService.create(
                     SprzetWojDto.builder()
                             .nazwa(item.getNazwa())
                             .skrot(item.getSkrot())
                             .kod(item.getKod())
                             .kategoriaFk(item.getKategoriaFk())
-                            .build());
+                            .klasa(item.getKlasa())
+                            .obsluga(item.getObsluga())
+                            .opancerzony(item.getOpancerzony())
+                            .kosztJednCykluZycia(item.getKosztJednCykluZycia())
+                            .kosztJednNabycia(item.getKosztJednNabycia())
+                            .kosztJednUtrzymWyszkPerson(item.getKosztJednUtrzymWyszkPerson())
+                            .masa(item.getMasa())
+                            .dlug(item.getDlug())
+                            .szerok(item.getSzerok())
+                            .wysok(item.getWysok())
+                            .potencjalBoj(item.getPotencjalBoj())
+                            .value(item.getValue())
+                            .pojemZbiorPaliwa(item.getPojemZbiorPaliwa())
+                            .pojemZbiorPaliwaDodat(item.getPojemZbiorPaliwaDodat())
+                            .pojemAkumulatorow(item.getPojemAkumulatorow())
+                            .jezdzacy(item.getJezdzacy())
+                            .latajacy(item.getLatajacy())
+                            .plywajacy(item.getPlywajacy())
+                            .przenosny(item.getPrzenosny())
+                            .ciagniony(item.getCiagniony())
+                            .efektorLacznFk(item.getEfektorLacznFk())
+//                            .rodzajSrodowFk(item.getRodzajSrodowFk())
+                            .efektorJezdnyFk(item.getEfektorJezdnyFk())
+                            .efektorPlywaniaFk(item.getEfektorPlywaniaFk())
+                            .efektorInzFk(item.getEfektorInzFk())
+                            .efektorWeFk(item.getEfektorWeFk())
+                            .paramKadlubaFk(item.getParamKadlubaFk())
+                            .efektorTranspFk(item.getEfektorTranspFk())
+                            .efektorLataniaFk(item.getEfektorLataniaFk())
+                            .efektorRozpozFk(item.getEfektorRozpozFk())
+                            .klasaPrzyrzOc(item.getKlasaPrzyrzOc())
+                            .moc(item.getMoc())
+                            .zuzyciePaliwaPraca(item.getZuzyciePaliwaPraca())
+                            .build()
+            );
 
-            //clear();
+
+            clear();
             Toast.showToast(stage, "Dodano Rekord!", Toast.ToastType.SUCCESS);
         } catch (Exception e) {
-            Toast.showToast(stage, "Wystąpił błąd - spróbuj ponownie!", Toast.ToastType.ERROR);
+            Toast.showToast(stage, "Wystąpił błąd - sprawdź poprawność danych!", Toast.ToastType.ERROR);
         }
 
     }
@@ -146,7 +230,7 @@ public class InputSpwController {
         CheckBox  ciagnionyCheckBox                     = (CheckBox) controller.findControlById(inputGridPane2,"CIAGNIONYCheckBox");
         CheckBox  opancerzonyCheckBox                   = (CheckBox) controller.findControlById(inputGridPane2,"OPANCERZONYCheckBox");
         ChoiceBox efektorLacznFkChoiceBox               = (ChoiceBox) controller.findControlById(inputGridPane2,"EFEKTOR_LACZN_FKChoiceBox");
-        ChoiceBox rodzajSrodowFkChoiceBox               = (ChoiceBox) controller.findControlById(inputGridPane2,"RODZAJ_SRODOW_FKChoiceBox");
+//        ChoiceBox rodzajSrodowFkChoiceBox               = (ChoiceBox) controller.findControlById(inputGridPane2,"RODZAJ_SRODOW_FKChoiceBox");
         ChoiceBox efektorJezdnyFkChoiceBox              = (ChoiceBox) controller.findControlById(inputGridPane2,"EFEKTOR_JEZDNY_FKChoiceBox");
         ChoiceBox efektorPlywaniaFkChoiceBox            = (ChoiceBox) controller.findControlById(inputGridPane2,"EFEKTOR_PLYWANIA_FKChoiceBox");
         ChoiceBox efektorInzFkChoiceBox                 = (ChoiceBox) controller.findControlById(inputGridPane2,"EFEKTOR_INZ_FKChoiceBox");
@@ -164,9 +248,46 @@ public class InputSpwController {
         result.setNazwa(nazwaTextField.getText());
         result.setSkrot(skrotTextField.getText());
         result.setKod(kodTextField.getText());
-        result.setKategoriaFk(((Item) kategFkChoiceBox.getValue()).getId());
+        result.setKlasa(!Objects.equals(klasaTextField.getText(), "") ?Integer.valueOf(klasaTextField.getText()):null);
+        result.setObsluga(!Objects.equals(obslugaTextField.getText(), "") ? Integer.valueOf(obslugaTextField.getText()):null);
+        result.setKosztJednCykluZycia(!Objects.equals(kosztJednCykluZyciaTextField.getText(), "") ?Double.valueOf(kosztJednCykluZyciaTextField.getText()):null);
+        result.setKosztJednNabycia(!Objects.equals(kosztJednNabyciaTextField.getText(), "") ?Double.valueOf(kosztJednNabyciaTextField.getText()):null);
+        result.setKosztJednUtrzymWyszkPerson(!Objects.equals(kosztJednUtrzymWyszkPersonTextField.getText(), "") ?Double.valueOf(kosztJednUtrzymWyszkPersonTextField.getText()):null);
+        result.setMasa(!Objects.equals(masaTextField.getText(), "") ?Double.valueOf(masaTextField.getText()):null);
+        result.setDlug(!Objects.equals(dlugTextField.getText(), "") ?Double.valueOf(dlugTextField.getText()):null);
+        result.setSzerok(!Objects.equals(szerokTextField.getText(), "") ?Double.valueOf(szerokTextField.getText()):null);
+        result.setWysok(!Objects.equals(wysokTextField.getText(), "") ?Double.valueOf(wysokTextField.getText()):null);
+        result.setPotencjalBoj(!Objects.equals(potencjalBojTextField.getText(), "") ?Double.valueOf(potencjalBojTextField.getText()):null);
+        result.setValue(!Objects.equals(valueTextField.getText(), "") ?Double.valueOf(valueTextField.getText()):null);
+        result.setPojemZbiorPaliwa(!Objects.equals(pojemZbiorPaliwaTextField.getText(), "") ?Double.valueOf(pojemZbiorPaliwaTextField.getText()):null);
+        result.setPojemZbiorPaliwaDodat(!Objects.equals(pojemZbiorPaliwaDodatTextField.getText(), "") ?Double.valueOf(pojemZbiorPaliwaDodatTextField.getText()):null);
+        result.setPojemAkumulatorow(!Objects.equals(pojemAkumulatorowTextField.getText(), "") ?Double.valueOf(pojemAkumulatorowTextField.getText()):null);
+        result.setJezdzacy(jezdzacyCheckBox.isSelected());
+        result.setLatajacy(latajacyCheckBox.isSelected());
+        result.setPlywajacy(plywajacyCheckBox.isSelected());
+        result.setPrzenosny(przenosnyCheckBox.isSelected());
+        result.setCiagniony(ciagnionyCheckBox.isSelected());
+        result.setOpancerzony(opancerzonyCheckBox.isSelected());
+        result.setEfektorLacznFk(getSelectedItemId(efektorLacznFkChoiceBox));
+//        result.setRodzajSrodowFk(getSelectedItemId(rodzajSrodowFkChoiceBox));
+        result.setEfektorJezdnyFk(getSelectedItemId(efektorJezdnyFkChoiceBox));
+        result.setEfektorPlywaniaFk(getSelectedItemId(efektorPlywaniaFkChoiceBox));
+        result.setEfektorInzFk(getSelectedItemId(efektorInzFkChoiceBox));
+        result.setEfektorWeFk(getSelectedItemId(efektorWeFkChoiceBox));
+        result.setKategoriaFk(getSelectedItemId(kategFkChoiceBox));
+        result.setParamKadlubaFk(getSelectedItemId(paramKadlubaFkChoiceBox));
+        result.setEfektorTranspFk(getSelectedItemId(efektorTranspFkChoiceBox));
+        result.setEfektorLataniaFk(getSelectedItemId(efektorLataniaFkChoiceBox));
+        result.setEfektorRozpozFk(getSelectedItemId(efektorRozpozFkChoiceBox));
+        result.setMoc(!Objects.equals(mocTextField.getText(), "") ? Double.valueOf(mocTextField.getText()) : null);
+        result.setKlasaPrzyrzOc(!Objects.equals(klasaPrzyrzOcTextField.getText(), "") ? Integer.valueOf(klasaPrzyrzOcTextField.getText()):null);
+        result.setZuzyciePaliwaPraca(!Objects.equals(zuzPaliwaPracaTextField.getText(), "") ? Double.valueOf(zuzPaliwaPracaTextField.getText()):null);
 
         return result;
+    }
+
+    private Integer getSelectedItemId(ChoiceBox<Item> choiceBox) {
+        return choiceBox.getValue() != null ? choiceBox.getValue().getId() : null;
     }
 
     private void clear(){
@@ -194,7 +315,7 @@ public class InputSpwController {
         ((CheckBox) controller.findControlById(inputGridPane2,"CIAGNIONYCheckBox")).setSelected(false);
         ((CheckBox) controller.findControlById(inputGridPane2,"OPANCERZONYCheckBox")).setSelected(false);
         ((ChoiceBox) controller.findControlById(inputGridPane2,"EFEKTOR_LACZN_FKChoiceBox")).setValue(null);
-        ((ChoiceBox) controller.findControlById(inputGridPane2,"RODZAJ_SRODOW_FKChoiceBox")).setValue(null);
+//        ((ChoiceBox) controller.findControlById(inputGridPane2,"RODZAJ_SRODOW_FKChoiceBox")).setValue(null);
         ((ChoiceBox) controller.findControlById(inputGridPane2,"EFEKTOR_JEZDNY_FKChoiceBox")).setValue(null);
         ((ChoiceBox) controller.findControlById(inputGridPane2,"EFEKTOR_PLYWANIA_FKChoiceBox")).setValue(null);
         ((ChoiceBox) controller.findControlById(inputGridPane2,"EFEKTOR_INZ_FKChoiceBox")).setValue(null);
