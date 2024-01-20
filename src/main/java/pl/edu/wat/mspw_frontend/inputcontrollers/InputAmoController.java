@@ -1,17 +1,26 @@
 package pl.edu.wat.mspw_frontend.inputcontrollers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import pl.edu.wat.mspw_frontend.enums.TableViews;
 import pl.edu.wat.mspw_frontend.enums.Views;
 import pl.edu.wat.mspw_frontend.interfaces.ControlGenerator;
+import pl.edu.wat.mspw_frontend.readcontrollers.TableAmoController;
+import pl.edu.wat.mspw_frontend.readcontrollers.TableMpsController;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
 public class InputAmoController {
-
+    private TableAmoController  tableAmoController;
+    @FXML
+    private AnchorPane tableContainer; // Container dla TableMpsView
     @FXML
     private GridPane inputGridPane;
 
@@ -87,15 +96,31 @@ public class InputAmoController {
         );
         controller.generateChoiceBox(inputGridPane,"RODZAJ_NAPROW_FK","RODZAJ_NAPROW_FK", 13, options4);
         controller.generateButton(inputGridPane, "RODZAJ_NAPROW_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 13);
+        loadTableView(TableViews.TABLE_AMO.getValue());
     }
+    private void loadTableView(String path) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+            Node view = loader.load();
 
+            tableAmoController = loader.getController();
+
+            AnchorPane.setTopAnchor(view, 0.0);
+            AnchorPane.setBottomAnchor(view, 0.0);
+            AnchorPane.setLeftAnchor(view, 0.0);
+            AnchorPane.setRightAnchor(view, 0.0);
+
+            tableContainer.getChildren().setAll(view);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     @FXML
-    private void addButton(){
-        // Kod, który ma zostać wykonany, gdy użytkownik kliknie przycisk "DODAJ"
-        // - Walidacja danych wejściowych
-        // - Dodawanie danych do listy lub tabeli
-        // - Komunikacja z bazą danych
-        // - itp.
+    private void addButtonAction(){
+
+    }
+    @FXML
+    private void deleteButtonAction() {
 
     }
 }

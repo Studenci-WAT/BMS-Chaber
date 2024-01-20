@@ -1,39 +1,32 @@
 package pl.edu.wat.mspw_frontend.inputcontrollers;
 
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
 import pl.edu.wat.mspw_backend.service.MpsService;
-import pl.edu.wat.mspw_frontend.enums.Views;
+import pl.edu.wat.mspw_frontend.enums.TableViews;
 import pl.edu.wat.mspw_frontend.interfaces.ControlGenerator;
 import pl.edu.wat.mspw_frontend.model.MpsDto;
 import pl.edu.wat.mspw_frontend.readcontrollers.TableMpsController;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class InputMpsController {
     private MpsService mpsService;
     private TableMpsController tableMpsController;
-
+    @FXML
+    private AnchorPane tableContainer; // Container dla TableMpsView
     @FXML
     private GridPane inputGridPane;
 
     @FXML
     private Label labelTitle;
-    @FXML
-    private AnchorPane tableMpsContainer; // Container dla TableMpsView
+
 
     private ControlGenerator controller = new ControlGenerator();
     public void initialize() {
@@ -47,11 +40,11 @@ public class InputMpsController {
         controller.generateTextField(inputGridPane,"KOD", "KOD",2);
 
         mpsService = new MpsService();
-        loadTableMpsView();
+        loadTableView(TableViews.TABLE_MPS.getValue());
     }
-    private void loadTableMpsView() {
+    private void loadTableView(String path) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.MPSTABVIEW.getValue()));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
             Node view = loader.load();
 
             tableMpsController = loader.getController();
@@ -61,13 +54,11 @@ public class InputMpsController {
             AnchorPane.setLeftAnchor(view, 0.0);
             AnchorPane.setRightAnchor(view, 0.0);
 
-            tableMpsContainer.getChildren().setAll(view);
+            tableContainer.getChildren().setAll(view);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
-
 
     @FXML
     private void addButtonAction(){

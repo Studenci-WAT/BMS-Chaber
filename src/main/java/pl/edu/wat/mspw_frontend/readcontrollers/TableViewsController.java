@@ -5,10 +5,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.layout.Region;
+import pl.edu.wat.mspw_frontend.enums.TableViews;
 import pl.edu.wat.mspw_frontend.enums.Views;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.net.URL;
 
 public class TableViewsController {
     @FXML
@@ -16,31 +19,30 @@ public class TableViewsController {
 
     @FXML
     private void initialize() {
-        // Tworzenie zakładek
-        Tab tab1 = new Tab("MPS");
-        Tab tab2 = new Tab("Amo");
-        Tab tab3 = new Tab("Spw");
-        Tab tab4 = new Tab("Kadlub");
-        // Dodawanie zakładek do TabPane
-        tabPane.getTabs().addAll(
-                tab1,
-                tab2,
-                tab3,
-                tab4)
-        ;
+        // Iterowanie przez wszystkie wartości enuma TableViews i tworzenie zakładek
+        for (TableViews tableView : TableViews.values()) {
+            Tab tab = new Tab(tableView.name());
+            loadViewToTab(tab, tableView.getValue());
+            tabPane.getTabs().add(tab);
+        }
 
-        loadViewToTab(tab1, Views.MPSTABVIEW.getValue());
-        loadViewToTab(tab2, Views.AMOTABVIEW.getValue());
-        loadViewToTab(tab3, Views.SPWTABVIEW.getValue());
-        loadViewToTab(tab4, Views.KADLUBTABVIEW.getValue());
+        // Ustawienie polityki skalowania zakładek, aby wypełniały dostępną przestrzeń
+        tabPane.setTabMinWidth(Region.USE_PREF_SIZE);
+        tabPane.setTabMaxWidth(Double.MAX_VALUE); // Ustawienie maksymalnej szerokości na 'nieskończoność'
+        tabPane.setTabMinHeight(Region.USE_PREF_SIZE);
+        tabPane.setTabMaxHeight(Double.MAX_VALUE); // Ustawienie maksymalnej wysokości na 'nieskończoność'
     }
+
 
     private void loadViewToTab(Tab tab, String fxmlPath) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            URL url = getClass().getResource(fxmlPath);
+            if (url == null) {
+                throw new IOException("Cannot find resource: " + fxmlPath);
+            }
+            FXMLLoader loader = new FXMLLoader(url);
             Node view = loader.load();
 
-            // Ustawianie widoku w AnchorPane dla dynamicznego skalowania
             AnchorPane anchorPane = new AnchorPane();
             AnchorPane.setTopAnchor(view, 0.0);
             AnchorPane.setBottomAnchor(view, 0.0);
@@ -51,8 +53,9 @@ public class TableViewsController {
             tab.setContent(anchorPane);
         } catch (IOException e) {
             e.printStackTrace();
-            // Obsługa błędu
+            // Appropriate error handling
         }
     }
+
 }
 

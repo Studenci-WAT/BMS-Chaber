@@ -32,7 +32,7 @@
             </GridPane>
             <Button layoutX="322.0" layoutY="533.0" mnemonicParsing="false" onAction="#addButtonAction" prefHeight="45.0" prefWidth="209.0" style="-fx-background-color: linear-gradient(to right, rgba(144, 238, 144, 0.8), rgba(0, 128, 0, 0.8));" text="DODAJ" />
              <Button fx:id="deleteButton" layoutX="770.0" layoutY="533.0" mnemonicParsing="false" onAction="#deleteButtonAction" prefHeight="46.0" prefWidth="199.0" style="-fx-background-color: linear-gradient(to right, rgba(255, 69, 0, 0.8), rgba(178, 34, 34, 0.8));" text="USUŃ WYBRANY REKORD" />
-             <AnchorPane fx:id="tableMpsContainer" layoutX="320.0" layoutY="2.0" prefHeight="525.0" prefWidth="644.0" BorderPane.alignment="CENTER"/>
+             <AnchorPane fx:id="tableContainer" layoutX="320.0" layoutY="2.0" prefHeight="525.0" prefWidth="644.0" BorderPane.alignment="CENTER"/>
 
          </children></Pane>
    </left>

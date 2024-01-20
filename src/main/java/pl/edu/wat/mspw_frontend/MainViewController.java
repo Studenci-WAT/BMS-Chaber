@@ -27,11 +27,10 @@ public class MainViewController {
 
         // Tworzenie przycisków dynamicznie w pierwszej zakładce
         GridPane firstTabGridPane = (GridPane) ((AnchorPane) tabPane.getTabs().get(0).getContent()).getChildren().get(0);
-        generateNavigationButton(firstTabGridPane, "TEMPLATE VIEW", "templateInputNavigator", 0);
-        generateNavigationButton(firstTabGridPane, "RODZAJ AMUNICJI", "amoInputNavigator", 1);
-        generateNavigationButton(firstTabGridPane, "SYSTEM OGNIA", "sysOgnInputNavigator", 2);
-        generateNavigationButton(firstTabGridPane, "SPW", "spwInputNavigator", 3);
-        generateNavigationButton(firstTabGridPane, "MPS", "mpsInputNavigator", 4);
+        generateNavigationButton(firstTabGridPane, "RODZAJ AMUNICJI", "amoInputNavigator", 0);
+        generateNavigationButton(firstTabGridPane, "SYSTEM OGNIA", "sysOgnInputNavigator", 1);
+        generateNavigationButton(firstTabGridPane, "SPW", "spwInputNavigator", 2);
+        generateNavigationButton(firstTabGridPane, "MPS", "mpsInputNavigator", 3);
         // Tworzenie przycisków dynamicznie w drugiej zakładce
         GridPane secondTabGridPane = (GridPane) ((AnchorPane) tabPane.getTabs().get(1).getContent()).getChildren().get(0);
         generateNavigationButton(secondTabGridPane, "TABLES", "tablesNavigator", 0);
@@ -84,9 +83,6 @@ public class MainViewController {
         // Obsługa akcji przycisku
         Button clickedButton = (Button) event.getSource();
         switch(clickedButton.getId()){
-            case "templateInputNavigator":
-                loadView(Views.INPUTTEMPLATEVIEW.getValue());
-                break;
             case "amoInputNavigator":
                 loadView(Views.INPUTAMOVIEW.getValue());
                 break;
