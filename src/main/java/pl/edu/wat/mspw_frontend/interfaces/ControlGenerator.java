@@ -2,6 +2,7 @@ package pl.edu.wat.mspw_frontend.interfaces;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -18,34 +19,36 @@ public class ControlGenerator {
         CheckBox checkBox = new CheckBox();
 
         // Nadanie identyfikatorów
-        label.setId(namePrefix);
-        checkBox.setId(namePrefix);
+        label.setId(namePrefix+ "Label");
+        checkBox.setId(namePrefix+ "CheckBox");
 
         // Dodajemy kontrolki do GridPane
         gridPane.add(label, 0, row); // Kolumna 0, wiersz row
         gridPane.add(checkBox, 1, row); // Kolumna 1, wiersz row
     }
 
-    public void generateTextField(GridPane gridPane, String namePrefix, String labelText, int row) {
+    public TextField generateTextField(GridPane gridPane, String namePrefix, String labelText, int row) {
         Label label = new Label(labelText);
         TextField textField = new TextField();
 
         // Nadanie identyfikatorów
-        label.setId(namePrefix);
-        textField.setId(namePrefix);
+        label.setId(namePrefix + "Label");
+        textField.setId(namePrefix + "TextField");
 
         // Dodajemy kontrolki do GridPane
         gridPane.add(label, 0, row); // Kolumna 0, wiersz row
         gridPane.add(textField, 1, row); // Kolumna 1, wiersz row
+
+        return textField;
     }
 
-    public void generateChoiceBox(GridPane gridPane, String namePrefix, String labelText, int row, List<String> choices) {
+    public void generateChoiceBox(GridPane gridPane, String namePrefix, String labelText, int row, List<Item> choices) {
         Label label = new Label(labelText);
-        ChoiceBox<String> choiceBox = new ChoiceBox<>();
+        ChoiceBox<Item> choiceBox = new ChoiceBox<>();
 
         // Nadanie identyfikatorów
-        label.setId(namePrefix);
-        choiceBox.setId(namePrefix);
+        label.setId(namePrefix+ "Label");
+        choiceBox.setId(namePrefix+ "ChoiceBox");
 
         // Ustawienie opcji wyboru w ChoiceBox
         choiceBox.setItems(FXCollections.observableArrayList(choices));
@@ -84,5 +87,14 @@ public class ControlGenerator {
         } catch (IOException e) {
             e.printStackTrace(); // Logowanie błędów
         }
+    }
+
+    public Node findControlById(GridPane gridPane, String controlId) {
+        for (Node node : gridPane.getChildren()) {
+            if (controlId.equals(node.getId())) {
+                return node;
+            }
+        }
+        return null;
     }
 }

@@ -4,13 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cd0cd9d-27c0-41c8-892b-2f3158cac233" name="Changes" comment="folder structure fixed">
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-test/db-test/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/db-test/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-test/db-test/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/db-test/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-test/db-test/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/db-test/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-test/db-test/populate.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db-test/populate.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-test/db-test/script/import-database.sh" beforeDir="false" afterPath="$PROJECT_DIR$/db-test/script/import-database.sh" afterDir="false" />
+    <list default="true" id="7cd0cd9d-27c0-41c8-892b-2f3158cac233" name="Changes" comment="added all tables in read view GUI&#10;deleted template view - now u need to check other scene becouse everything else is done">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/interfaces/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/util/Toast.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/ApplicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/enums/Views.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/enums/Views.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputAmoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputAmoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputSpwController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputSpwController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputSystemOgnController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputSystemOgnController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/interfaces/ControlGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/interfaces/ControlGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/AbstractTableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/AbstractTableController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-spw-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-spw-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/ApplicationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/ApplicationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/enums/Views.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/enums/Views.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/inputcontrollers/InputAmoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/inputcontrollers/InputAmoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/inputcontrollers/InputSpwController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/inputcontrollers/InputSpwController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/interfaces/ControlGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/interfaces/ControlGenerator.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -32,10 +44,18 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/backend" />
+        <entry key="$PROJECT_DIR$" value="feature/frontend-test" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="develop" />
+        <option value="master" />
+      </list>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -72,11 +92,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feature/backend",
+    "git-widget-placeholder": "feature/frontend",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "corretto-21",
     "last_directory_selection": "C:/Users/wojci/IdeaProjects/BMS-Chaber/src/main/java/pl/edu/wat/mspw_projekt",
-    "last_opened_file_path": "E:/sem_IX/Mspw/BMS-Chaber/src/main/java/pl/edu/wat/mspw_backend",
+    "last_opened_file_path": "D:/Users/podla/IdeaProjects/BMS-Chaber/src/main/resources/pl/edu/wat/mspw_projekt/readviews",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -96,6 +116,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\podla\IdeaProjects\BMS-Chaber\src\main\resources\pl\edu\wat\mspw_projekt\readviews" />
+      <recent name="D:\Users\podla\IdeaProjects\BMS-Chaber\src\main\resources\pl\edu\wat\mspw_projekt\inputviews" />
+      <recent name="D:\Users\podla\IdeaProjects\BMS-Chaber\src\main\java\pl\edu\wat\mspw_frontend\model" />
       <recent name="E:\sem_IX\Mspw\BMS-Chaber\src\main\java\pl\edu\wat\mspw_backend" />
       <recent name="E:\sem_IX\Mspw\BMS-Chaber\frontend\src\main\java\mspwfe\wat" />
     </key>
@@ -110,6 +133,11 @@
     </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="pl.edu.wat.mspw_projekt" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pl.edu.wat.mspw_frontend.readcontrollers" />
+      <recent name="pl.edu.wat.mspw_backend.service" />
+      <recent name="pl.edu.wat.mspw_frontend.model" />
     </key>
   </component>
   <component name="RunManager" selected="Application.ApplicationController">
@@ -178,6 +206,15 @@
       <workItem from="1702369349126" duration="1884000" />
       <workItem from="1704578995971" duration="47000" />
       <workItem from="1705494225364" duration="2091000" />
+      <workItem from="1705665302014" duration="3855000" />
+      <workItem from="1705669175134" duration="1757000" />
+      <workItem from="1705672886082" duration="36000" />
+      <workItem from="1705672938297" duration="167000" />
+      <workItem from="1705673117061" duration="11631000" />
+      <workItem from="1705689367920" duration="452000" />
+      <workItem from="1705690844120" duration="615000" />
+      <workItem from="1705691497853" duration="4571000" />
+      <workItem from="1705765839760" duration="11835000" />
     </task>
     <task id="LOCAL-00001" summary="Model Implementations + Descriptions of used tabels names">
       <created>1701196587904</created>
@@ -186,7 +223,94 @@
       <option name="project" value="LOCAL" />
       <updated>1701196587904</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary=" ---- mps scene ---&#10;gui elements names in generator fixed,&#10;gui delete button added (worked),&#10;models updated (id),&#10;delete metod by id created in service">
+      <option name="closed" value="true" />
+      <created>1705669371562</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1705669371562</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added all Dto&#10;added all services Dto - Entity&#10;added table for read only (only 3 class for now - spw, mps, amo)">
+      <option name="closed" value="true" />
+      <created>1705684060450</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1705684060450</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added kadlub table controller">
+      <option name="closed" value="true" />
+      <created>1705684671056</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1705684671056</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fixed id type in smps dto">
+      <option name="closed" value="true" />
+      <created>1705691280932</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705691280932</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fixed id type in smps dto">
+      <option name="closed" value="true" />
+      <created>1705691422083</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705691422083</updated>
+    </task>
+    <task id="LOCAL-00007" summary="changed mps table - now its imported from other fxml (shared with read feature)">
+      <option name="closed" value="true" />
+      <created>1705696010406</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1705696010406</updated>
+    </task>
+    <task id="LOCAL-00008" summary="changed mps table - now its imported from other fxml (shared with read feature)">
+      <option name="closed" value="true" />
+      <created>1705696022238</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1705696022238</updated>
+    </task>
+    <task id="LOCAL-00009" summary="changed mps table - now its imported from other fxml (shared with read feature)">
+      <option name="closed" value="true" />
+      <created>1705696056778</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1705696056778</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added all tables in read view GUI&#10;deleted template view - now u need to check other scene becouse everything else is done">
+      <option name="closed" value="true" />
+      <created>1705776753422</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1705776753422</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added all tables in read view GUI&#10;deleted template view - now u need to check other scene becouse everything else is done">
+      <option name="closed" value="true" />
+      <created>1705776760323</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1705776760323</updated>
+    </task>
+    <task id="LOCAL-00012" summary="test">
+      <created>1705783928696</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1705783928696</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +323,21 @@
     <option featureType="dependencySupport" implementationName="executable:kubectl" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/feature/frontend" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -209,7 +348,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="develop" />
+                        <option value="origin/feature/frontend" />
                       </list>
                     </value>
                   </entry>
@@ -225,7 +364,14 @@
     <MESSAGE value="Model Implementations + Descriptions of used tabels names" />
     <MESSAGE value="Merge pull request #26 from Studenci-WAT/feature/backend&#10;&#10;Feature/backend merge" />
     <MESSAGE value="folder structure fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="folder structure fixed" />
+    <MESSAGE value=" ---- mps scene ---&#10;gui elements names in generator fixed,&#10;gui delete button added (worked),&#10;models updated (id),&#10;delete metod by id created in service" />
+    <MESSAGE value="added all Dto&#10;added all services Dto - Entity&#10;added table for read only (only 3 class for now - spw, mps, amo)" />
+    <MESSAGE value="added kadlub table controller" />
+    <MESSAGE value="fixed id type in smps dto" />
+    <MESSAGE value="changed mps table - now its imported from other fxml (shared with read feature)" />
+    <MESSAGE value="added all tables in read view GUI&#10;deleted template view - now u need to check other scene becouse everything else is done" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
