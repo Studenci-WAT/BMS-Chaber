@@ -4,8 +4,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
+<?import java.net.URL?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="648.0" prefWidth="998.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.edu.wat.mspw_frontend.inputcontrollers.InputMpsController">
-   <left>
+    <stylesheets>
+        <!-- Dodaj linijkę importu dla pliku CSS -->
+        <URL value="@../styles/styles.css" />
+    </stylesheets>
+    <left>
       <Pane prefHeight="604.0" prefWidth="1016.0" BorderPane.alignment="CENTER">
          <children>
             <GridPane fx:id="inputGridPane" layoutX="25.0" layoutY="33.0" prefHeight="462.0" prefWidth="273.0">
@@ -30,11 +35,15 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
             </GridPane>
-            <Button layoutX="322.0" layoutY="533.0" mnemonicParsing="false" onAction="#addButtonAction" prefHeight="45.0" prefWidth="209.0" style="-fx-background-color: linear-gradient(to right, rgba(144, 238, 144, 0.8), rgba(0, 128, 0, 0.8));" text="DODAJ" />
+            <Button fx:id="addButton" layoutX="322.0" layoutY="533.0" mnemonicParsing="false" onAction="#addButtonAction" prefHeight="45.0" prefWidth="209.0" style="-fx-background-color: linear-gradient(to right, rgba(144, 238, 144, 0.8), rgba(0, 128, 0, 0.8));" text="DODAJ" />
              <Button fx:id="deleteButton" layoutX="770.0" layoutY="533.0" mnemonicParsing="false" onAction="#deleteButtonAction" prefHeight="46.0" prefWidth="199.0" style="-fx-background-color: linear-gradient(to right, rgba(255, 69, 0, 0.8), rgba(178, 34, 34, 0.8));" text="USUŃ WYBRANY REKORD" />
-             <AnchorPane fx:id="tableMpsContainer" layoutX="320.0" layoutY="2.0" prefHeight="525.0" prefWidth="644.0" BorderPane.alignment="CENTER"/>
+             <AnchorPane fx:id="tableMpsContainer" layoutX="320.0" layoutY="2.0" prefHeight="525.0" prefWidth="644.0" BorderPane.alignment="CENTER">
+
+             </AnchorPane>
+
 
          </children></Pane>
+
    </left>
    <top>
        <StackPane prefHeight="44.0" prefWidth="608.0">
@@ -48,4 +57,5 @@
        </StackPane>
 
    </top>
+
 </BorderPane>

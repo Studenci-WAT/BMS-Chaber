@@ -1,15 +1,14 @@
 package pl.edu.wat.mspw_frontend.inputcontrollers;
 
+import javafx.beans.binding.Bindings;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
@@ -20,8 +19,8 @@ import pl.edu.wat.mspw_frontend.model.MpsDto;
 import pl.edu.wat.mspw_frontend.readcontrollers.TableMpsController;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class InputMpsController {
     private MpsService mpsService;
@@ -29,26 +28,40 @@ public class InputMpsController {
 
     @FXML
     private GridPane inputGridPane;
-
+    @FXML
+    private Button addButton;
+    @FXML
+    private Button deleteButton;
     @FXML
     private Label labelTitle;
     @FXML
-    private AnchorPane tableMpsContainer; // Container dla TableMpsView
-
+    private AnchorPane tableMpsContainer;
+    private Map<String, TextField> dynamicTextFields = new HashMap<>();
+    private BooleanProperty anyTextFieldEmpty = new SimpleBooleanProperty(false);
     private ControlGenerator controller = new ControlGenerator();
+    @FXML
     public void initialize() {
-        // ustawienie tytulu strony
-        labelTitle.setText("Wprowadzanie nowego rodzaju MPS");
-        labelTitle.setAlignment(Pos.CENTER); // Ustawienie wyrównania tekstu na środek
-
-        // generowanie kontrolek
-        controller.generateTextField(inputGridPane,"NAZWA", "NAZWA",0);
-        controller.generateTextField(inputGridPane,"SKROT","SKRÓT", 1);
-        controller.generateTextField(inputGridPane,"KOD", "KOD",2);
-
+        setupTitle();
+        setupDynamicTextFields();
         mpsService = new MpsService();
         loadTableMpsView();
+        setupDynamicTextFieldsListeners();
+        setupButtonProperties();
+        updateAnyTextFieldEmpty();
+        updateAddButtonStyle();
     }
+
+    private void setupTitle() {
+        labelTitle.setText("Wprowadzanie nowego rodzaju MPS");
+        labelTitle.setAlignment(Pos.CENTER);
+    }
+
+    private void setupDynamicTextFields() {
+        generateDynamicTextField("NAZWA", "NAZWA", dynamicTextFields, 0);
+        generateDynamicTextField("SKROT", "SKRÓT", dynamicTextFields, 1);
+        generateDynamicTextField("KOD", "KOD", dynamicTextFields, 2);
+    }
+
     private void loadTableMpsView() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(Views.MPSTABVIEW.getValue()));
@@ -67,7 +80,19 @@ public class InputMpsController {
         }
     }
 
+    private void setupDynamicTextFieldsListeners() {
+        dynamicTextFields.forEach((id, textField) ->
+                textField.textProperty().addListener((observable, oldValue, newValue) -> {
+                    updateAnyTextFieldEmpty();
+                    updateAddButtonStyle();
+                }));
+    }
 
+    private void setupButtonProperties() {
+        addButton.disableProperty().bind(anyTextFieldEmpty);
+        deleteButton.disableProperty().bind(tableMpsController.getTableView().getSelectionModel().selectedItemProperty().isNull());
+        deleteButton.disabledProperty().addListener((observable, oldValue, newValue) -> updateDeleteButtonStyle());
+    }
 
     @FXML
     private void addButtonAction(){
@@ -93,6 +118,8 @@ public class InputMpsController {
         if (tableMpsController != null) {
             tableMpsController.populateTable();
         }
+
+        dynamicTextFields.values().forEach(textField -> textField.setText(""));
     }
     @FXML
     private void deleteButtonAction() {
@@ -109,5 +136,41 @@ public class InputMpsController {
         }
     }
 
+    private void updateAnyTextFieldEmpty() {
+        anyTextFieldEmpty.set(isAnyTextFieldEmpty());
+    }
 
+    private boolean isAnyTextFieldEmpty() {
+        return dynamicTextFields.values().stream()
+                .anyMatch(textField -> textField.getText().isEmpty());
+    }
+
+    private void generateDynamicTextField(String id, String label, Map<String, TextField> container, int rowIndex) {
+        TextField textField = controller.generateTextField(inputGridPane,id, label,rowIndex);
+        container.put(id, textField);
+    }
+
+    private void updateAddButtonStyle() {
+        if (addButton.isDisabled()) {
+            addButton.getStyleClass().remove("button-disabled");
+            addButton.getStyleClass().remove("button-enabled");
+            addButton.getStyleClass().add("button-disabled");
+        } else {
+            addButton.getStyleClass().remove("button-disabled");
+            addButton.getStyleClass().remove("button-enabled");
+            addButton.getStyleClass().add("button-enabled");
+        }
+    }
+
+    private void updateDeleteButtonStyle() {
+        if (deleteButton.isDisabled()) {
+            deleteButton.getStyleClass().remove("button-disabled");
+            deleteButton.getStyleClass().remove("button-enabled");
+            deleteButton.getStyleClass().add("button-disabled");
+        } else {
+            deleteButton.getStyleClass().remove("button-disabled");
+            deleteButton.getStyleClass().remove("button-enabled");
+            deleteButton.getStyleClass().add("button-enabled");
+        }
+    }
 }
