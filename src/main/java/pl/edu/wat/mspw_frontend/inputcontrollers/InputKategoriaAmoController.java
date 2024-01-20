@@ -6,25 +6,27 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import pl.edu.wat.mspw_backend.service.KategoriaAmoService;
 import pl.edu.wat.mspw_backend.service.MpsService;
 import pl.edu.wat.mspw_frontend.enums.TableViews;
 import pl.edu.wat.mspw_frontend.interfaces.ControlGenerator;
-import pl.edu.wat.mspw_frontend.interfaces.Item;
+import pl.edu.wat.mspw_frontend.model.KategoriaAmoDto;
 import pl.edu.wat.mspw_frontend.model.MpsDto;
+import pl.edu.wat.mspw_frontend.readcontrollers.TableKategoriaAmoController;
 import pl.edu.wat.mspw_frontend.readcontrollers.TableMpsController;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-
-public class InputMpsController {
-    private MpsService mpsService;
-    private TableMpsController tableMpsController;
+public class InputKategoriaAmoController {
+    private KategoriaAmoService kategoriaAmoService;
+    private TableKategoriaAmoController tableController;
     @FXML
     private AnchorPane tableContainer; // Container dla TableMpsView
     @FXML
@@ -36,30 +38,29 @@ public class InputMpsController {
     @FXML
     private Label labelTitle;
 
-    private Map<String,  Control> dynamicControls = new HashMap<>();
+    private Map<String, TextField> dynamicTextFields = new HashMap<>();
     private BooleanProperty anyTextFieldEmpty = new SimpleBooleanProperty(false);
     private ControlGenerator controller = new ControlGenerator();
     @FXML
     public void initialize() {
         setupTitle();
         setupDynamicTextFields();
-        mpsService = new MpsService();
-        loadTableView(TableViews.TABLE_MPS.getValue());
-        setupDynamicControlsListeners();
+        kategoriaAmoService = new KategoriaAmoService();
+        loadTableView(TableViews.TABLE_KATEGORIA_AMO.getValue());
+        setupDynamicTextFieldsListeners();
         setupButtonProperties();
         updateAnyTextFieldEmpty();
         updateAddButtonStyle();
     }
 
     private void setupTitle() {
-        labelTitle.setText("Wprowadzanie nowego rodzaju MPS");
+        labelTitle.setText("Wprowadzanie nowej kategorii amunicji");
         labelTitle.setAlignment(Pos.CENTER);
     }
 
     private void setupDynamicTextFields() {
-        generateDynamicControl("NAZWA", "NAZWA", dynamicControls, 0,TextField.class, null);
-        generateDynamicControl("SKROT", "SKRÓT", dynamicControls, 1,TextField.class, null);
-        generateDynamicControl("KOD", "KOD", dynamicControls, 2, TextField.class, null);
+        generateDynamicTextField("NAZWA", "NAZWA", dynamicTextFields, 0);
+        generateDynamicTextField("SKROT", "SKRÓT", dynamicTextFields, 1);
     }
 
     private void loadTableView(String path) {
@@ -67,7 +68,7 @@ public class InputMpsController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
             Node view = loader.load();
 
-            tableMpsController = loader.getController();
+            tableController= loader.getController();
 
             AnchorPane.setTopAnchor(view, 0.0);
             AnchorPane.setBottomAnchor(view, 0.0);
@@ -80,27 +81,17 @@ public class InputMpsController {
         }
     }
 
-    private void setupDynamicControlsListeners() {
-        dynamicControls.forEach((id, control) -> {
-            if (control instanceof TextField) {
-                ((TextField) control).textProperty().addListener((observable, oldValue, newValue) -> {
+    private void setupDynamicTextFieldsListeners() {
+        dynamicTextFields.forEach((id, textField) ->
+                textField.textProperty().addListener((observable, oldValue, newValue) -> {
                     updateAnyTextFieldEmpty();
                     updateAddButtonStyle();
-                });
-            } else if (control instanceof ChoiceBox) {
-                ((ChoiceBox<?>) control).valueProperty().addListener((observable, oldValue, newValue) -> {
-                    updateAnyTextFieldEmpty();
-                    updateAddButtonStyle();
-                });
-            } else {
-                throw new IllegalArgumentException("Unsupported control type: " + control.getClass().getSimpleName());
-            }
-        });
+                }));
     }
 
     private void setupButtonProperties() {
         addButton.disableProperty().bind(anyTextFieldEmpty);
-        deleteButton.disableProperty().bind(tableMpsController.getTableView().getSelectionModel().selectedItemProperty().isNull());
+        deleteButton.disableProperty().bind(tableController.getTableView().getSelectionModel().selectedItemProperty().isNull());
         deleteButton.disabledProperty().addListener((observable, oldValue, newValue) -> updateDeleteButtonStyle());
     }
 
@@ -113,70 +104,48 @@ public class InputMpsController {
         // - itp.
         TextField nazwaTextField = (TextField) controller.findControlById(inputGridPane, "NAZWATextField");
         TextField skrotTextField = (TextField) controller.findControlById(inputGridPane, "SKROTTextField");
-        TextField kodTextField = (TextField) controller.findControlById(inputGridPane, "KODTextField");
 
-        if(nazwaTextField.getText() != null || skrotTextField.getText() != null || kodTextField.getText() != null) {
-            mpsService.create(
-                    MpsDto.builder()
+        if(nazwaTextField.getText() != null || skrotTextField.getText() != null) {
+            kategoriaAmoService.create(
+                    KategoriaAmoDto.builder()
                             .nazwa(nazwaTextField.getText())
                             .skrot(skrotTextField.getText())
-                            .kod(kodTextField.getText())
                             .build()
             );
         }
         // Odświeżenie tabeli
-        if (tableMpsController != null) {
-            tableMpsController.populateTable();
+        if (tableController!= null) {
+            tableController.populateTable();
         }
 
-        clearDynamicControls();
+        dynamicTextFields.values().forEach(textField -> textField.setText(""));
     }
     @FXML
     private void deleteButtonAction() {
-        MpsDto selectedMps = tableMpsController.getTableView().getSelectionModel().getSelectedItem();
+        KategoriaAmoDto selectedMps = tableController.getTableView().getSelectionModel().getSelectedItem();
         if (selectedMps != null) {
             // Przekazanie ID do metody delete
-            mpsService.delete(Long.valueOf(selectedMps.getId()));
+            kategoriaAmoService.delete(Long.valueOf(selectedMps.getId()));
         } else {
             // Pokaż komunikat, że nie wybrano rekordu
         }
         // Odświeżenie tabeli
-        if (tableMpsController != null) {
-            tableMpsController.populateTable();
+        if (tableController!= null) {
+            tableController.populateTable();
         }
     }
     private void updateAnyTextFieldEmpty() {
-        anyTextFieldEmpty.set(isAnyControlEmpty());
+        anyTextFieldEmpty.set(isAnyTextFieldEmpty());
     }
 
-    private boolean isAnyControlEmpty() {
-        return dynamicControls.values().stream().anyMatch(control -> {
-            if (control instanceof TextField) {
-                return ((TextField) control).getText().isEmpty();
-            } else if (control instanceof ChoiceBox) {
-                return ((ChoiceBox<?>) control).getValue() == null;
-            } else {
-                throw new IllegalArgumentException("Unsupported control type: " + control.getClass().getSimpleName());
-            }
-        });
+    private boolean isAnyTextFieldEmpty() {
+        return dynamicTextFields.values().stream()
+                .anyMatch(textField -> textField.getText().isEmpty());
     }
 
-    private void generateDynamicControl(String id, String label, Map<String, Control> container, int rowIndex, Class<? extends Control> controlType, List<Item> options) {
-        Control control;
-        if (controlType.equals(TextField.class)) {
-            control = controller.generateTextField(inputGridPane, id, label, rowIndex);
-        } else if (controlType.equals(ChoiceBox.class)) {
-            if (!options.isEmpty()) {
-                throw new IllegalArgumentException("ChoiceBox requires options");
-            }
-            ChoiceBox<Item> choiceBox = controller.generateChoiceBox(inputGridPane, id, label, rowIndex, options);
-            choiceBox.getItems().addAll(options);
-            control = choiceBox;
-        } else {
-            throw new IllegalArgumentException("Unsupported control type: " + controlType.getSimpleName());
-        }
-
-        container.put(id, control);
+    private void generateDynamicTextField(String id, String label, Map<String, TextField> container, int rowIndex) {
+        TextField textField = controller.generateTextField(inputGridPane,id, label,rowIndex);
+        container.put(id, textField);
     }
 
     private void updateAddButtonStyle() {
@@ -201,17 +170,5 @@ public class InputMpsController {
             deleteButton.getStyleClass().remove("button-enabled");
             deleteButton.getStyleClass().add("button-enabled");
         }
-    }
-
-    private void clearDynamicControls() {
-        dynamicControls.forEach((id, control) -> {
-            if (control instanceof TextField) {
-                ((TextField) control).clear();
-            } else if (control instanceof ChoiceBox) {
-                ((ChoiceBox<?>) control).setValue(null);
-            } else {
-                throw new IllegalArgumentException("Unsupported control type: " + control.getClass().getSimpleName());
-            }
-        });
     }
 }
