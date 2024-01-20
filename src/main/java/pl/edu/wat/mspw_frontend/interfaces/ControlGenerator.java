@@ -27,7 +27,7 @@ public class ControlGenerator {
         gridPane.add(checkBox, 1, row); // Kolumna 1, wiersz row
     }
 
-    public void generateTextField(GridPane gridPane, String namePrefix, String labelText, int row) {
+    public TextField generateTextField(GridPane gridPane, String namePrefix, String labelText, int row) {
         Label label = new Label(labelText);
         TextField textField = new TextField();
 
@@ -38,6 +38,8 @@ public class ControlGenerator {
         // Dodajemy kontrolki do GridPane
         gridPane.add(label, 0, row); // Kolumna 0, wiersz row
         gridPane.add(textField, 1, row); // Kolumna 1, wiersz row
+
+        return textField;
     }
 
     public void generateChoiceBox(GridPane gridPane, String namePrefix, String labelText, int row, List<String> choices) {

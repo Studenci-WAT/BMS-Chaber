@@ -1,0 +1,11 @@
+/* styles.css */
+
+/* Domyślny kursor dla przycisku aktywnego */
+.button-enabled {
+    -fx-cursor: hand;
+}
+
+/* Domyślny kursor dla przycisku nieaktywnego (disabled) */
+.button-disabled {
+    -fx-cursor: default;
+}
