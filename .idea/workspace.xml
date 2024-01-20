@@ -4,107 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cd0cd9d-27c0-41c8-892b-2f3158cac233" name="Changes" comment="changed mps table - now its imported from other fxml (shared with read feature)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/enums/TableViews.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableEfektorInzController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableEfektorJezdnyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableEfektorLacznController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableEfektorLataniaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableEfektorPlywaniaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableEfektorRozpozController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableEfektorTranspController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableEfektorWeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableFunIntensNiszczNosicSym2Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableFunIntensNiszczNosicSymController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableFunIntensStrzelOpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableFunNiszczObSymController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableFunPstwoZniszczOpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableFunPstwoZniszczTrafObController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableFunWspMobilDlaStrzelController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableFunWspMobilDlaWykrController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableFunWspObezwladController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableFunWspUkryciaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableFunWspWidoczDlaStrzelController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableFunWspWidoczDlaWykrController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableKategoriaAmoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableKategoriaCeluRazeniaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableKategoriaSpwController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableMiaraZdolnosciRazeniaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableParamStrzelOgBezpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableParamStrzelOgPosrController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TablePoziomOddzialOgnController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TablePrzebijalPancRhaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableRodzajGlowicyBojController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableRodzajGlowicyNaprowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableRodzajNaprowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableRodzajPodwoziaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableRodzajSystemuOgnController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableSprzetWojController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableStanAmoSpwController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableStanMpsSpwController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableStrefaRazeniaSilyZywejController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableStrefaRazeniaSpwController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableSystemOgnController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableTypKlimatuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableTypTerenuWidoczController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableWagiWspUsredIntensNiszczController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-efektor-jezdny-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-efektor-laczn-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-efektor-latania-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-efektor-plywania-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-efektor-rozpoz-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-efektor-transp-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-efektor-we-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-fun-intens-niszcz-nosic-sym-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-fun-intens-niszcz-nosic-sym2-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-fun-intens-strzel-op-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-fun-niszcz-ob-sym-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-fun-pstwo-zniszcz-op-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-fun-pstwo-zniszcz-traf-ob-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-fun-wsp-mobil-dla-strzel-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-fun-wsp-mobil-dla-wykr-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-fun-wsp-obezwlad-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-fun-wsp-ukrycia-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-fun-wsp-widocz-dla-strzel-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-fun-wsp-widocz-dla-wykr-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-kategoria-amo-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-kategoria-celu-razenia-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-kategoria-spw-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-miara-zdolnosci-razenia-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-param-strzel-ogn-bezp-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-param-strzel-ogn-posr-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-poziom-oddzial-ogn-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-przebijal-panc-rha-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-rodzaj-glowicy-boj-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-rodzaj-glowicy-naprow-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-rodzaj-naprow-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-rodzaj-podwozia-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-rodzaj-systemu-ogn-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-sprzet-woj-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-spw-sys-ogn-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-stan-amo-spw-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-stan-mps-spw-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-strefa-razenia-sily-zywej-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-strefa-razenia-spw-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-system-ogn-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-typ-klimatu-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-typ-terenu-widocz-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-wagi-wsp-usred-intens-niszcz-view.fxml" afterDir="false" />
+    <list default="true" id="7cd0cd9d-27c0-41c8-892b-2f3158cac233" name="Changes" comment="added all tables in read view GUI&#10;deleted template view - now u need to check other scene becouse everything else is done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/enums/Views.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/enums/Views.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputAmoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputAmoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputMpsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputMpsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputSysOgnController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputSystemOgnController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputTemplateController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableSpwController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableSpwSysOgnController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableViewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/readcontrollers/TableViewsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputSystemOgnController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputSystemOgnController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-amo-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-amo-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-sys-ogn-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-sys-ogn-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-template-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-spw-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/readviews/table-efektor-inz-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/enums/Views.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/enums/Views.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/inputcontrollers/InputAmoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/inputcontrollers/InputAmoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/inputcontrollers/InputMpsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/inputcontrollers/InputMpsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/readviews/table-spw-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/inputviews/input-mps-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/inputviews/input-mps-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,7 +207,7 @@
       <workItem from="1705689367920" duration="452000" />
       <workItem from="1705690844120" duration="615000" />
       <workItem from="1705691497853" duration="4571000" />
-      <workItem from="1705765839760" duration="10680000" />
+      <workItem from="1705765839760" duration="11835000" />
     </task>
     <task id="LOCAL-00001" summary="Model Implementations + Descriptions of used tabels names">
       <created>1701196587904</created>
@@ -371,7 +280,23 @@
       <option name="project" value="LOCAL" />
       <updated>1705696056778</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added all tables in read view GUI&#10;deleted template view - now u need to check other scene becouse everything else is done">
+      <option name="closed" value="true" />
+      <created>1705776753422</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1705776753422</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added all tables in read view GUI&#10;deleted template view - now u need to check other scene becouse everything else is done">
+      <option name="closed" value="true" />
+      <created>1705776760323</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1705776760323</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +355,8 @@
     <MESSAGE value="added kadlub table controller" />
     <MESSAGE value="fixed id type in smps dto" />
     <MESSAGE value="changed mps table - now its imported from other fxml (shared with read feature)" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed mps table - now its imported from other fxml (shared with read feature)" />
+    <MESSAGE value="added all tables in read view GUI&#10;deleted template view - now u need to check other scene becouse everything else is done" />
+    <option name="LAST_COMMIT_MESSAGE" value="added all tables in read view GUI&#10;deleted template view - now u need to check other scene becouse everything else is done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
