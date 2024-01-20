@@ -42,7 +42,7 @@ public class ControlGenerator {
         return textField;
     }
 
-    public void generateChoiceBox(GridPane gridPane, String namePrefix, String labelText, int row, List<String> choices) {
+    public ChoiceBox<String> generateChoiceBox(GridPane gridPane, String namePrefix, String labelText, int row, List<String> choices) {
         Label label = new Label(labelText);
         ChoiceBox<String> choiceBox = new ChoiceBox<>();
 
@@ -56,6 +56,8 @@ public class ControlGenerator {
         // Dodajemy kontrolki do GridPane
         gridPane.add(label, 0, row); // Kolumna 0, wiersz row
         gridPane.add(choiceBox, 1, row); // Kolumna 1, wiersz row
+
+        return choiceBox;
     }
 
     public void generateButton(GridPane gridPane, String buttonId, String buttonText, String fxmlPath, int colIndex, int rowIndex) {

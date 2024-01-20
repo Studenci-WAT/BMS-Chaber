@@ -95,7 +95,7 @@ public class InputAmoController {
                 "MINA MORSKA"
         );
         controller.generateChoiceBox(inputGridPane,"KATEG_FK", "KATEGORIA", 10, options1);
-        controller.generateButton(inputGridPane, "KATEG_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 10);
+        controller.generateButton(inputGridPane, "KATEG_FK", "#", Views.INPUTKATEGORIAAMOVIEW.getValue(), 2, 10);
         // TODO TE OPCJE TRZEBA BRAĆ Z TABEL SŁOWNIKOWYCH
         List<String> options2 = Arrays.asList(
                 "PRZEBIJAJĄCA",

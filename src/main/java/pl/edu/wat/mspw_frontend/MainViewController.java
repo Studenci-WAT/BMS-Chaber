@@ -31,6 +31,7 @@ public class MainViewController {
         generateNavigationButton(firstTabGridPane, "SYSTEM OGNIA", "sysOgnInputNavigator", 1);
         generateNavigationButton(firstTabGridPane, "SPW", "spwInputNavigator", 2);
         generateNavigationButton(firstTabGridPane, "MPS", "mpsInputNavigator", 3);
+        generateNavigationButton(firstTabGridPane, "KATEGORIA AMO", "kategoriaAmoInputNavigator", 4);
         // Tworzenie przycisków dynamicznie w drugiej zakładce
         GridPane secondTabGridPane = (GridPane) ((AnchorPane) tabPane.getTabs().get(1).getContent()).getChildren().get(0);
         generateNavigationButton(secondTabGridPane, "TABLES", "tablesNavigator", 0);
@@ -94,6 +95,9 @@ public class MainViewController {
                 break;
             case "mpsInputNavigator":
                 loadView(Views.INPUTMPSVIEW.getValue());
+                break;
+            case "kategoriaAmoInputNavigator":
+                loadView(Views.INPUTKATEGORIAAMOVIEW.getValue());
                 break;
             case "tablesNavigator":
                 loadView(Views.READTABLES.getValue());
