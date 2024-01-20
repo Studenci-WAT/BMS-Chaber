@@ -1,5 +1,6 @@
 package pl.edu.wat.mspw_frontend.readcontrollers;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
@@ -23,11 +24,11 @@ public abstract class AbstractTableController<T, S> {
     private void initialize() {
         initializeService();
         createTableColumns();
-        populateTable();
         // chwilowo tutaj tak ustawiam bo nie moge sobie poradzic z tymi tabelami i ich rozmiarem, wysuwaja sie strasznie
         tableView.setPrefHeight(USE_COMPUTED_SIZE);
         tableView.setPrefWidth(USE_COMPUTED_SIZE);
         tableView.setColumnResizePolicy(TableView.UNCONSTRAINED_RESIZE_POLICY);
+        Platform.runLater(this::populateTable);
 
     }
 

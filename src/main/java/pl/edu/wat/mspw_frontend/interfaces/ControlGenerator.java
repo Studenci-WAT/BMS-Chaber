@@ -42,9 +42,9 @@ public class ControlGenerator {
         return textField;
     }
 
-    public void generateChoiceBox(GridPane gridPane, String namePrefix, String labelText, int row, List<String> choices) {
+    public void generateChoiceBox(GridPane gridPane, String namePrefix, String labelText, int row, List<Item> choices) {
         Label label = new Label(labelText);
-        ChoiceBox<String> choiceBox = new ChoiceBox<>();
+        ChoiceBox<Item> choiceBox = new ChoiceBox<>();
 
         // Nadanie identyfikatorów
         label.setId(namePrefix+ "Label");

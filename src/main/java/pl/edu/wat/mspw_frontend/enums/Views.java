@@ -2,6 +2,7 @@ package pl.edu.wat.mspw_frontend.enums;
 
 public enum Views {
     INPUTAMOVIEW("/pl/edu/wat/mspw_projekt/inputviews/input-amo-view.fxml"),
+    INPUTBLANKVIEW("/pl/edu/wat/mspw_projekt/inputviews/input-blank-view.fxml"),
     INPUTSYSOGNVIEW("/pl/edu/wat/mspw_projekt/inputviews/input-sys-ogn-view.fxml"),
     INPUTSPWVIEW("/pl/edu/wat/mspw_projekt/inputviews/input-spw-view.fxml"),
     INPUTMPSVIEW("/pl/edu/wat/mspw_projekt/inputviews/input-mps-view.fxml"),
