@@ -107,7 +107,7 @@ public class InputSystemOgnController {
                 "WYRZUTNIA TORPED",
                 "STAWIACZ MIN"
         );
-        controller.generateChoiceBox(inputGridPane,"RODZAJ_SYSTEMU_OGN_FK", "RODZAJ_SYSTEMU_OGN_FK", 8, options1);
+        //controller.generateChoiceBox(inputGridPane,"RODZAJ_SYSTEMU_OGN_FK", "RODZAJ_SYSTEMU_OGN_FK", 8, options1);
         controller.generateButton(inputGridPane, "RODZAJ_SYSTEMU_OGN_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 8);
     }
     private void setupDynamicTextFieldsListeners() {

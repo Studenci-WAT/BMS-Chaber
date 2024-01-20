@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import pl.edu.wat.mspw_backend.util.MainDao;
 import pl.edu.wat.mspw_frontend.MainViewController;
 
 import java.io.IOException;
@@ -25,6 +26,8 @@ public class ApplicationController extends Application {
 
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
+
+        MainDao.getInstance();
     }
 
 

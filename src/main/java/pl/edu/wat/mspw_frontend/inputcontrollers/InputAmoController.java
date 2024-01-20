@@ -94,8 +94,8 @@ public class InputAmoController {
                 "MINA LĄDOWA",
                 "MINA MORSKA"
         );
-        controller.generateChoiceBox(inputGridPane,"KATEG_FK", "KATEGORIA", 10, options1);
-        controller.generateButton(inputGridPane, "KATEG_FK", "#", Views.INPUTKATEGORIAAMOVIEW.getValue(), 2, 10);
+        //controller.generateChoiceBox(inputGridPane,"KATEG_FK", "KATEGORIA", 10, options1);
+        controller.generateButton(inputGridPane, "KATEG_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 10);
         // TODO TE OPCJE TRZEBA BRAĆ Z TABEL SŁOWNIKOWYCH
         List<String> options2 = Arrays.asList(
                 "PRZEBIJAJĄCA",
@@ -110,7 +110,7 @@ public class InputAmoController {
                 "CHEMICZNA",
                 "MINUJĄCA"
         );
-        controller.generateChoiceBox(inputGridPane,"RODZAJ_GLOWICY_BOJ_FK","RODZAJ_GLOWICY_BOJ_FK", 11, options2);
+       // controller.generateChoiceBox(inputGridPane,"RODZAJ_GLOWICY_BOJ_FK","RODZAJ_GLOWICY_BOJ_FK", 11, options2);
         controller.generateButton(inputGridPane, "RODZAJ_GLOWICY_BOJ_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 11);
         // TODO TE OPCJE TRZEBA BRAĆ Z TABEL SŁOWNIKOWYCH
         List<String> options3 = Arrays.asList(
@@ -124,7 +124,7 @@ public class InputAmoController {
                 "DUALNA IR UV",
                 "GPS INERCYJNE"
         );
-        controller.generateChoiceBox(inputGridPane,"RODZAJ_GLOWICY_NAPROW_FK", "RODZAJ_GLOWICY_NAPROW_FK",12, options3);
+        //controller.generateChoiceBox(inputGridPane,"RODZAJ_GLOWICY_NAPROW_FK", "RODZAJ_GLOWICY_NAPROW_FK",12, options3);
         controller.generateButton(inputGridPane, "RODZAJ_GLOWICY_NAPROW_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 12);
         // TODO TE OPCJE TRZEBA BRAĆ Z TABEL SŁOWNIKOWYCH
         List<String> options4 = Arrays.asList(
@@ -135,7 +135,7 @@ public class InputAmoController {
                 "SAMONAPROWADZANIE POLAKTYWNE",
                 "SAMONAPROWADZANIE AKTYWNE"
         );
-        controller.generateChoiceBox(inputGridPane,"RODZAJ_NAPROW_FK","RODZAJ_NAPROW_FK", 13, options4);
+        //controller.generateChoiceBox(inputGridPane,"RODZAJ_NAPROW_FK","RODZAJ_NAPROW_FK", 13, options4);
         controller.generateButton(inputGridPane, "RODZAJ_NAPROW_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 13);
     }
     @FXML

@@ -12,6 +12,7 @@ import javafx.scene.layout.GridPane;
 import pl.edu.wat.mspw_backend.service.MpsService;
 import pl.edu.wat.mspw_frontend.enums.TableViews;
 import pl.edu.wat.mspw_frontend.interfaces.ControlGenerator;
+import pl.edu.wat.mspw_frontend.interfaces.Item;
 import pl.edu.wat.mspw_frontend.model.MpsDto;
 import pl.edu.wat.mspw_frontend.readcontrollers.TableMpsController;
 
@@ -160,7 +161,7 @@ public class InputMpsController {
         });
     }
 
-    private void generateDynamicControl(String id, String label, Map<String, Control> container, int rowIndex, Class<? extends Control> controlType, List<String> options) {
+    private void generateDynamicControl(String id, String label, Map<String, Control> container, int rowIndex, Class<? extends Control> controlType, List<Item> options) {
         Control control;
         if (controlType.equals(TextField.class)) {
             control = controller.generateTextField(inputGridPane, id, label, rowIndex);
@@ -168,7 +169,7 @@ public class InputMpsController {
             if (!options.isEmpty()) {
                 throw new IllegalArgumentException("ChoiceBox requires options");
             }
-            ChoiceBox<String> choiceBox = controller.generateChoiceBox(inputGridPane, id, label, rowIndex, options);
+            ChoiceBox<Item> choiceBox = controller.generateChoiceBox(inputGridPane, id, label, rowIndex, options);
             choiceBox.getItems().addAll(options);
             control = choiceBox;
         } else {
