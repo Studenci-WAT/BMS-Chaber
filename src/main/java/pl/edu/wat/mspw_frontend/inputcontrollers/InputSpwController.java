@@ -153,7 +153,6 @@ public class InputSpwController {
         controller.generateTextField(inputGridPane3,"MOC","MOC [HP]", 6);
         controller.generateTextField(inputGridPane3,"KLASA_PRZYRZ_OC", "KLASA_PRZYRZ_OC",7);
         controller.generateTextField(inputGridPane3,"ZUZ_PALIWA_PRACA", "ZUZ_PALIWA_PRACA",8);
-
     }
 
     @FXML

@@ -171,9 +171,7 @@ public class InputAmoController {
             if (options.isEmpty()) {
                 throw new IllegalArgumentException("ChoiceBox requires options");
             }
-            ChoiceBox<Item> choiceBox = controller.generateChoiceBox(inputGridPane, id, label, rowIndex, options);
-            choiceBox.getItems().addAll(options);
-            control = choiceBox;
+            control = controller.generateChoiceBox(inputGridPane, id, label, rowIndex, options);
         } else {
             throw new IllegalArgumentException("Unsupported control type: " + controlType.getSimpleName());
         }
