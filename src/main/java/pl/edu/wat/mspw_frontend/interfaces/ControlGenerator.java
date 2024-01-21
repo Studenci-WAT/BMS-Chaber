@@ -14,7 +14,7 @@ import java.util.List;
 
 public class ControlGenerator {
 
-    public void generateCheckBox(GridPane gridPane, String namePrefix, String labelText, int row) {
+    public CheckBox generateCheckBox(GridPane gridPane, String namePrefix, String labelText, int row) {
         Label label = new Label(labelText);
         CheckBox checkBox = new CheckBox();
 
@@ -25,6 +25,8 @@ public class ControlGenerator {
         // Dodajemy kontrolki do GridPane
         gridPane.add(label, 0, row); // Kolumna 0, wiersz row
         gridPane.add(checkBox, 1, row); // Kolumna 1, wiersz row
+
+        return checkBox;
     }
 
     public TextField generateTextField(GridPane gridPane, String namePrefix, String labelText, int row) {
