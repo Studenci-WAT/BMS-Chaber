@@ -16,12 +16,15 @@ import pl.edu.wat.mspw_frontend.interfaces.Item;
 import pl.edu.wat.mspw_frontend.model.SprzetWojDto;
 import pl.edu.wat.mspw_frontend.readcontrollers.TableSprzetWojController;
 import pl.edu.wat.mspw_frontend.util.Toast;
-import pl.edu.wat.mspw_frontend.util.Util;
+
+import static pl.edu.wat.mspw_frontend.util.Toast.showToast;
+import static pl.edu.wat.mspw_frontend.util.Util.*;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
+
 
 public class InputSpwController {
 
@@ -126,27 +129,27 @@ public class InputSpwController {
         controller.generateCheckBox(inputGridPane2,"CIAGNIONY","CIĄGNIONY",7);
         controller.generateCheckBox(inputGridPane2,"OPANCERZONY","OPANCERZONY",8);
         controller.generateChoiceBox(inputGridPane2,"EFEKTOR_LACZN_FK", "EFEKTOR_LACZN_FK", 9, efektorLacznList);
-        controller.generateButton(inputGridPane2, "EFEKTOR_LACZN_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 9);
+        controller.generateButton(inputGridPane2, "EFEKTOR_LACZN_FK", "#", Views.INPUTEFEKTORLACZN.getValue(), 2, 9);
 //        controller.generateChoiceBox(inputGridPane2,"RODZAJ_SRODOW_FK","RODZAJ_SRODOW_FK",  10,);
 //        controller.generateButton(inputGridPane2, "RODZAJ_SRODOW_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 10);
         controller.generateChoiceBox(inputGridPane2,"EFEKTOR_JEZDNY_FK", "EFEKTOR_JEZDNY_FK", 11, efektorJezdbyList);
-        controller.generateButton(inputGridPane2, "EFEKTOR_JEZDNY_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 11);
+        controller.generateButton(inputGridPane2, "EFEKTOR_JEZDNY_FK", "#", Views.INPUTEFEKTORJEZDN.getValue(), 2, 11);
         controller.generateChoiceBox(inputGridPane2,"EFEKTOR_PLYWANIA_FK", "EFEKTOR_PLYWANIA_FK", 12,efektorPlywaniaList);
-        controller.generateButton(inputGridPane2, "EFEKTOR_PLYWANIA_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 12);
+        controller.generateButton(inputGridPane2, "EFEKTOR_PLYWANIA_FK", "#", Views.INPUTEFEKTORPLYWANIA.getValue(), 2, 12);
         controller.generateChoiceBox(inputGridPane2,"EFEKTOR_INZ_FK", "EFEKTOR_INZ_FK", 13, efektorInzList);
-        controller.generateButton(inputGridPane2, "EFEKTOR_INZ_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 13);
+        controller.generateButton(inputGridPane2, "EFEKTOR_INZ_FK", "#", Views.INPUTEFEKTORINZ.getValue(), 2, 13);
         controller.generateChoiceBox(inputGridPane3,"EFEKTOR_WE_FK", "EFEKTOR_WE_FK", 0, efektorWeList);
-        controller.generateButton(inputGridPane3, "EFEKTOR_WE_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 0);
+        controller.generateButton(inputGridPane3, "EFEKTOR_WE_FK", "#", Views.INPUTEFEKTORWE.getValue(), 2, 0);
         controller.generateChoiceBox(inputGridPane3,"PARAM_KADLUBA_FK","PARAM_KADLUBA_FK", 1, kadlubList);
-        controller.generateButton(inputGridPane3, "PARAM_KADLUBA_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 1);
+        controller.generateButton(inputGridPane3, "PARAM_KADLUBA_FK", "#", Views.INPUTKAKLUB.getValue(), 2, 1);
         controller.generateChoiceBox(inputGridPane3,"EFEKTOR_TRANSP_FK","EFEKTOR_TRANSP_FK", 2, efektorTranspList);
-        controller.generateButton(inputGridPane3, "EFEKTOR_TRANSP_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 2);
+        controller.generateButton(inputGridPane3, "EFEKTOR_TRANSP_FK", "#", Views.INPUTEFEKTORTRANSP.getValue(), 2, 2);
         controller.generateChoiceBox(inputGridPane3,"KATEG_FK","KATEG_FK",  3, kategoryList);
-        controller.generateButton(inputGridPane3, "KATEG_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 3);
+        controller.generateButton(inputGridPane3, "KATEG_FK", "#", Views.INPUTKATEGORY.getValue(), 2, 3);
         controller.generateChoiceBox(inputGridPane3,"EFEKTOR_LATANIA_FK","EFEKTOR_LATANIA_FK", 4, efektorLataniaList);
-        controller.generateButton(inputGridPane3, "EFEKTOR_LATANIA_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 4);
+        controller.generateButton(inputGridPane3, "EFEKTOR_LATANIA_FK", "#", Views.INPUTEFEKTORLATANIA.getValue(), 2, 4);
         controller.generateChoiceBox(inputGridPane3,"EFEKTOR_ROZPOZ_FK","EFEKTOR_ROZPOZ_FK",  5, efektorRozpozList);
-        controller.generateButton(inputGridPane3, "EFEKTOR_ROZPOZ_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 5);
+        controller.generateButton(inputGridPane3, "EFEKTOR_ROZPOZ_FK", "#", Views.INPUTROZPOZ.getValue(), 2, 5);
         controller.generateTextField(inputGridPane3,"MOC","MOC [HP]", 6);
         controller.generateTextField(inputGridPane3,"KLASA_PRZYRZ_OC", "KLASA_PRZYRZ_OC",7);
         controller.generateTextField(inputGridPane3,"ZUZ_PALIWA_PRACA", "ZUZ_PALIWA_PRACA",8);
@@ -208,10 +211,10 @@ public class InputSpwController {
             );
             clear();
 
-            Util.refreshData(tableSpwController);
-            Toast.showToast(stage, "Dodano Rekord!", Toast.ToastType.SUCCESS);
+            refreshData(tableSpwController);
+            showToast(stage, "Dodano Rekord!", Toast.ToastType.SUCCESS);
         } catch (Exception e) {
-            Toast.showToast(stage, "Wystąpił błąd - sprawdź poprawność danych!", Toast.ToastType.ERROR);
+            showToast(stage, "Wystąpił błąd - sprawdź poprawność danych!", Toast.ToastType.ERROR);
         }
 
     }
@@ -224,17 +227,17 @@ public class InputSpwController {
             // Przekazanie ID do metody delete
             try{
                 spwService.delete(Long.valueOf(selectedMps.getId()));
-                Toast.showToast(stage, "Rekord usunięto!", Toast.ToastType.SUCCESS);
+                showToast(stage, "Rekord usunięto!", Toast.ToastType.SUCCESS);
 
             }catch (Exception ex){
-                Toast.showToast(stage, "Wystąpił błąd!", Toast.ToastType.ERROR);
+                showToast(stage, "Wystąpił błąd!", Toast.ToastType.ERROR);
             }
 
         } else {
-            Toast.showToast(stage, "Wybierz rekord aby usunąć!", Toast.ToastType.INFO);
+            showToast(stage, "Wybierz rekord aby usunąć!", Toast.ToastType.INFO);
         }
         // Odświeżenie tabeli
-        Util.refreshData(tableSpwController);
+        refreshData(tableSpwController);
     }
 
     private SprzetWojDto getValueFromControls(){
@@ -316,10 +319,6 @@ public class InputSpwController {
         result.setZuzyciePaliwaPraca(!Objects.equals(zuzPaliwaPracaTextField.getText(), "") ? Double.valueOf(zuzPaliwaPracaTextField.getText()):null);
 
         return result;
-    }
-
-    private Integer getSelectedItemId(ChoiceBox<Item> choiceBox) {
-        return choiceBox.getValue() != null ? choiceBox.getValue().getId() : null;
     }
 
     private void clear(){

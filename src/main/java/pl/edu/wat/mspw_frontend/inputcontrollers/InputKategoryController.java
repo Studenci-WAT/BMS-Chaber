@@ -9,22 +9,31 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import pl.edu.wat.mspw_backend.service.MpsService;
+import javafx.stage.Stage;
+import pl.edu.wat.mspw_backend.service.KategoriaCeluRazeniaService;
+import pl.edu.wat.mspw_backend.service.KategoriaSpwService;
 import pl.edu.wat.mspw_frontend.enums.TableViews;
 import pl.edu.wat.mspw_frontend.interfaces.ControlGenerator;
 import pl.edu.wat.mspw_frontend.interfaces.Item;
-import pl.edu.wat.mspw_frontend.model.MpsDto;
-import pl.edu.wat.mspw_frontend.readcontrollers.TableMpsController;
+import pl.edu.wat.mspw_frontend.model.KategoriaSpwDto;
+import pl.edu.wat.mspw_frontend.readcontrollers.TableKategoriaSpwController;
+import pl.edu.wat.mspw_frontend.util.Toast;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
+import static pl.edu.wat.mspw_frontend.util.Toast.showToast;
+import static pl.edu.wat.mspw_frontend.util.Util.getSelectedItemId;
+import static pl.edu.wat.mspw_frontend.util.Util.refreshData;
 
-public class InputMpsController {
-    private MpsService mpsService;
-    private TableMpsController tableMpsController;
+public class InputKategoryController {
+
+    private final KategoriaSpwService kategoriaSpwService = new KategoriaSpwService();
+    private final KategoriaCeluRazeniaService kategoriaCeluRazeniaService = new KategoriaCeluRazeniaService();
+    private TableKategoriaSpwController tableKategoriaSpwController;
     @FXML
     private AnchorPane tableContainer; // Container dla TableMpsView
     @FXML
@@ -36,15 +45,14 @@ public class InputMpsController {
     @FXML
     private Label labelTitle;
 
-    private Map<String,  Control> dynamicControls = new HashMap<>();
+    private Map<String, Control> dynamicControls = new HashMap<>();
     private BooleanProperty anyTextFieldEmpty = new SimpleBooleanProperty(false);
     private ControlGenerator controller = new ControlGenerator();
     @FXML
     public void initialize() {
         setupTitle();
         setupDynamicTextFields();
-        mpsService = new MpsService();
-        loadTableView(TableViews.TABLE_MPS.getValue());
+        loadTableView(TableViews.TABLE_KATEGORIA_SPW.getValue());
         setupDynamicControlsListeners();
         setupButtonProperties();
         updateAnyTextFieldEmpty();
@@ -52,14 +60,18 @@ public class InputMpsController {
     }
 
     private void setupTitle() {
-        labelTitle.setText("Wprowadzanie nowego rodzaju MPS");
+        labelTitle.setText("Wprowadzanie nowegej kategorii sprzetu wojskowego");
         labelTitle.setAlignment(Pos.CENTER);
     }
 
     private void setupDynamicTextFields() {
-        generateDynamicControl("NAZWA", "NAZWA", dynamicControls, 0,TextField.class, null);
-        generateDynamicControl("SKROT", "SKRÓT", dynamicControls, 1,TextField.class, null);
-        generateDynamicControl("KOD", "KOD", dynamicControls, 2, TextField.class, null);
+        List<Item> kategoryList = kategoriaCeluRazeniaService.getAll().stream()
+                .map(object -> new Item(object.getId(), object.getNazwa()))
+                .collect(Collectors.toList());
+
+        generateDynamicControl("NAZWA", "NAZWA", dynamicControls, 0, TextField.class, null);
+        generateDynamicControl("SKROT", "SKRÓT", dynamicControls, 1, TextField.class, null);
+        generateDynamicControl("KATEGORIA_CELU_RAZENIA_FK", "KATEGORIA_CELU_RAŻENIA_FK", dynamicControls, 2, ChoiceBox.class, kategoryList);
     }
 
     private void loadTableView(String path) {
@@ -67,7 +79,7 @@ public class InputMpsController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
             Node view = loader.load();
 
-            tableMpsController = loader.getController();
+            tableKategoriaSpwController = loader.getController();
 
             AnchorPane.setTopAnchor(view, 0.0);
             AnchorPane.setBottomAnchor(view, 0.0);
@@ -100,7 +112,7 @@ public class InputMpsController {
 
     private void setupButtonProperties() {
         addButton.disableProperty().bind(anyTextFieldEmpty);
-        deleteButton.disableProperty().bind(tableMpsController.getTableView().getSelectionModel().selectedItemProperty().isNull());
+        deleteButton.disableProperty().bind(tableKategoriaSpwController.getTableView().getSelectionModel().selectedItemProperty().isNull());
         deleteButton.disabledProperty().addListener((observable, oldValue, newValue) -> updateDeleteButtonStyle());
     }
 
@@ -113,37 +125,40 @@ public class InputMpsController {
         // - itp.
         TextField nazwaTextField = (TextField) controller.findControlById(inputGridPane, "NAZWATextField");
         TextField skrotTextField = (TextField) controller.findControlById(inputGridPane, "SKROTTextField");
-        TextField kodTextField = (TextField) controller.findControlById(inputGridPane, "KODTextField");
+        ChoiceBox kategoriaCeluRazeniaFkChoiceBox = (ChoiceBox) controller.findControlById(inputGridPane,"KATEGORIA_CELU_RAZENIA_FKChoiceBox");
+        Stage stage = (Stage) addButton.getScene().getWindow();
 
-        if(nazwaTextField.getText() != null || skrotTextField.getText() != null || kodTextField.getText() != null) {
-            mpsService.create(
-                    MpsDto.builder()
-                            .nazwa(nazwaTextField.getText())
-                            .skrot(skrotTextField.getText())
-                            .kod(kodTextField.getText())
-                            .build()
-            );
-        }
-        // Odświeżenie tabeli
-        if (tableMpsController != null) {
-            tableMpsController.populateTable();
+        if(nazwaTextField.getText() != null || skrotTextField.getText() != null || kategoriaCeluRazeniaFkChoiceBox.getValue() != null) {
+            try{
+                kategoriaSpwService.create(
+                        KategoriaSpwDto.builder()
+                                .nazwa(nazwaTextField.getText())
+                                .skrot(skrotTextField.getText())
+                                .kategCeluRazeniaFk(getSelectedItemId(kategoriaCeluRazeniaFkChoiceBox))
+                                .build()
+                );
+
+                refreshData(tableKategoriaSpwController);
+                showToast(stage, "Dodano Rekord!", Toast.ToastType.SUCCESS);
+                clearDynamicControls();
+            } catch (Exception e) {
+                showToast(stage, "Wystąpił błąd - sprawdź poprawność danych!", Toast.ToastType.ERROR);
+            }
         }
 
-        clearDynamicControls();
+
     }
     @FXML
     private void deleteButtonAction() {
-        MpsDto selectedMps = tableMpsController.getTableView().getSelectionModel().getSelectedItem();
+        KategoriaSpwDto selectedMps = tableKategoriaSpwController.getTableView().getSelectionModel().getSelectedItem();
         if (selectedMps != null) {
             // Przekazanie ID do metody delete
-            mpsService.delete(Long.valueOf(selectedMps.getId()));
+            kategoriaSpwService.delete(Long.valueOf(selectedMps.getId()));
         } else {
             // Pokaż komunikat, że nie wybrano rekordu
         }
         // Odświeżenie tabeli
-        if (tableMpsController != null) {
-            tableMpsController.populateTable();
-        }
+        refreshData(tableKategoriaSpwController);
     }
     private void updateAnyTextFieldEmpty() {
         anyTextFieldEmpty.set(isAnyControlEmpty());
