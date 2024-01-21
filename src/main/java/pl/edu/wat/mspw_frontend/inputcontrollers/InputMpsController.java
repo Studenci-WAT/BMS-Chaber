@@ -9,17 +9,23 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 import pl.edu.wat.mspw_backend.service.MpsService;
 import pl.edu.wat.mspw_frontend.enums.TableViews;
 import pl.edu.wat.mspw_frontend.interfaces.ControlGenerator;
 import pl.edu.wat.mspw_frontend.interfaces.Item;
+import pl.edu.wat.mspw_frontend.model.KategoriaAmoDto;
 import pl.edu.wat.mspw_frontend.model.MpsDto;
 import pl.edu.wat.mspw_frontend.readcontrollers.TableMpsController;
+import pl.edu.wat.mspw_frontend.util.Toast;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static pl.edu.wat.mspw_frontend.util.Toast.showToast;
 
 
 public class InputMpsController {
@@ -81,24 +87,27 @@ public class InputMpsController {
 
     @FXML
     private void addButtonAction(){
-        // Kod, który ma zostać wykonany, gdy użytkownik kliknie przycisk "DODAJ"
-        // - Walidacja danych wejściowych
-        // - Dodawanie danych do listy lub tabeli
-        // - Komunikacja z bazą danych
-        // - itp.
-        TextField nazwaTextField = (TextField) controller.findControlById(inputGridPane, "NAZWATextField");
-        TextField skrotTextField = (TextField) controller.findControlById(inputGridPane, "SKROTTextField");
-        TextField kodTextField = (TextField) controller.findControlById(inputGridPane, "KODTextField");
+        String nazwa = InputControllerStatic.getControlValue(inputGridPane,"NAZWATextField",TextField.class,controller);
+        String skrot = InputControllerStatic.getControlValue(inputGridPane,"SKROTTextField",TextField.class,controller);
+        String kod = InputControllerStatic.getControlValue(inputGridPane,"KODTextField",TextField.class,controller);
 
-        if(nazwaTextField.getText() != null || skrotTextField.getText() != null || kodTextField.getText() != null) {
-            mpsService.create(
-                    MpsDto.builder()
-                            .nazwa(nazwaTextField.getText())
-                            .skrot(skrotTextField.getText())
-                            .kod(kodTextField.getText())
-                            .build()
-            );
+
+        Stage stage = (Stage) addButton.getScene().getWindow();
+        try {
+            if (!InputControllerStatic.isAnyControlEmpty(dynamicControls)) {
+                mpsService.create(
+                        MpsDto.builder()
+                                .nazwa(nazwa)
+                                .skrot(skrot)
+                                .kod(kod)
+                                .build()
+                );
+            }
+            showToast(stage, "Dodano Rekord!", Toast.ToastType.SUCCESS);
+        } catch (Exception e) {
+            showToast(stage, "Wystąpił błąd - sprawdź poprawność danych!", Toast.ToastType.ERROR);
         }
+
         // Odświeżenie tabeli
         if (tableMpsController != null) {
             tableMpsController.populateTable();
@@ -109,12 +118,20 @@ public class InputMpsController {
     @FXML
     private void deleteButtonAction() {
         MpsDto selectedMps = tableMpsController.getTableView().getSelectionModel().getSelectedItem();
+        Stage stage = (Stage) deleteButton.getScene().getWindow();
         if (selectedMps != null) {
             // Przekazanie ID do metody delete
-            mpsService.delete(Long.valueOf(selectedMps.getId()));
+            try{
+                mpsService.delete(Long.valueOf(selectedMps.getId()));
+                showToast(stage, "Rekord usunięto!", Toast.ToastType.SUCCESS);
+
+            }catch (Exception ex){
+                showToast(stage, "Wystąpił błąd!", Toast.ToastType.ERROR);
+            }
         } else {
-            // Pokaż komunikat, że nie wybrano rekordu
+            showToast(stage, "Wybierz rekord aby usunąć!", Toast.ToastType.INFO);
         }
+
         // Odświeżenie tabeli
         if (tableMpsController != null) {
             tableMpsController.populateTable();

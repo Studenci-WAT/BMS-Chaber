@@ -7,13 +7,17 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 import pl.edu.wat.mspw_frontend.interfaces.ControlGenerator;
 import pl.edu.wat.mspw_frontend.interfaces.Item;
 import pl.edu.wat.mspw_frontend.readcontrollers.AbstractTableController;
+import pl.edu.wat.mspw_frontend.util.Toast;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+
+import static pl.edu.wat.mspw_frontend.util.Toast.showToast;
 
 public class InputControllerStatic {
 
@@ -122,6 +126,73 @@ public class InputControllerStatic {
     public static void setupTitle(Label labelTitle, String text) {
         labelTitle.setText(text);
         labelTitle.setAlignment(Pos.CENTER);
+    }
+
+    public static <T> String getControlValue(GridPane parentContainer, String controlId, Class<T> controlType, ControlGenerator controller) {
+        Node control = controller.findControlById(parentContainer, controlId);
+
+        if (controlType.isInstance(control)) {
+            if (controlType.equals(TextField.class)) {
+                return ((TextField) control).getText();
+            } else if (controlType.equals(ChoiceBox.class)) {
+                Object selectedValue = ((ChoiceBox<Item>) control).getValue().getId();
+                return selectedValue != null ? selectedValue.toString() : null;
+            } else if (controlType.equals(CheckBox.class)) {
+                return Boolean.toString(((CheckBox) control).isSelected());
+            } else {
+                throw new IllegalArgumentException("Unsupported control type: " + controlType.getSimpleName());
+            }
+        } else {
+            throw new IllegalArgumentException("Control with ID " + controlId + " not found or is not of type " + controlType.getSimpleName());
+        }
+    }
+
+    public static Double getDoubleControlValue(Stage stage, GridPane parentContainer, String controlId, ControlGenerator controller) {
+        Node control = controller.findControlById(parentContainer, controlId);
+
+        if (control instanceof TextField) {
+            try {
+                String text = ((TextField) control).getText();
+                return text.isEmpty() ? null : Double.parseDouble(text);
+            } catch (NumberFormatException e) {
+                showToast(stage, "Wystąpił błąd - invalid double value for TextField with ID " + controlId, Toast.ToastType.ERROR);
+                throw new IllegalArgumentException("Invalid double value for TextField with ID " + controlId);
+            }
+        } else if (control instanceof ChoiceBox) {
+            Object selectedValue = ((ChoiceBox<Item>) control).getValue().getId();
+            if (selectedValue instanceof Double) {
+                return (Double) selectedValue;
+            } else {
+                showToast(stage, "Wystąpił błąd - invalid double value for Choicebox with ID " + controlId, Toast.ToastType.ERROR);
+                throw new IllegalArgumentException("Invalid double value for ChoiceBox with ID " + controlId);
+            }
+        } else {
+            throw new IllegalArgumentException("Unsupported control type or control not found for ID " + controlId);
+        }
+    }
+
+    public static Integer getIntegerControlValue(Stage stage, GridPane parentContainer, String controlId, ControlGenerator controller) {
+        Node control = controller.findControlById(parentContainer, controlId);
+
+        if (control instanceof TextField) {
+            try {
+                String text = ((TextField) control).getText();
+                return text.isEmpty() ? null : Integer.parseInt(text);
+            } catch (NumberFormatException e) {
+                showToast(stage, "Wystąpił błąd - invalid integer value for TextField with ID " + controlId, Toast.ToastType.ERROR);
+                throw new IllegalArgumentException("Invalid integer value for TextField with ID " + controlId);
+            }
+        } else if (control instanceof ChoiceBox) {
+            Object selectedValue = ((ChoiceBox<Item>) control).getValue().getId();
+            if (selectedValue instanceof Integer) {
+                return (Integer) selectedValue;
+            } else {
+                showToast(stage, "Wystąpił błąd - invalid integer value for Choicebox with ID " + controlId, Toast.ToastType.ERROR);
+                throw new IllegalArgumentException("Invalid integer value for ChoiceBox with ID " + controlId);
+            }
+        } else {
+            throw new IllegalArgumentException("Unsupported control type or control not found for ID " + controlId);
+        }
     }
 
 }

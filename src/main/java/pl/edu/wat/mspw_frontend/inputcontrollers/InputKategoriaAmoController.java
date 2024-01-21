@@ -12,18 +12,23 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 import pl.edu.wat.mspw_backend.service.KategoriaAmoService;
 import pl.edu.wat.mspw_backend.service.MpsService;
 import pl.edu.wat.mspw_frontend.enums.TableViews;
 import pl.edu.wat.mspw_frontend.interfaces.ControlGenerator;
+import pl.edu.wat.mspw_frontend.model.AmoDto;
 import pl.edu.wat.mspw_frontend.model.KategoriaAmoDto;
 import pl.edu.wat.mspw_frontend.model.MpsDto;
 import pl.edu.wat.mspw_frontend.readcontrollers.TableKategoriaAmoController;
 import pl.edu.wat.mspw_frontend.readcontrollers.TableMpsController;
+import pl.edu.wat.mspw_frontend.util.Toast;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+
+import static pl.edu.wat.mspw_frontend.util.Toast.showToast;
 
 public class InputKategoriaAmoController {
     private KategoriaAmoService kategoriaAmoService = new KategoriaAmoService();
@@ -85,21 +90,22 @@ public class InputKategoriaAmoController {
 
     @FXML
     private void addButtonAction(){
-        // Kod, który ma zostać wykonany, gdy użytkownik kliknie przycisk "DODAJ"
-        // - Walidacja danych wejściowych
-        // - Dodawanie danych do listy lub tabeli
-        // - Komunikacja z bazą danych
-        // - itp.
-        TextField nazwaTextField = (TextField) controller.findControlById(inputGridPane, "NAZWATextField");
-        TextField skrotTextField = (TextField) controller.findControlById(inputGridPane, "SKROTTextField");
+        String nazwa = InputControllerStatic.getControlValue(inputGridPane,"NAZWATextField",TextField.class,controller);
+        String skrot = InputControllerStatic.getControlValue(inputGridPane,"SKROTTextField",TextField.class,controller);
 
-        if(nazwaTextField.getText() != null || skrotTextField.getText() != null) {
-            kategoriaAmoService.create(
-                    KategoriaAmoDto.builder()
-                            .nazwa(nazwaTextField.getText())
-                            .skrot(skrotTextField.getText())
-                            .build()
-            );
+        Stage stage = (Stage) addButton.getScene().getWindow();
+        try {
+            if (!InputControllerStatic.isAnyControlEmpty(dynamicControls)) {
+                kategoriaAmoService.create(
+                        KategoriaAmoDto.builder()
+                                .nazwa(nazwa)
+                                .skrot(skrot)
+                                .build()
+                );
+            }
+            showToast(stage, "Dodano Rekord!", Toast.ToastType.SUCCESS);
+        } catch (Exception e) {
+            showToast(stage, "Wystąpił błąd - sprawdź poprawność danych!", Toast.ToastType.ERROR);
         }
         // Odświeżenie tabeli
         if (tableController!= null) {
