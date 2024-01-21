@@ -1,25 +1,35 @@
 package pl.edu.wat.mspw_frontend.inputcontrollers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import pl.edu.wat.mspw_backend.service.*;
+import pl.edu.wat.mspw_frontend.enums.TableViews;
 import pl.edu.wat.mspw_frontend.enums.Views;
 import pl.edu.wat.mspw_frontend.interfaces.ControlGenerator;
 import pl.edu.wat.mspw_frontend.interfaces.Item;
 import pl.edu.wat.mspw_frontend.model.SprzetWojDto;
+import pl.edu.wat.mspw_frontend.readcontrollers.TableSprzetWojController;
 import pl.edu.wat.mspw_frontend.util.Toast;
+import pl.edu.wat.mspw_frontend.util.Util;
 
-import java.io.Console;
+import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class InputSpwController {
 
-    public Button button;
+    public Button addButton;
+    public Button delButton;
+    private TableSprzetWojController tableSpwController;
+    @FXML
+    private AnchorPane anchorTableContainer;
     @FXML
     private GridPane inputGridPane;
     @FXML
@@ -45,6 +55,12 @@ public class InputSpwController {
         labelTitle.setText("Wprowadzanie nowego SPW");
         labelTitle.setAlignment(Pos.CENTER); // Ustawienie wyrównania tekstu na środek
 
+        generateControls();
+        loadTableView(TableViews.TABLE_SPRZET_WOJ.getValue());
+
+    }
+
+    private void generateControls(){
         List<Item> kategoryList = kategoriaSpwService.getAll().stream()
                 .map(object -> new Item(object.getId(), object.getNazwa()))
                 .collect(Collectors.toList());
@@ -83,9 +99,6 @@ public class InputSpwController {
         List<Item> efektorRozpozList = efektorRozpozService.getAll().stream()
                 .map(object -> new Item(object.getId(), object.getNazwa()))
                 .collect(Collectors.toList());
-
-
-
 
         // generowanie kontrolek
         controller.generateTextField(inputGridPane,"NAZWA","NAZWA",  0);
@@ -138,8 +151,6 @@ public class InputSpwController {
         controller.generateTextField(inputGridPane3,"KLASA_PRZYRZ_OC", "KLASA_PRZYRZ_OC",7);
         controller.generateTextField(inputGridPane3,"ZUZ_PALIWA_PRACA", "ZUZ_PALIWA_PRACA",8);
 
-
-
     }
 
     @FXML
@@ -150,7 +161,7 @@ public class InputSpwController {
         // - Komunikacja z bazą danych
         // - itp.
         SprzetWojDto item;
-        Stage stage = (Stage) button.getScene().getWindow();
+        Stage stage = (Stage) addButton.getScene().getWindow();
 
         try {
             item = getValueFromControls();
@@ -195,14 +206,35 @@ public class InputSpwController {
                             .zuzyciePaliwaPraca(item.getZuzyciePaliwaPraca())
                             .build()
             );
-
-
             clear();
+
+            Util.refreshData(tableSpwController);
             Toast.showToast(stage, "Dodano Rekord!", Toast.ToastType.SUCCESS);
         } catch (Exception e) {
             Toast.showToast(stage, "Wystąpił błąd - sprawdź poprawność danych!", Toast.ToastType.ERROR);
         }
 
+    }
+
+    @FXML
+    private void deleteButtonAction() {
+        SprzetWojDto selectedMps = tableSpwController.getTableView().getSelectionModel().getSelectedItem();
+        Stage stage = (Stage) delButton.getScene().getWindow();
+        if (selectedMps != null) {
+            // Przekazanie ID do metody delete
+            try{
+                spwService.delete(Long.valueOf(selectedMps.getId()));
+                Toast.showToast(stage, "Rekord usunięto!", Toast.ToastType.SUCCESS);
+
+            }catch (Exception ex){
+                Toast.showToast(stage, "Wystąpił błąd!", Toast.ToastType.ERROR);
+            }
+
+        } else {
+            Toast.showToast(stage, "Wybierz rekord aby usunąć!", Toast.ToastType.INFO);
+        }
+        // Odświeżenie tabeli
+        Util.refreshData(tableSpwController);
     }
 
     private SprzetWojDto getValueFromControls(){
@@ -328,5 +360,23 @@ public class InputSpwController {
         ((TextField) controller.findControlById(inputGridPane3,"MOCTextField")).clear();
         ((TextField) controller.findControlById(inputGridPane3,"KLASA_PRZYRZ_OCTextField")).clear();
         ((TextField) controller.findControlById(inputGridPane3,"ZUZ_PALIWA_PRACATextField")).clear();
+    }
+
+    private void loadTableView(String path) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+            Node view = loader.load();
+
+            tableSpwController = loader.getController();
+
+            AnchorPane.setTopAnchor(view, 0.0);
+            AnchorPane.setBottomAnchor(view, 0.0);
+            AnchorPane.setLeftAnchor(view, 0.0);
+            AnchorPane.setRightAnchor(view, 0.0);
+
+            anchorTableContainer.getChildren().setAll(view);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
