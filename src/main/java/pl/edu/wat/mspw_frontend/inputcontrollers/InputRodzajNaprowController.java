@@ -4,7 +4,6 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Control;
@@ -13,15 +12,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import pl.edu.wat.mspw_backend.service.KategoriaAmoService;
-import pl.edu.wat.mspw_backend.service.MpsService;
+import pl.edu.wat.mspw_backend.service.RodzajGlowicyNaprowService;
+import pl.edu.wat.mspw_backend.service.RodzajNaprowService;
 import pl.edu.wat.mspw_frontend.enums.TableViews;
 import pl.edu.wat.mspw_frontend.interfaces.ControlGenerator;
-import pl.edu.wat.mspw_frontend.model.AmoDto;
-import pl.edu.wat.mspw_frontend.model.KategoriaAmoDto;
-import pl.edu.wat.mspw_frontend.model.MpsDto;
-import pl.edu.wat.mspw_frontend.readcontrollers.TableKategoriaAmoController;
-import pl.edu.wat.mspw_frontend.readcontrollers.TableMpsController;
+import pl.edu.wat.mspw_frontend.model.RodzajGlowicyNaprowDto;
+import pl.edu.wat.mspw_frontend.model.RodzajNaprowDto;
+import pl.edu.wat.mspw_frontend.readcontrollers.TableRodzajGlowicyNaprowController;
+import pl.edu.wat.mspw_frontend.readcontrollers.TableRodzajNaprowController;
 import pl.edu.wat.mspw_frontend.util.Toast;
 
 import java.io.IOException;
@@ -30,11 +28,11 @@ import java.util.Map;
 
 import static pl.edu.wat.mspw_frontend.util.Toast.showToast;
 
-public class InputKategoriaAmoController {
-    private KategoriaAmoService kategoriaAmoService = new KategoriaAmoService();
-    private TableKategoriaAmoController tableController;
+public class InputRodzajNaprowController {
+    private RodzajNaprowService rodzajNaprowService = new RodzajNaprowService();
+    private TableRodzajNaprowController tableController;
     @FXML
-    private AnchorPane tableContainer; // Container dla TableMpsView
+    private AnchorPane tableContainer;
     @FXML
     private GridPane inputGridPane;
     @FXML
@@ -49,10 +47,9 @@ public class InputKategoriaAmoController {
     private ControlGenerator controller = new ControlGenerator();
     @FXML
     public void initialize() {
-        InputControllerStatic.setupTitle(labelTitle, "Wprowadzanie nowej kategorii amunicji");
+        InputControllerStatic.setupTitle(labelTitle, "Wprowadzanie nowego rodzaju naprowadzania");
         setupDynamicTextFields();
-        kategoriaAmoService = new KategoriaAmoService();
-        loadTableView(TableViews.TABLE_KATEGORIA_AMO.getValue());
+        loadTableView(TableViews.TABLE_RODZAJ_NAPROW.getValue());
         InputControllerStatic.setupDynamicControlsListeners(
                 dynamicControls,
                 addButton,
@@ -65,7 +62,7 @@ public class InputKategoriaAmoController {
 
 
     private void setupDynamicTextFields() {
-        InputControllerStatic.generateDynamicControl("NAZWA", "NAZWA", dynamicControls, 0,TextField.class, null,controller,inputGridPane);
+        InputControllerStatic.generateDynamicControl("NAZWA", "NAZWA", dynamicControls, 0, TextField.class, null,controller,inputGridPane);
         InputControllerStatic.generateDynamicControl("SKROT", "SKRÓT", dynamicControls, 1,TextField.class, null,controller,inputGridPane);
     }
 
@@ -96,8 +93,8 @@ public class InputKategoriaAmoController {
         Stage stage = (Stage) addButton.getScene().getWindow();
         try {
             if (!InputControllerStatic.isAnyControlEmpty(dynamicControls)) {
-                kategoriaAmoService.create(
-                        KategoriaAmoDto.builder()
+                rodzajNaprowService.create(
+                        RodzajNaprowDto.builder()
                                 .nazwa(nazwa)
                                 .skrot(skrot)
                                 .build()
@@ -116,11 +113,11 @@ public class InputKategoriaAmoController {
     }
     @FXML
     private void deleteButtonAction() {
-        KategoriaAmoDto selectedCategory = tableController.getTableView().getSelectionModel().getSelectedItem();
+        RodzajNaprowDto selectedType = tableController.getTableView().getSelectionModel().getSelectedItem();
         Stage stage = (Stage) deleteButton.getScene().getWindow();
-        if (selectedCategory != null) {
+        if (selectedType != null) {
             try{
-                kategoriaAmoService.delete(Long.valueOf(selectedCategory.getId()));
+                rodzajNaprowService.delete(Long.valueOf(selectedType.getId()));
                 showToast(stage, "Rekord usunięto!", Toast.ToastType.SUCCESS);
 
             }catch (Exception ex){

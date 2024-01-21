@@ -109,13 +109,13 @@ public class InputAmoController {
         controller.generateButton(inputGridPane, "KATEG_FK", "#", Views.INPUTKATEGORIAAMOVIEW.getValue(), 2, 9);
 
         InputControllerStatic.generateDynamicControl("RODZAJ_GLOWICY_BOJ_FK", "RODZAJ_GLOWICY_BOJ_FK", dynamicControls, 10, ChoiceBox.class, rodzajGlowicyList,controller,inputGridPane);
-        controller.generateButton(inputGridPane, "RODZAJ_GLOWICY_BOJ_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 10);
+        controller.generateButton(inputGridPane, "RODZAJ_GLOWICY_BOJ_FK", "#", Views.INPUTRODZAJGLOWICYBOJ.getValue(), 2, 10);
 
         InputControllerStatic.generateDynamicControl("RODZAJ_GLOWICY_NAPROW_FK", "RODZAJ_GLOWICY_NAPROW_FK", dynamicControls, 11, ChoiceBox.class, rodzajGlowicyNaprowList,controller,inputGridPane);
-        controller.generateButton(inputGridPane, "RODZAJ_GLOWICY_NAPROW_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 11);
+        controller.generateButton(inputGridPane, "RODZAJ_GLOWICY_NAPROW_FK", "#", Views.INPUTRODZAJGLOWICYNAPROW.getValue(), 2, 11);
 
         InputControllerStatic.generateDynamicControl("RODZAJ_NAPROW_FK", "RODZAJ_NAPROW_FK", dynamicControls, 12, ChoiceBox.class, rodzajNaprowList,controller,inputGridPane);
-        controller.generateButton(inputGridPane, "RODZAJ_NAPROW_FK", "#", Views.INPUTSPWVIEW.getValue(), 2, 12);
+        controller.generateButton(inputGridPane, "RODZAJ_NAPROW_FK", "#", Views.INPUTRODZAJNAPROW.getValue(), 2, 12);
     }
     @FXML
     private void addButtonAction(){

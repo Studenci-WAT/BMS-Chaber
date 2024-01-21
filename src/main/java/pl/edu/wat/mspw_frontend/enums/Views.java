@@ -17,8 +17,10 @@ public enum Views {
     INPUTEFEKTORTRANSP("/pl/edu/wat/mspw_projekt/inputviews/input-efektor-transp-view.fxml"),
     INPUTKATEGORY("/pl/edu/wat/mspw_projekt/inputviews/input-kategory-view.fxml"),
     INPUTEFEKTORLATANIA("/pl/edu/wat/mspw_projekt/inputviews/input-efektor-latania-view.fxml"),
-    INPUTROZPOZ("/pl/edu/wat/mspw_projekt/inputviews/input-rozpoz-view.fxml");
-
+    INPUTROZPOZ("/pl/edu/wat/mspw_projekt/inputviews/input-rozpoz-view.fxml"),
+    INPUTRODZAJGLOWICYBOJ("/pl/edu/wat/mspw_projekt/inputviews/input-rodzaj-glowicy-boj-view.fxml"),
+    INPUTRODZAJGLOWICYNAPROW("/pl/edu/wat/mspw_projekt/inputviews/input-rodzaj-glowicy-naprow-view.fxml"),
+    INPUTRODZAJNAPROW("/pl/edu/wat/mspw_projekt/inputviews/input-rodzaj-naprow-view.fxml");
 
     private final String value;
 
