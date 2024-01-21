@@ -23,7 +23,7 @@ import java.util.Map;
 
 
 public class InputMpsController {
-    private MpsService mpsService;
+    private MpsService mpsService = new MpsService();
     private TableMpsController tableMpsController;
     @FXML
     private AnchorPane tableContainer; // Container dla TableMpsView
@@ -37,29 +37,28 @@ public class InputMpsController {
     private Label labelTitle;
 
     private Map<String,  Control> dynamicControls = new HashMap<>();
-    private BooleanProperty anyTextFieldEmpty = new SimpleBooleanProperty(false);
+    private BooleanProperty anyControlEmpty = new SimpleBooleanProperty(false);
     private ControlGenerator controller = new ControlGenerator();
     @FXML
     public void initialize() {
-        setupTitle();
+        InputControllerStatic.setupTitle(labelTitle,"Wprowadzanie nowego rodzaju MPS");
         setupDynamicTextFields();
-        mpsService = new MpsService();
         loadTableView(TableViews.TABLE_MPS.getValue());
-        setupDynamicControlsListeners();
-        setupButtonProperties();
-        updateAnyTextFieldEmpty();
-        updateAddButtonStyle();
+        InputControllerStatic.setupDynamicControlsListeners(
+                dynamicControls,
+                addButton,
+                anyControlEmpty
+        );
+        InputControllerStatic.setupButtonProperties(addButton,deleteButton,anyControlEmpty,tableMpsController);
+        InputControllerStatic.updateAnyControlEmpty(anyControlEmpty,dynamicControls);
+        InputControllerStatic.updateButtonStyle(addButton);
     }
 
-    private void setupTitle() {
-        labelTitle.setText("Wprowadzanie nowego rodzaju MPS");
-        labelTitle.setAlignment(Pos.CENTER);
-    }
 
     private void setupDynamicTextFields() {
-        generateDynamicControl("NAZWA", "NAZWA", dynamicControls, 0,TextField.class, null);
-        generateDynamicControl("SKROT", "SKRÓT", dynamicControls, 1,TextField.class, null);
-        generateDynamicControl("KOD", "KOD", dynamicControls, 2, TextField.class, null);
+        InputControllerStatic.generateDynamicControl("NAZWA", "NAZWA", dynamicControls, 0,TextField.class, null,controller,inputGridPane);
+        InputControllerStatic.generateDynamicControl("SKROT", "SKRÓT", dynamicControls, 1,TextField.class, null,controller,inputGridPane);
+        InputControllerStatic.generateDynamicControl("KOD", "KOD", dynamicControls, 2, TextField.class, null,controller,inputGridPane);
     }
 
     private void loadTableView(String path) {
@@ -78,30 +77,6 @@ public class InputMpsController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    private void setupDynamicControlsListeners() {
-        dynamicControls.forEach((id, control) -> {
-            if (control instanceof TextField) {
-                ((TextField) control).textProperty().addListener((observable, oldValue, newValue) -> {
-                    updateAnyTextFieldEmpty();
-                    updateAddButtonStyle();
-                });
-            } else if (control instanceof ChoiceBox) {
-                ((ChoiceBox<?>) control).valueProperty().addListener((observable, oldValue, newValue) -> {
-                    updateAnyTextFieldEmpty();
-                    updateAddButtonStyle();
-                });
-            } else {
-                throw new IllegalArgumentException("Unsupported control type: " + control.getClass().getSimpleName());
-            }
-        });
-    }
-
-    private void setupButtonProperties() {
-        addButton.disableProperty().bind(anyTextFieldEmpty);
-        deleteButton.disableProperty().bind(tableMpsController.getTableView().getSelectionModel().selectedItemProperty().isNull());
-        deleteButton.disabledProperty().addListener((observable, oldValue, newValue) -> updateDeleteButtonStyle());
     }
 
     @FXML
@@ -129,7 +104,7 @@ public class InputMpsController {
             tableMpsController.populateTable();
         }
 
-        clearDynamicControls();
+        InputControllerStatic.clearDynamicControls(dynamicControls);
     }
     @FXML
     private void deleteButtonAction() {
@@ -145,73 +120,5 @@ public class InputMpsController {
             tableMpsController.populateTable();
         }
     }
-    private void updateAnyTextFieldEmpty() {
-        anyTextFieldEmpty.set(isAnyControlEmpty());
-    }
 
-    private boolean isAnyControlEmpty() {
-        return dynamicControls.values().stream().anyMatch(control -> {
-            if (control instanceof TextField) {
-                return ((TextField) control).getText().isEmpty();
-            } else if (control instanceof ChoiceBox) {
-                return ((ChoiceBox<?>) control).getValue() == null;
-            } else {
-                throw new IllegalArgumentException("Unsupported control type: " + control.getClass().getSimpleName());
-            }
-        });
-    }
-
-    private void generateDynamicControl(String id, String label, Map<String, Control> container, int rowIndex, Class<? extends Control> controlType, List<Item> options) {
-        Control control;
-        if (controlType.equals(TextField.class)) {
-            control = controller.generateTextField(inputGridPane, id, label, rowIndex);
-        } else if (controlType.equals(ChoiceBox.class)) {
-            if (!options.isEmpty()) {
-                throw new IllegalArgumentException("ChoiceBox requires options");
-            }
-            ChoiceBox<Item> choiceBox = controller.generateChoiceBox(inputGridPane, id, label, rowIndex, options);
-            choiceBox.getItems().addAll(options);
-            control = choiceBox;
-        } else {
-            throw new IllegalArgumentException("Unsupported control type: " + controlType.getSimpleName());
-        }
-
-        container.put(id, control);
-    }
-
-    private void updateAddButtonStyle() {
-        if (addButton.isDisabled()) {
-            addButton.getStyleClass().remove("button-disabled");
-            addButton.getStyleClass().remove("button-enabled");
-            addButton.getStyleClass().add("button-disabled");
-        } else {
-            addButton.getStyleClass().remove("button-disabled");
-            addButton.getStyleClass().remove("button-enabled");
-            addButton.getStyleClass().add("button-enabled");
-        }
-    }
-
-    private void updateDeleteButtonStyle() {
-        if (deleteButton.isDisabled()) {
-            deleteButton.getStyleClass().remove("button-disabled");
-            deleteButton.getStyleClass().remove("button-enabled");
-            deleteButton.getStyleClass().add("button-disabled");
-        } else {
-            deleteButton.getStyleClass().remove("button-disabled");
-            deleteButton.getStyleClass().remove("button-enabled");
-            deleteButton.getStyleClass().add("button-enabled");
-        }
-    }
-
-    private void clearDynamicControls() {
-        dynamicControls.forEach((id, control) -> {
-            if (control instanceof TextField) {
-                ((TextField) control).clear();
-            } else if (control instanceof ChoiceBox) {
-                ((ChoiceBox<?>) control).setValue(null);
-            } else {
-                throw new IllegalArgumentException("Unsupported control type: " + control.getClass().getSimpleName());
-            }
-        });
-    }
 }

@@ -44,13 +44,17 @@ public class InputAmoController {
     private BooleanProperty anyControlEmpty = new SimpleBooleanProperty(false);
     private ControlGenerator controller = new ControlGenerator();
     public void initialize() {
-        setupTitle();
+        InputControllerStatic.setupTitle(labelTitle,"Wprowadzanie nowego rodzaju amunicji");
         setupDynamicControls();
         loadTableView(TableViews.TABLE_AMO.getValue());
-        setupDynamicControlsListeners();
-        setupButtonProperties();
-        updateAnyTextFieldEmpty();
-        InputControllerStatic.updateAddButtonStyle(addButton);
+        InputControllerStatic.setupDynamicControlsListeners(
+                dynamicControls,
+                addButton,
+                anyControlEmpty
+        );
+        InputControllerStatic.setupButtonProperties(addButton,deleteButton,anyControlEmpty,tableAmoController);
+        InputControllerStatic.updateAnyControlEmpty(anyControlEmpty,dynamicControls);
+        InputControllerStatic.updateButtonStyle(addButton);
     }
     private void loadTableView(String path) {
         try {
@@ -68,10 +72,6 @@ public class InputAmoController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-    private void setupTitle() {
-        labelTitle.setText("Wprowadzanie nowego rodzaju amunicji");
-        labelTitle.setAlignment(Pos.CENTER);
     }
 
     private void setupDynamicControls() {
@@ -122,36 +122,5 @@ public class InputAmoController {
     @FXML
     private void deleteButtonAction() {
 
-    }
-    private void setupDynamicControlsListeners() {
-        dynamicControls.forEach((id, control) -> {
-            if (control instanceof TextField) {
-                ((TextField) control).textProperty().addListener((observable, oldValue, newValue) -> {
-                    updateAnyTextFieldEmpty();
-                    InputControllerStatic.updateAddButtonStyle(addButton);
-                });
-            } else if (control instanceof ChoiceBox) {
-                ((ChoiceBox<?>) control).valueProperty().addListener((observable, oldValue, newValue) -> {
-                    updateAnyTextFieldEmpty();
-                    InputControllerStatic.updateAddButtonStyle(addButton);
-                });
-            } else if (control instanceof CheckBox) {
-                ((CheckBox) control).selectedProperty().addListener((observable, oldValue, newValue) -> {
-                    updateAnyTextFieldEmpty();
-                    InputControllerStatic.updateAddButtonStyle(addButton);
-                });
-            } else {
-                throw new IllegalArgumentException("Unsupported control type: " + control.getClass().getSimpleName());
-            }
-        });
-    }
-
-    private void setupButtonProperties() {
-        addButton.disableProperty().bind(anyControlEmpty);
-        deleteButton.disableProperty().bind(tableAmoController.getTableView().getSelectionModel().selectedItemProperty().isNull());
-        deleteButton.disabledProperty().addListener((observable, oldValue, newValue) -> InputControllerStatic.updateDeleteButtonStyle(deleteButton));
-    }
-    private void updateAnyTextFieldEmpty() {
-        anyControlEmpty.set(InputControllerStatic.isAnyControlEmpty(dynamicControls));
     }
 }

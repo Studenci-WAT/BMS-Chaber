@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -25,7 +26,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class InputKategoriaAmoController {
-    private KategoriaAmoService kategoriaAmoService;
+    private KategoriaAmoService kategoriaAmoService = new KategoriaAmoService();
     private TableKategoriaAmoController tableController;
     @FXML
     private AnchorPane tableContainer; // Container dla TableMpsView
@@ -38,29 +39,29 @@ public class InputKategoriaAmoController {
     @FXML
     private Label labelTitle;
 
-    private Map<String, TextField> dynamicTextFields = new HashMap<>();
-    private BooleanProperty anyTextFieldEmpty = new SimpleBooleanProperty(false);
+    private Map<String, Control> dynamicControls = new HashMap<>();
+    private BooleanProperty anyControlEmpty = new SimpleBooleanProperty(false);
     private ControlGenerator controller = new ControlGenerator();
     @FXML
     public void initialize() {
-        setupTitle();
+        InputControllerStatic.setupTitle(labelTitle, "Wprowadzanie nowej kategorii amunicji");
         setupDynamicTextFields();
         kategoriaAmoService = new KategoriaAmoService();
         loadTableView(TableViews.TABLE_KATEGORIA_AMO.getValue());
-        setupDynamicTextFieldsListeners();
-        setupButtonProperties();
-        updateAnyTextFieldEmpty();
-        updateAddButtonStyle();
+        InputControllerStatic.setupDynamicControlsListeners(
+                dynamicControls,
+                addButton,
+                anyControlEmpty
+        );
+        InputControllerStatic.setupButtonProperties(addButton,deleteButton,anyControlEmpty,tableController);
+        InputControllerStatic.updateAnyControlEmpty(anyControlEmpty,dynamicControls);
+        InputControllerStatic.updateButtonStyle(addButton);
     }
 
-    private void setupTitle() {
-        labelTitle.setText("Wprowadzanie nowej kategorii amunicji");
-        labelTitle.setAlignment(Pos.CENTER);
-    }
 
     private void setupDynamicTextFields() {
-        generateDynamicTextField("NAZWA", "NAZWA", dynamicTextFields, 0);
-        generateDynamicTextField("SKROT", "SKRÓT", dynamicTextFields, 1);
+        InputControllerStatic.generateDynamicControl("NAZWA", "NAZWA", dynamicControls, 0,TextField.class, null,controller,inputGridPane);
+        InputControllerStatic.generateDynamicControl("SKROT", "SKRÓT", dynamicControls, 1,TextField.class, null,controller,inputGridPane);
     }
 
     private void loadTableView(String path) {
@@ -81,19 +82,6 @@ public class InputKategoriaAmoController {
         }
     }
 
-    private void setupDynamicTextFieldsListeners() {
-        dynamicTextFields.forEach((id, textField) ->
-                textField.textProperty().addListener((observable, oldValue, newValue) -> {
-                    updateAnyTextFieldEmpty();
-                    updateAddButtonStyle();
-                }));
-    }
-
-    private void setupButtonProperties() {
-        addButton.disableProperty().bind(anyTextFieldEmpty);
-        deleteButton.disableProperty().bind(tableController.getTableView().getSelectionModel().selectedItemProperty().isNull());
-        deleteButton.disabledProperty().addListener((observable, oldValue, newValue) -> updateDeleteButtonStyle());
-    }
 
     @FXML
     private void addButtonAction(){
@@ -118,7 +106,7 @@ public class InputKategoriaAmoController {
             tableController.populateTable();
         }
 
-        dynamicTextFields.values().forEach(textField -> textField.setText(""));
+        InputControllerStatic.clearDynamicControls(dynamicControls);
     }
     @FXML
     private void deleteButtonAction() {
@@ -132,43 +120,6 @@ public class InputKategoriaAmoController {
         // Odświeżenie tabeli
         if (tableController!= null) {
             tableController.populateTable();
-        }
-    }
-    private void updateAnyTextFieldEmpty() {
-        anyTextFieldEmpty.set(isAnyTextFieldEmpty());
-    }
-
-    private boolean isAnyTextFieldEmpty() {
-        return dynamicTextFields.values().stream()
-                .anyMatch(textField -> textField.getText().isEmpty());
-    }
-
-    private void generateDynamicTextField(String id, String label, Map<String, TextField> container, int rowIndex) {
-        TextField textField = controller.generateTextField(inputGridPane,id, label,rowIndex);
-        container.put(id, textField);
-    }
-
-    private void updateAddButtonStyle() {
-        if (addButton.isDisabled()) {
-            addButton.getStyleClass().remove("button-disabled");
-            addButton.getStyleClass().remove("button-enabled");
-            addButton.getStyleClass().add("button-disabled");
-        } else {
-            addButton.getStyleClass().remove("button-disabled");
-            addButton.getStyleClass().remove("button-enabled");
-            addButton.getStyleClass().add("button-enabled");
-        }
-    }
-
-    private void updateDeleteButtonStyle() {
-        if (deleteButton.isDisabled()) {
-            deleteButton.getStyleClass().remove("button-disabled");
-            deleteButton.getStyleClass().remove("button-enabled");
-            deleteButton.getStyleClass().add("button-disabled");
-        } else {
-            deleteButton.getStyleClass().remove("button-disabled");
-            deleteButton.getStyleClass().remove("button-enabled");
-            deleteButton.getStyleClass().add("button-enabled");
         }
     }
 }

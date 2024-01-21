@@ -1,11 +1,17 @@
 package pl.edu.wat.mspw_frontend.inputcontrollers;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import pl.edu.wat.mspw_frontend.interfaces.ControlGenerator;
 import pl.edu.wat.mspw_frontend.interfaces.Item;
 import pl.edu.wat.mspw_frontend.readcontrollers.AbstractTableController;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -66,28 +72,56 @@ public class InputControllerStatic {
         });
     }
 
-    public static void updateAddButtonStyle(Button addButton) {
-        if (addButton.isDisabled()) {
-            addButton.getStyleClass().remove("button-disabled");
-            addButton.getStyleClass().remove("button-enabled");
-            addButton.getStyleClass().add("button-disabled");
+    public static void updateButtonStyle(Button button) {
+        if (button.isDisabled()) {
+            button.getStyleClass().remove("button-disabled");
+            button.getStyleClass().remove("button-enabled");
+            button.getStyleClass().add("button-disabled");
         } else {
-            addButton.getStyleClass().remove("button-disabled");
-            addButton.getStyleClass().remove("button-enabled");
-            addButton.getStyleClass().add("button-enabled");
+            button.getStyleClass().remove("button-disabled");
+            button.getStyleClass().remove("button-enabled");
+            button.getStyleClass().add("button-enabled");
         }
     }
 
-    public static void updateDeleteButtonStyle(Button deleteButton) {
-        if (deleteButton.isDisabled()) {
-            deleteButton.getStyleClass().remove("button-disabled");
-            deleteButton.getStyleClass().remove("button-enabled");
-            deleteButton.getStyleClass().add("button-disabled");
-        } else {
-            deleteButton.getStyleClass().remove("button-disabled");
-            deleteButton.getStyleClass().remove("button-enabled");
-            deleteButton.getStyleClass().add("button-enabled");
-        }
+
+
+    public static void setupDynamicControlsListeners(Map<String, Control> dynamicControls, Button addButton, BooleanProperty anyControlEmpty) {
+        dynamicControls.forEach((id, control) -> {
+            if (control instanceof TextField) {
+                ((TextField) control).textProperty().addListener((observable, oldValue, newValue) -> {
+                    updateAnyControlEmpty(anyControlEmpty,dynamicControls);
+                    InputControllerStatic.updateButtonStyle(addButton);
+                });
+            } else if (control instanceof ChoiceBox) {
+                ((ChoiceBox<?>) control).valueProperty().addListener((observable, oldValue, newValue) -> {
+                    updateAnyControlEmpty(anyControlEmpty,dynamicControls);
+                    InputControllerStatic.updateButtonStyle(addButton);
+                });
+            } else if (control instanceof CheckBox) {
+                ((CheckBox) control).selectedProperty().addListener((observable, oldValue, newValue) -> {
+                    updateAnyControlEmpty(anyControlEmpty,dynamicControls);
+                    InputControllerStatic.updateButtonStyle(addButton);
+                });
+            } else {
+                throw new IllegalArgumentException("Unsupported control type: " + control.getClass().getSimpleName());
+            }
+        });
+    }
+
+    public static void updateAnyControlEmpty(BooleanProperty anyControlEmpty, Map<String, Control> dynamicControls) {
+        anyControlEmpty.set(InputControllerStatic.isAnyControlEmpty(dynamicControls));
+    }
+
+    public static void setupButtonProperties(Button addButton, Button deleteButton, BooleanProperty anyControlEmpty, AbstractTableController tableController) {
+        addButton.disableProperty().bind(anyControlEmpty);
+        deleteButton.disableProperty().bind(tableController.getTableView().getSelectionModel().selectedItemProperty().isNull());
+        deleteButton.disabledProperty().addListener((observable, oldValue, newValue) -> InputControllerStatic.updateButtonStyle(deleteButton));
+    }
+
+    public static void setupTitle(Label labelTitle, String text) {
+        labelTitle.setText(text);
+        labelTitle.setAlignment(Pos.CENTER);
     }
 
 }
