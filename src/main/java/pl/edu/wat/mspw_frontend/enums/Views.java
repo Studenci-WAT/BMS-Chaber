@@ -20,7 +20,8 @@ public enum Views {
     INPUTROZPOZ("/pl/edu/wat/mspw_projekt/inputviews/input-rozpoz-view.fxml"),
     INPUTRODZAJGLOWICYBOJ("/pl/edu/wat/mspw_projekt/inputviews/input-rodzaj-glowicy-boj-view.fxml"),
     INPUTRODZAJGLOWICYNAPROW("/pl/edu/wat/mspw_projekt/inputviews/input-rodzaj-glowicy-naprow-view.fxml"),
-    INPUTRODZAJNAPROW("/pl/edu/wat/mspw_projekt/inputviews/input-rodzaj-naprow-view.fxml");
+    INPUTRODZAJNAPROW("/pl/edu/wat/mspw_projekt/inputviews/input-rodzaj-naprow-view.fxml"),
+    INPUTRODZAJSYSTEMUOGN("/pl/edu/wat/mspw_projekt/inputviews/input-rodzaj-systemu-ogn-view.fxml");
 
     private final String value;
 
