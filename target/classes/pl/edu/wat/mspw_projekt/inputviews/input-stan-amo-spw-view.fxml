@@ -12,7 +12,7 @@
             prefWidth="998.0"
             xmlns="http://javafx.com/javafx/17.0.2-ea"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="pl.edu.wat.mspw_frontend.inputcontrollers.InputKadlubController">
+            fx:controller="pl.edu.wat.mspw_frontend.inputcontrollers.InputStanAmoSpwController">
     <left>
         <Pane prefHeight="604.0" prefWidth="1016.0" BorderPane.alignment="CENTER">
             <children>

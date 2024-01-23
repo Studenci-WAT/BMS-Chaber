@@ -13,7 +13,7 @@ public enum Views {
     INPUTEFEKTORPLYWANIA("/pl/edu/wat/mspw_projekt/inputviews/input-efektor-plywania-view.fxml"),
     INPUTEFEKTORINZ("/pl/edu/wat/mspw_projekt/inputviews/input-efektor-inz-view.fxml"),
     INPUTEFEKTORWE("/pl/edu/wat/mspw_projekt/inputviews/input-efektor-we-view.fxml"),
-    INPUTKAKLUB("/pl/edu/wat/mspw_projekt/inputviews/input-kadlub-view.fxml"),
+    INPUTKADLUB("/pl/edu/wat/mspw_projekt/inputviews/input-kadlub-view.fxml"),
     INPUTEFEKTORTRANSP("/pl/edu/wat/mspw_projekt/inputviews/input-efektor-transp-view.fxml"),
     INPUTKATEGORY("/pl/edu/wat/mspw_projekt/inputviews/input-kategory-view.fxml"),
     INPUTEFEKTORLATANIA("/pl/edu/wat/mspw_projekt/inputviews/input-efektor-latania-view.fxml"),
@@ -21,7 +21,10 @@ public enum Views {
     INPUTRODZAJGLOWICYBOJ("/pl/edu/wat/mspw_projekt/inputviews/input-rodzaj-glowicy-boj-view.fxml"),
     INPUTRODZAJGLOWICYNAPROW("/pl/edu/wat/mspw_projekt/inputviews/input-rodzaj-glowicy-naprow-view.fxml"),
     INPUTRODZAJNAPROW("/pl/edu/wat/mspw_projekt/inputviews/input-rodzaj-naprow-view.fxml"),
-    INPUTRODZAJSYSTEMUOGN("/pl/edu/wat/mspw_projekt/inputviews/input-rodzaj-systemu-ogn-view.fxml");
+    INPUTRODZAJSYSTEMUOGN("/pl/edu/wat/mspw_projekt/inputviews/input-rodzaj-systemu-ogn-view.fxml"),
+    INPUTSPWSYSOGN("/pl/edu/wat/mspw_projekt/inputviews/input-spw-sys-ogn-view.fxml"),
+    INPUTSTANAMOSPW("/pl/edu/wat/mspw_projekt/inputviews/input-stan-amo-spw-view.fxml");
+
 
     private final String value;
 

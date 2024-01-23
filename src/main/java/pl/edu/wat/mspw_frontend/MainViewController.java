@@ -31,7 +31,10 @@ public class MainViewController {
         generateNavigationButton(firstTabGridPane, "SYSTEM OGNIA", "sysOgnInputNavigator", 1);
         generateNavigationButton(firstTabGridPane, "SPW", "spwInputNavigator", 2);
         generateNavigationButton(firstTabGridPane, "MPS", "mpsInputNavigator", 3);
-        generateNavigationButton(firstTabGridPane, "KATEGORIA AMO", "kategoriaAmoInputNavigator", 4);
+        generateNavigationButton(firstTabGridPane, "SPW - SYSTEM OGNIA", "spwSysOgnInputNavigator", 4);
+        generateNavigationButton(firstTabGridPane, "STAN AMO - SPW", "stanAmoSpwInputNavigator", 5);
+        generateNavigationButton(firstTabGridPane, "KADLUB", "kadlubInputNavigator", 6);
+        generateNavigationButton(firstTabGridPane, "KATEGORIA AMO", "kategoriaAmoInputNavigator", 7);
         // Tworzenie przycisków dynamicznie w drugiej zakładce
         GridPane secondTabGridPane = (GridPane) ((AnchorPane) tabPane.getTabs().get(1).getContent()).getChildren().get(0);
         generateNavigationButton(secondTabGridPane, "TABLES", "tablesNavigator", 0);
@@ -95,6 +98,15 @@ public class MainViewController {
                 break;
             case "mpsInputNavigator":
                 loadView(Views.INPUTMPSVIEW.getValue());
+                break;
+            case "spwSysOgnInputNavigator":
+                loadView(Views.INPUTSPWSYSOGN.getValue());
+                break;
+            case "stanAmoSpwInputNavigator":
+                loadView(Views.INPUTSTANAMOSPW.getValue());
+                break;
+            case "kadlubInputNavigator":
+                loadView(Views.INPUTKADLUB.getValue());
                 break;
             case "kategoriaAmoInputNavigator":
                 loadView(Views.INPUTKATEGORIAAMOVIEW.getValue());
