@@ -23,9 +23,9 @@ public enum Views {
     INPUTRODZAJNAPROW("/pl/edu/wat/mspw_projekt/inputviews/input-rodzaj-naprow-view.fxml"),
     INPUTRODZAJSYSTEMUOGN("/pl/edu/wat/mspw_projekt/inputviews/input-rodzaj-systemu-ogn-view.fxml"),
     INPUTSPWSYSOGN("/pl/edu/wat/mspw_projekt/inputviews/input-spw-sys-ogn-view.fxml"),
-    INPUTSTANAMOSPW("/pl/edu/wat/mspw_projekt/inputviews/input-stan-amo-spw-view.fxml");
-
-
+    INPUTSTANAMOSPW("/pl/edu/wat/mspw_projekt/inputviews/input-stan-amo-spw-view.fxml"),
+    INPUTEFEKTORJEZDNY("/pl/edu/wat/mspw_projekt/inputviews/input-efektor-jezdn-view.fxml"),
+    INPUTRODZAJPODWOZIA("/pl/edu/wat/mspw_projekt/inputviews/input-rodzaj-podwozia-view.fxml");
     private final String value;
 
     Views(String value) {
