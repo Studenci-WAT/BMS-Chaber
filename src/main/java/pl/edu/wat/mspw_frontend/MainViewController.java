@@ -35,7 +35,11 @@ public class MainViewController {
         generateNavigationButton(firstTabGridPane, "STAN AMO - SPW", "stanAmoSpwInputNavigator", 5);
         generateNavigationButton(firstTabGridPane, "KADLUB", "kadlubInputNavigator", 6);
         generateNavigationButton(firstTabGridPane, "KATEGORIA AMO", "kategoriaAmoInputNavigator", 7);
-
+        generateNavigationButton(firstTabGridPane, "STAN MPS SPW ", "stanMpsSpwNavigator", 8);
+        generateNavigationButton(firstTabGridPane, "STREFA RAZ. SPW ", "strefaRazSpw", 9);
+        //generateNavigationButton(firstTabGridPane, "PRZEBIJAL. RHA ", "przebijalPanRha", 9);
+        //generateNavigationButton(firstTabGridPane, "PARAM OG BEZP ", "paramStrzelOgBezp", 9);
+        //generateNavigationButton(firstTabGridPane, "PARAM OG POSR ", "paramStrzelOgPosr", 10);
 
         // Tworzenie przycisków dynamicznie w drugiej zakładce
         GridPane secondTabGridPane = (GridPane) ((AnchorPane) tabPane.getTabs().get(1).getContent()).getChildren().get(0);
@@ -128,6 +132,27 @@ public class MainViewController {
             case "efektorInzInputNavigator":
                 loadView(Views.INPUTEFEKTORINZ.getValue());
                 break;
+
+            case "stanMpsSpwNavigator":
+                loadView(Views.INPUTSTANMPSSPW.getValue());
+                break;
+
+            case "paramStrzelOgBezp":
+                loadView(Views.INPUTPARAMSTRZELOGBEZP.getValue());
+                break;
+
+            case "paramStrzelOgPosr":
+                loadView(Views.INPUTPARAMSTRZELOGPOSR.getValue());
+                break;
+
+            case "przebijalPanRha":
+                loadView(Views.INPUTPRZEBIJALPANRHA.getValue());
+                break;
+
+            case "strefaRazSpw":
+                loadView(Views.STREFARAZENIASPW.getValue());
+                break;
+
             case "tablesNavigator":
                 loadView(Views.READTABLES.getValue());
                 break;
