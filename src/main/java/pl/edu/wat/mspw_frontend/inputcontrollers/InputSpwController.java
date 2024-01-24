@@ -149,7 +149,7 @@ public class InputSpwController {
         controller.generateChoiceBox(inputGridPane3,"EFEKTOR_LATANIA_FK","EFEKTOR_LATANIA_FK", 4, efektorLataniaList);
         controller.generateButton(inputGridPane3, "EFEKTOR_LATANIA_FK", "#", Views.INPUTEFEKTORLATANIA.getValue(), 2, 4);
         controller.generateChoiceBox(inputGridPane3,"EFEKTOR_ROZPOZ_FK","EFEKTOR_ROZPOZ_FK",  5, efektorRozpozList);
-        controller.generateButton(inputGridPane3, "EFEKTOR_ROZPOZ_FK", "#", Views.INPUTROZPOZ.getValue(), 2, 5);
+        controller.generateButton(inputGridPane3, "EFEKTOR_ROZPOZ_FK", "#", Views.INPUTEFEKTORROZPOZ.getValue(), 2, 5);
         controller.generateTextField(inputGridPane3,"MOC","MOC [HP]", 6);
         controller.generateTextField(inputGridPane3,"KLASA_PRZYRZ_OC", "KLASA_PRZYRZ_OC",7);
         controller.generateTextField(inputGridPane3,"ZUZ_PALIWA_PRACA", "ZUZ_PALIWA_PRACA",8);

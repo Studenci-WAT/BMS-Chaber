@@ -4,21 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cd0cd9d-27c0-41c8-892b-2f3158cac233" name="Changes" comment="added all tables in read view GUI&#10;deleted template view - now u need to check other scene becouse everything else is done">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputRodzajPodwoziaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-rodzaj-podwozia-view.fxml" afterDir="false" />
+    <list default="true" id="7cd0cd9d-27c0-41c8-892b-2f3158cac233" name="Changes" comment="added 4 views definition">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/MainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/enums/TableViews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/enums/TableViews.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/enums/Views.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/enums/Views.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputEfektorJezdnController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputEfektorJezdnController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputEfektorLacznController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputEfektorLacznController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputEfektorLataniaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputEfektorLataniaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-efektor-jezdn-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-efektor-jezdn-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-efektor-laczn-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-efektor-laczn-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-efektor-latania-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-efektor-latania-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputControllerStatic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputControllerStatic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputEfektInzController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputEfektInzController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputEfektorPlywaniaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputEfektorPlywaniaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputEfektorTranspController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputEfektorTranspController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputEfektorWeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputEfektorWeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputRozpozController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputEfektorRozpozController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputSpwController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputSpwController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-efektor-inz-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-efektor-inz-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-efektor-plywania-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-efektor-plywania-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-efektor-transp-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-efektor-transp-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-efektor-we-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-efektor-we-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-rozpoz-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-efektor-rozpoz-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/MainViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/MainViewController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/enums/Views.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/enums/Views.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/inputviews/input-efektor-jezdn-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/inputviews/input-efektor-jezdn-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/inputcontrollers/InputSpwController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/inputcontrollers/InputSpwController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/inputviews/input-efektor-inz-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/inputviews/input-efektor-inz-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/inputviews/input-efektor-plywania-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/inputviews/input-efektor-plywania-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/inputviews/input-efektor-we-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/inputviews/input-efektor-we-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_projekt/inputviews/input-rozpoz-view.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -301,7 +310,23 @@
       <option name="project" value="LOCAL" />
       <updated>1705776760323</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added 4 views definition">
+      <option name="closed" value="true" />
+      <created>1706044717623</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1706044717623</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added 4 views definition">
+      <option name="closed" value="true" />
+      <created>1706085553526</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1706085553526</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,7 +386,8 @@
     <MESSAGE value="fixed id type in smps dto" />
     <MESSAGE value="changed mps table - now its imported from other fxml (shared with read feature)" />
     <MESSAGE value="added all tables in read view GUI&#10;deleted template view - now u need to check other scene becouse everything else is done" />
-    <option name="LAST_COMMIT_MESSAGE" value="added all tables in read view GUI&#10;deleted template view - now u need to check other scene becouse everything else is done" />
+    <MESSAGE value="added 4 views definition" />
+    <option name="LAST_COMMIT_MESSAGE" value="added 4 views definition" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

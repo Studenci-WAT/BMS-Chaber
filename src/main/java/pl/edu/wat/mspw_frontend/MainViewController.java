@@ -35,7 +35,7 @@ public class MainViewController {
         generateNavigationButton(firstTabGridPane, "STAN AMO - SPW", "stanAmoSpwInputNavigator", 5);
         generateNavigationButton(firstTabGridPane, "KADLUB", "kadlubInputNavigator", 6);
         generateNavigationButton(firstTabGridPane, "KATEGORIA AMO", "kategoriaAmoInputNavigator", 7);
-        generateNavigationButton(firstTabGridPane, "EFEKTOR JEZDNY", "efektorJezdnyInputNavigator", 8);
+
 
         // Tworzenie przycisków dynamicznie w drugiej zakładce
         GridPane secondTabGridPane = (GridPane) ((AnchorPane) tabPane.getTabs().get(1).getContent()).getChildren().get(0);
@@ -115,6 +115,18 @@ public class MainViewController {
                 break;
             case "efektorJezdnyInputNavigator":
                 loadView(Views.INPUTEFEKTORJEZDNY.getValue());
+                break;
+            case "efektorLacznInputNavigator":
+                loadView(Views.INPUTEFEKTORLACZN.getValue());
+                break;
+            case "efektorLataniaInputNavigator":
+                loadView(Views.INPUTEFEKTORLATANIA.getValue());
+                break;
+            case "efektorPlywaniaInputNavigator":
+                loadView(Views.INPUTEFEKTORPLYWANIA.getValue());
+                break;
+            case "efektorInzInputNavigator":
+                loadView(Views.INPUTEFEKTORINZ.getValue());
                 break;
             case "tablesNavigator":
                 loadView(Views.READTABLES.getValue());

@@ -16,6 +16,7 @@ import pl.edu.wat.mspw_frontend.util.Toast;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import static pl.edu.wat.mspw_frontend.util.Toast.showToast;
 
@@ -189,6 +190,30 @@ public class InputControllerStatic {
             } else {
                 showToast(stage, "Wystąpił błąd - invalid integer value for Choicebox with ID " + controlId, Toast.ToastType.ERROR);
                 throw new IllegalArgumentException("Invalid integer value for ChoiceBox with ID " + controlId);
+            }
+        } else {
+            throw new IllegalArgumentException("Unsupported control type or control not found for ID " + controlId);
+        }
+    }
+
+    public static Boolean getBooleanControlValue(Stage stage, GridPane parentContainer, String controlId, ControlGenerator controller) {
+        Node control = controller.findControlById(parentContainer, controlId);
+
+        if (control instanceof TextField) {
+                String text = ((TextField) control).getText();
+                if(Objects.equals(text, "1") || Objects.equals(text, "true")) { return true;}
+                else if(Objects.equals(text, "0") || Objects.equals(text, "false")){ return false;}
+                else {
+                    showToast(stage, "Wystąpił błąd - invalid boolean value for TextField with ID " + controlId, Toast.ToastType.ERROR);
+                    throw new IllegalArgumentException("Invalid boolean value for TextField with ID " + controlId);
+                }
+        } else if (control instanceof ChoiceBox) {
+            Object selectedValue = ((ChoiceBox<Item>) control).getValue().getId();
+            if (selectedValue instanceof Integer) {
+                return (Boolean) selectedValue;
+            } else {
+                showToast(stage, "Wystąpił błąd - invalid boolean value for Choicebox with ID " + controlId, Toast.ToastType.ERROR);
+                throw new IllegalArgumentException("Invalid boolean value for ChoiceBox with ID " + controlId);
             }
         } else {
             throw new IllegalArgumentException("Unsupported control type or control not found for ID " + controlId);
