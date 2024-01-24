@@ -83,7 +83,7 @@ public class InputEfektorTranspController {
         InputControllerStatic.generateDynamicControl("LADOW_WYM_Y", "LADOW_WYM_Y", dynamicControls, 3, TextField.class ,null,controller,inputGridPane);
         InputControllerStatic.generateDynamicControl("LADOW_WYM_Z", "LADOW_WYM_Z", dynamicControls, 4, TextField.class,null, controller,inputGridPane);
         InputControllerStatic.generateDynamicControl("POJEM", "POJEM", dynamicControls, 5, TextField.class ,null,controller,inputGridPane);
-        InputControllerStatic.generateDynamicControl("TRANSPORT_WODY", "TRANSPORT_WODY", dynamicControls, 6, TextField.class,null,controller,inputGridPane);
+        controller.generateCheckBox(inputGridPane,"TRANSPORT_WODY","TRANSPORT_WODY",6);
     }
     @FXML
     private void addButtonAction(){
@@ -95,7 +95,7 @@ public class InputEfektorTranspController {
         Double ladow_wym_y = InputControllerStatic.getDoubleControlValue(stage,inputGridPane,"LADOW_WYM_YTextField",controller);
         Double ladow_wym_z = InputControllerStatic.getDoubleControlValue(stage,inputGridPane,"LADOW_WYM_ZTextField",controller);
         Double pojem = InputControllerStatic.getDoubleControlValue(stage,inputGridPane,"POJEMTextField",controller);
-        Boolean transport_wody = InputControllerStatic.getBooleanControlValue(stage,inputGridPane,"TRANSPORT_WODYTextField",controller);
+        Boolean transport_wody = InputControllerStatic.getBooleanControlValue(stage,inputGridPane,"TRANSPORT_WODYCheckBox",controller);
 
         try {
             if (!InputControllerStatic.isAnyControlEmpty(dynamicControls)) {

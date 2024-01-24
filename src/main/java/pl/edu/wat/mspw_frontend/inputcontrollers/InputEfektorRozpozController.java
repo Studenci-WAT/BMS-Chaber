@@ -77,30 +77,29 @@ public class InputEfektorRozpozController {
 
     private void setupDynamicControls() {
 
-        InputControllerStatic.generateDynamicControl("ROZPOZ_AKUST", "ROZPOZ_AKUST", dynamicControls, 0, TextField.class, null,controller,inputGridPane);
+        controller.generateCheckBox(inputGridPane,"ROZPOZ_AKUST","ROZPOZ_AKUST",0);
         InputControllerStatic.generateDynamicControl("ROZPOZ_AKUST_PROMIEN", "ROZPOZ_AKUST_PROMIEN", dynamicControls, 1,TextField.class, null,controller,inputGridPane);
-        InputControllerStatic.generateDynamicControl("ROZPOZ_TERMICZ", "ROZPOZ_TERMICZ", dynamicControls, 2, TextField.class, null,controller,inputGridPane);
+        controller.generateCheckBox(inputGridPane,"ROZPOZ_TERMICZ","ROZPOZ_TERMICZ",2);
         InputControllerStatic.generateDynamicControl("ROZPOZ_TERMICZ_PROMIEN_DZIEN", "ROZPOZ_TERMICZ_PROMIEN_DZIEN", dynamicControls, 3, TextField.class ,null,controller,inputGridPane);
         InputControllerStatic.generateDynamicControl("ROZPOZ_TERMICZ_PROMIEN_NOC", "ROZPOZ_TERMICZ_PROMIEN_NOC", dynamicControls, 4, TextField.class,null, controller,inputGridPane);
-        InputControllerStatic.generateDynamicControl("ROZPOZ_NOKTOW", "ROZPOZ_NOKTOW", dynamicControls, 5, TextField.class, null,controller,inputGridPane);
+        controller.generateCheckBox(inputGridPane,"ROZPOZ_NOKTOW","ROZPOZ_NOKTOW",5);
         InputControllerStatic.generateDynamicControl("ROZPOZ_NOKTOW_PROMIEN", "ROZPOZ_NOKTOW_PROMIEN", dynamicControls, 6, TextField.class ,null,controller,inputGridPane);
-        InputControllerStatic.generateDynamicControl("ROZPOZ_RADAR", "ROZPOZ_RADAR", dynamicControls, 7, TextField.class,null, controller,inputGridPane);
+        controller.generateCheckBox(inputGridPane,"ROZPOZ_RADAR","ROZPOZ_RADAR",7);
         InputControllerStatic.generateDynamicControl("ROZPOZ_RADAR_PROMIEN", "ROZPOZ_RADAR_PROMIEN", dynamicControls, 8, TextField.class ,null,controller,inputGridPane);
         InputControllerStatic.generateDynamicControl("KLASA_PRZYRZ_OC", "KLASA_PRZYRZ_OC", dynamicControls, 9, TextField.class,null, controller,inputGridPane);
-
     }
     @FXML
     private void addButtonAction(){
 
         Stage stage = (Stage) addButton.getScene().getWindow();
-        Boolean rozpoz_akust = InputControllerStatic.getBooleanControlValue(stage,inputGridPane,"ROZPOZ_AKUSTTextField",controller);
+        Boolean rozpoz_akust = InputControllerStatic.getBooleanControlValue(stage,inputGridPane,"ROZPOZ_AKUSTCheckBox",controller);
         Double rozpoz_akust_promien = InputControllerStatic.getDoubleControlValue(stage,inputGridPane,"ROZPOZ_AKUST_PROMIENTextField",controller);
-        Boolean rozpoz_termicz = InputControllerStatic.getBooleanControlValue(stage,inputGridPane,"ROZPOZ_TERMICZTextField",controller);
+        Boolean rozpoz_termicz = InputControllerStatic.getBooleanControlValue(stage,inputGridPane,"ROZPOZ_TERMICZCheckBox",controller);
         Double rozpoz_termicz_promien_dzien = InputControllerStatic.getDoubleControlValue(stage,inputGridPane,"ROZPOZ_TERMICZ_PROMIEN_DZIENTextField",controller);
         Double rozpoz_termicz_promien_noc = InputControllerStatic.getDoubleControlValue(stage,inputGridPane,"ROZPOZ_TERMICZ_PROMIEN_NOCTextField",controller);
-        Boolean rozpoz_noktow = InputControllerStatic.getBooleanControlValue(stage,inputGridPane,"ROZPOZ_NOKTOWTextField",controller);
+        Boolean rozpoz_noktow = InputControllerStatic.getBooleanControlValue(stage,inputGridPane,"ROZPOZ_NOKTOWCheckBox",controller);
         Double rozpoz_noktow_promien = InputControllerStatic.getDoubleControlValue(stage,inputGridPane,"ROZPOZ_NOKTOW_PROMIENTextField",controller);
-        Boolean rozpoz_radar = InputControllerStatic.getBooleanControlValue(stage,inputGridPane,"ROZPOZ_RADARTextField",controller);
+        Boolean rozpoz_radar = InputControllerStatic.getBooleanControlValue(stage,inputGridPane,"ROZPOZ_RADARCheckBox",controller);
         Double rozpoz_radar_promien = InputControllerStatic.getDoubleControlValue(stage,inputGridPane,"ROZPOZ_RADAR_PROMIENTextField",controller);
         Integer klasa_przyrz_oc = InputControllerStatic.getIntegerControlValue(stage,inputGridPane,"KLASA_PRZYRZ_OCTextField",controller);
 

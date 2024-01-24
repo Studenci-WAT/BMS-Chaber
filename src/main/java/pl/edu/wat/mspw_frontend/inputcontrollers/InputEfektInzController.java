@@ -77,9 +77,9 @@ public class InputEfektInzController {
 
     private void setupDynamicControls() {
 
-        InputControllerStatic.generateDynamicControl("DO_PRAC_ZIEMNYCH", "DO_PRAC_ZIEMNYCH", dynamicControls, 0, TextField.class, null,controller,inputGridPane);
-        InputControllerStatic.generateDynamicControl("ELEMENT_PRZEPR_PROM", "ELEMENT_PRZEPR_PROM", dynamicControls, 1,TextField.class, null,controller,inputGridPane);
-        InputControllerStatic.generateDynamicControl("ELEMENT_PRZEPR_MOST", "ELEMENT_PRZEPR_MOST", dynamicControls, 2, TextField.class, null,controller,inputGridPane);
+        controller.generateCheckBox(inputGridPane,"DO_PRAC_ZIEMNYCH","DO_PRAC_ZIEMNYCH",0);
+        controller.generateCheckBox(inputGridPane,"ELEMENT_PRZEPR_PROM","ELEMENT_PRZEPR_PROM",1);
+        controller.generateCheckBox(inputGridPane,"ELEMENT_PRZEPR_MOST","ELEMENT_PRZEPR_MOST",2);
         InputControllerStatic.generateDynamicControl("NOSNOSC", "NOŚNOŚĆ", dynamicControls, 3, TextField.class ,null,controller,inputGridPane);
         InputControllerStatic.generateDynamicControl("SZEROK_PRZEPRAWY", "SZEROK_PRZEPRAWY", dynamicControls, 4, TextField.class,null, controller,inputGridPane);
 
@@ -88,9 +88,9 @@ public class InputEfektInzController {
     private void addButtonAction(){
 
         Stage stage = (Stage) addButton.getScene().getWindow();
-        Boolean do_prac_ziemnych = InputControllerStatic.getBooleanControlValue(stage,inputGridPane,"DO_PRAC_ZIEMNYCHTextField",controller);
-        Boolean element_przepr_prom = InputControllerStatic.getBooleanControlValue(stage,inputGridPane,"ELEMENT_PRZEPR_PROMTextField",controller);
-        Boolean element_przepr_most = InputControllerStatic.getBooleanControlValue(stage,inputGridPane,"ELEMENT_PRZEPR_MOSTTextField",controller);
+        Boolean do_prac_ziemnych = InputControllerStatic.getBooleanControlValue(stage,inputGridPane,"DO_PRAC_ZIEMNYCHCheckBox",controller);
+        Boolean element_przepr_prom = InputControllerStatic.getBooleanControlValue(stage,inputGridPane,"ELEMENT_PRZEPR_PROMCheckBox",controller);
+        Boolean element_przepr_most = InputControllerStatic.getBooleanControlValue(stage,inputGridPane,"ELEMENT_PRZEPR_MOSTCheckBox",controller);
         Double nosnosc = InputControllerStatic.getDoubleControlValue(stage,inputGridPane,"NOSNOSCTextField",controller);
         Double szerok_przeprawy = InputControllerStatic.getDoubleControlValue(stage,inputGridPane,"SZEROK_PRZEPRAWYTextField",controller);
 

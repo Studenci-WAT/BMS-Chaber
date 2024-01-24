@@ -199,14 +199,8 @@ public class InputControllerStatic {
     public static Boolean getBooleanControlValue(Stage stage, GridPane parentContainer, String controlId, ControlGenerator controller) {
         Node control = controller.findControlById(parentContainer, controlId);
 
-        if (control instanceof TextField) {
-                String text = ((TextField) control).getText();
-                if(Objects.equals(text, "1") || Objects.equals(text, "true")) { return true;}
-                else if(Objects.equals(text, "0") || Objects.equals(text, "false")){ return false;}
-                else {
-                    showToast(stage, "Wystąpił błąd - invalid boolean value for TextField with ID " + controlId, Toast.ToastType.ERROR);
-                    throw new IllegalArgumentException("Invalid boolean value for TextField with ID " + controlId);
-                }
+        if (control instanceof CheckBox) {
+                return ((CheckBox) control).isSelected();
         } else if (control instanceof ChoiceBox) {
             Object selectedValue = ((ChoiceBox<Item>) control).getValue().getId();
             if (selectedValue instanceof Integer) {
