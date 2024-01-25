@@ -14,6 +14,8 @@ import java.io.IOException;
 
 import pl.edu.wat.mspw_frontend.enums.Views;
 
+import static pl.edu.wat.mspw_frontend.interfaces.ChoiceList.refreshDataToChoiceBox;
+
 public class MainViewController {
     @FXML
     private StackPane contentArea;
@@ -44,6 +46,8 @@ public class MainViewController {
         // Tworzenie przycisków dynamicznie w drugiej zakładce
         GridPane secondTabGridPane = (GridPane) ((AnchorPane) tabPane.getTabs().get(1).getContent()).getChildren().get(0);
         generateNavigationButton(secondTabGridPane, "TABLES", "tablesNavigator", 0);
+
+        refreshDataToChoiceBox();
     }
     public void loadView(String fxmlPath) {
         try {

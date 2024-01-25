@@ -2,6 +2,7 @@ package pl.edu.wat.mspw_frontend.inputcontrollers;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -26,6 +27,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static pl.edu.wat.mspw_frontend.interfaces.ChoiceList.kategoryList;
 import static pl.edu.wat.mspw_frontend.util.Toast.showToast;
 
 public class InputEfektorJezdnController {
@@ -78,10 +80,6 @@ public class InputEfektorJezdnController {
     }
 
     private void setupDynamicControls() {
-        List<Item> kategoryList = rodzajPodwoziaService.getAll().stream()
-                .map(object -> new Item(object.getId(), object.getNazwa()))
-                .collect(Collectors.toList());
-
 
         InputControllerStatic.generateDynamicControl("ZUZYCIE_PALIWA_PREDK_EKO_DROGA", "ZUZYCIE_PALIWA_PREDK_EKO_DROGA", dynamicControls, 0, TextField.class, null,controller,inputGridPane);
         InputControllerStatic.generateDynamicControl("ZUZYCIE_PALIWA_PREDK_EKO_TEREN", "ZUZYCIE_PALIWA_PREDK_EKO_TEREN", dynamicControls, 1,TextField.class, null,controller,inputGridPane);
@@ -93,7 +91,7 @@ public class InputEfektorJezdnController {
         InputControllerStatic.generateDynamicControl("SZEROK_POKONYW_ROWOW", "SZEROK_POKONYW_ROWÓW", dynamicControls, 7, TextField.class,null,controller,inputGridPane);
         InputControllerStatic.generateDynamicControl("GLEBOK_BRODZ", "GLEBOK_BRODZ", dynamicControls, 8, TextField.class,null,controller,inputGridPane);
 
-        InputControllerStatic.generateDynamicControl("RODZAJ_PODWOZIA_FK", "RODZAJ_PODWOZIA", dynamicControls, 9, ChoiceBox.class, kategoryList,controller,inputGridPane);
+        InputControllerStatic.generateDynamicControl("RODZAJ_PODWOZIA_FK", "RODZAJ_PODWOZIA", dynamicControls, 9, ChoiceBox.class, kategoryList ,controller,inputGridPane);
         controller.generateButton(inputGridPane, "RODZAJ_PODWOZIA_FK", "#", Views.INPUTRODZAJPODWOZIA.getValue(), 2, 9);
 
     }

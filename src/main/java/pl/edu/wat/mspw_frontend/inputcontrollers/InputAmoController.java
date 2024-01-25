@@ -2,6 +2,7 @@ package pl.edu.wat.mspw_frontend.inputcontrollers;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -25,14 +26,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static pl.edu.wat.mspw_frontend.interfaces.ChoiceList.*;
 import static pl.edu.wat.mspw_frontend.util.Toast.showToast;
 
 public class InputAmoController {
     private AmoService amoService = new AmoService();
-    private KategoriaAmoService kategoriaAmoService = new KategoriaAmoService();
-    private RodzajGlowicyBojService rodzajGlowicyBojService = new RodzajGlowicyBojService();
-    private RodzajGlowicyNaprowService rodzajGlowicyNaprowService = new RodzajGlowicyNaprowService();
-    private RodzajNaprowService rodzajNaprowService = new RodzajNaprowService();
     private TableAmoController  tableAmoController;
     @FXML
     private AnchorPane tableContainer; // Container dla TableMpsView
@@ -79,21 +77,6 @@ public class InputAmoController {
     }
 
     private void setupDynamicControls() {
-        List<Item> kategoryList = kategoriaAmoService.getAll().stream()
-                .map(object -> new Item(object.getId(), object.getNazwa()))
-                .collect(Collectors.toList());
-        List<Item> rodzajGlowicyList = rodzajGlowicyBojService.getAll().stream()
-                .map(object -> new Item(object.getId(), object.getNazwa()))
-                .collect(Collectors.toList());
-
-        List<Item> rodzajGlowicyNaprowList = rodzajGlowicyNaprowService.getAll().stream()
-                .map(object -> new Item(object.getId(), object.getNazwa()))
-                .collect(Collectors.toList());
-
-        List<Item> rodzajNaprowList = rodzajNaprowService.getAll().stream()
-                .map(object -> new Item(object.getId(), object.getNazwa()))
-                .collect(Collectors.toList());
-
 
         InputControllerStatic.generateDynamicControl("NAZWA", "NAZWA", dynamicControls, 0,TextField.class, null,controller,inputGridPane);
         InputControllerStatic.generateDynamicControl("SKROT", "SKRÓT", dynamicControls, 1,TextField.class, null,controller,inputGridPane);
@@ -105,16 +88,16 @@ public class InputAmoController {
         InputControllerStatic.generateDynamicControl("WYM_PACZKI_Y", "WYM_PACZKI_Y", dynamicControls, 7, TextField.class,null,controller,inputGridPane);
         InputControllerStatic.generateDynamicControl("WYM_PACZKI_Z", "WYM_PACZKI_Z", dynamicControls, 8, TextField.class,null,controller,inputGridPane);
 
-        InputControllerStatic.generateDynamicControl("KATEG_FK", "KATEGORIA", dynamicControls, 9, ChoiceBox.class, kategoryList,controller,inputGridPane);
+        InputControllerStatic.generateDynamicControl("KATEG_FK", "KATEGORIA", dynamicControls, 9, ChoiceBox.class, kategoryList ,controller,inputGridPane);
         controller.generateButton(inputGridPane, "KATEG_FK", "#", Views.INPUTKATEGORIAAMOVIEW.getValue(), 2, 9);
 
-        InputControllerStatic.generateDynamicControl("RODZAJ_GLOWICY_BOJ_FK", "RODZAJ_GLOWICY_BOJ_FK", dynamicControls, 10, ChoiceBox.class, rodzajGlowicyList,controller,inputGridPane);
+        InputControllerStatic.generateDynamicControl("RODZAJ_GLOWICY_BOJ_FK", "RODZAJ_GLOWICY_BOJ_FK", dynamicControls, 10, ChoiceBox.class, rodzajGlowicyList ,controller,inputGridPane);
         controller.generateButton(inputGridPane, "RODZAJ_GLOWICY_BOJ_FK", "#", Views.INPUTRODZAJGLOWICYBOJ.getValue(), 2, 10);
 
-        InputControllerStatic.generateDynamicControl("RODZAJ_GLOWICY_NAPROW_FK", "RODZAJ_GLOWICY_NAPROW_FK", dynamicControls, 11, ChoiceBox.class, rodzajGlowicyNaprowList,controller,inputGridPane);
+        InputControllerStatic.generateDynamicControl("RODZAJ_GLOWICY_NAPROW_FK", "RODZAJ_GLOWICY_NAPROW_FK", dynamicControls, 11, ChoiceBox.class, rodzajGlowicyNaprawList ,controller,inputGridPane);
         controller.generateButton(inputGridPane, "RODZAJ_GLOWICY_NAPROW_FK", "#", Views.INPUTRODZAJGLOWICYNAPROW.getValue(), 2, 11);
 
-        InputControllerStatic.generateDynamicControl("RODZAJ_NAPROW_FK", "RODZAJ_NAPROW_FK", dynamicControls, 12, ChoiceBox.class, rodzajNaprowList,controller,inputGridPane);
+        InputControllerStatic.generateDynamicControl("RODZAJ_NAPROW_FK", "RODZAJ_NAPROW_FK", dynamicControls, 12, ChoiceBox.class, rodzajNaprawList ,controller,inputGridPane);
         controller.generateButton(inputGridPane, "RODZAJ_NAPROW_FK", "#", Views.INPUTRODZAJNAPROW.getValue(), 2, 12);
     }
     @FXML

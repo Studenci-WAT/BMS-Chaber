@@ -2,6 +2,7 @@ package pl.edu.wat.mspw_frontend.inputcontrollers;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
@@ -28,11 +29,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static pl.edu.wat.mspw_frontend.interfaces.ChoiceList.rodzajSystemuOgniaList;
 import static pl.edu.wat.mspw_frontend.util.Toast.showToast;
 
 public class InputSystemOgnController {
     private SystemOgnService systemOgnService = new SystemOgnService();
-    private RodzajSystemuOgnService rodzajSystemuOgnService = new RodzajSystemuOgnService();
     private TableSystemOgnController tableController;
     @FXML
     private AnchorPane tableContainer; // Container dla TableMpsView
@@ -79,9 +80,6 @@ public class InputSystemOgnController {
     }
 
     private void setupDynamicControls() {
-        List<Item> rodzajSystemuOgniaList = rodzajSystemuOgnService.getAll().stream()
-                .map(object -> new Item(object.getId(), object.getNazwa()))
-                .collect(Collectors.toList());
 
         InputControllerStatic.generateDynamicControl("NAZWA", "NAZWA", dynamicControls, 0,TextField.class, null,controller,inputGridPane);
         InputControllerStatic.generateDynamicControl("SKROT", "SKRÓT", dynamicControls, 1,TextField.class, null,controller,inputGridPane);

@@ -2,6 +2,7 @@ package pl.edu.wat.mspw_frontend.inputcontrollers;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -24,6 +25,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static pl.edu.wat.mspw_frontend.interfaces.ChoiceList.amoList;
+import static pl.edu.wat.mspw_frontend.interfaces.ChoiceList.spwList;
 import static pl.edu.wat.mspw_frontend.util.Toast.showToast;
 
 public class InputStanAmoSpwController {
@@ -76,13 +79,6 @@ public class InputStanAmoSpwController {
     }
 
     private void setupDynamicControls() {
-        List<Item> amoList = amoService.getAll().stream()
-                .map(object -> new Item(object.getId(), object.getNazwa()))
-                .collect(Collectors.toList());
-
-        List<Item> spwList = sprzetWojService.getAll().stream()
-                .map(object -> new Item(object.getId(), object.getNazwa()))
-                .collect(Collectors.toList());
 
         InputControllerStatic.generateDynamicControl("AMO_FK", "AMO_FK", dynamicControls, 0, ChoiceBox.class, amoList,controller,inputGridPane);
         controller.generateButton(inputGridPane, "AMO_FK", "#", Views.INPUTAMOVIEW.getValue(), 2, 0);

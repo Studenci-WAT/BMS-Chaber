@@ -2,6 +2,7 @@ package pl.edu.wat.mspw_frontend.inputcontrollers;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
@@ -25,6 +26,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static pl.edu.wat.mspw_frontend.interfaces.ChoiceList.kategoryList;
 import static pl.edu.wat.mspw_frontend.util.Toast.showToast;
 import static pl.edu.wat.mspw_frontend.util.Util.getSelectedItemId;
 import static pl.edu.wat.mspw_frontend.util.Util.refreshData;
@@ -32,7 +34,6 @@ import static pl.edu.wat.mspw_frontend.util.Util.refreshData;
 public class InputKategoryController {
 
     private final KategoriaSpwService kategoriaSpwService = new KategoriaSpwService();
-    private final KategoriaCeluRazeniaService kategoriaCeluRazeniaService = new KategoriaCeluRazeniaService();
     private TableKategoriaSpwController tableKategoriaSpwController;
     @FXML
     private AnchorPane tableContainer; // Container dla TableMpsView
@@ -65,10 +66,6 @@ public class InputKategoryController {
     }
 
     private void setupDynamicTextFields() {
-        List<Item> kategoryList = kategoriaCeluRazeniaService.getAll().stream()
-                .map(object -> new Item(object.getId(), object.getNazwa()))
-                .collect(Collectors.toList());
-
         generateDynamicControl("NAZWA", "NAZWA", dynamicControls, 0, TextField.class, null);
         generateDynamicControl("SKROT", "SKRÓT", dynamicControls, 1, TextField.class, null);
         generateDynamicControl("KATEGORIA_CELU_RAZENIA_FK", "KATEGORIA_CELU_RAŻENIA_FK", dynamicControls, 2, ChoiceBox.class, kategoryList);
@@ -176,7 +173,7 @@ public class InputKategoryController {
         });
     }
 
-    private void generateDynamicControl(String id, String label, Map<String, Control> container, int rowIndex, Class<? extends Control> controlType, List<Item> options) {
+    private void generateDynamicControl(String id, String label, Map<String, Control> container, int rowIndex, Class<? extends Control> controlType, ObservableList<Item> options) {
         Control control;
         if (controlType.equals(TextField.class)) {
             control = controller.generateTextField(inputGridPane, id, label, rowIndex);

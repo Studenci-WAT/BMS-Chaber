@@ -1,5 +1,7 @@
 package pl.edu.wat.mspw_frontend.inputcontrollers;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
@@ -17,6 +19,7 @@ import pl.edu.wat.mspw_frontend.model.SprzetWojDto;
 import pl.edu.wat.mspw_frontend.readcontrollers.TableSprzetWojController;
 import pl.edu.wat.mspw_frontend.util.Toast;
 
+import static pl.edu.wat.mspw_frontend.interfaces.ChoiceList.*;
 import static pl.edu.wat.mspw_frontend.util.Toast.showToast;
 import static pl.edu.wat.mspw_frontend.util.Util.*;
 
@@ -43,16 +46,7 @@ public class InputSpwController {
     private Label labelTitle;
     private ControlGenerator controller = new ControlGenerator();
     private final SprzetWojService spwService = new SprzetWojService();
-    private final KategoriaSpwService kategoriaSpwService = new KategoriaSpwService();
-    private final EfektorLacznService efektorLacznService = new EfektorLacznService();
-    private final EfektorJezdnyService efektorJezdnyService = new EfektorJezdnyService();
-    private final EfektorPlywaniaService efektorPlywaniaService = new EfektorPlywaniaService();
-    private final EfektorInzService efektorInzService = new EfektorInzService();
-    private final EfektorWeService efektorWeService = new EfektorWeService();
-    private final KadlubService kadlubService = new KadlubService();
-    private final EfektorTranspService efektorTranspService = new EfektorTranspService();
-    private final EfektorLataniaService efektorLataniaService = new EfektorLataniaService();
-    private final EfektorRozpozService efektorRozpozService = new EfektorRozpozService();
+
     public void initialize() {
         // ustawienie tytulu strony
         labelTitle.setText("Wprowadzanie nowego SPW");
@@ -63,45 +57,8 @@ public class InputSpwController {
 
     }
 
+
     private void generateControls(){
-        List<Item> kategoryList = kategoriaSpwService.getAll().stream()
-                .map(object -> new Item(object.getId(), object.getNazwa()))
-                .collect(Collectors.toList());
-        List<Item> efektorLacznList = efektorLacznService.getAll().stream()
-                .map(object -> new Item(object.getId(), object.getNazwa()))
-                .collect(Collectors.toList());
-
-        List<Item> efektorJezdbyList = efektorJezdnyService.getAll().stream()
-                .map(object -> new Item(object.getId(), object.getNazwa()))
-                .collect(Collectors.toList());
-
-        List<Item> efektorPlywaniaList = efektorPlywaniaService.getAll().stream()
-                .map(object -> new Item(object.getId(), object.getNazwa()))
-                .collect(Collectors.toList());
-
-        List<Item> efektorInzList = efektorInzService.getAll().stream()
-                .map(object -> new Item(object.getId(), object.getNazwa()))
-                .collect(Collectors.toList());
-
-        List<Item> efektorWeList = efektorWeService.getAll().stream()
-                .map(object -> new Item(object.getId(), object.getNazwa()))
-                .collect(Collectors.toList());
-
-        List<Item> kadlubList = kadlubService.getAll().stream()
-                .map(object -> new Item(object.getId(), object.getNazwa()))
-                .collect(Collectors.toList());
-
-        List<Item> efektorTranspList = efektorTranspService.getAll().stream()
-                .map(object -> new Item(object.getId(), object.getNazwa()))
-                .collect(Collectors.toList());
-
-        List<Item> efektorLataniaList = efektorLataniaService.getAll().stream()
-                .map(object -> new Item(object.getId(), object.getNazwa()))
-                .collect(Collectors.toList());
-
-        List<Item> efektorRozpozList = efektorRozpozService.getAll().stream()
-                .map(object -> new Item(object.getId(), object.getNazwa()))
-                .collect(Collectors.toList());
 
         // generowanie kontrolek
         controller.generateTextField(inputGridPane,"NAZWA","NAZWA",  0);
@@ -132,7 +89,7 @@ public class InputSpwController {
         controller.generateButton(inputGridPane2, "EFEKTOR_LACZN_FK", "#", Views.INPUTEFEKTORLACZN.getValue(), 2, 9);
 //        controller.generateChoiceBox(inputGridPane2,"RODZAJ_SRODOW_FK","RODZAJ_SRODOW_FK",  10,);
 //        controller.generateButton(inputGridPane2, "RODZAJ_SRODOW_FK", "#", Views.INPUTBLANKVIEW.getValue(), 2, 10);
-        controller.generateChoiceBox(inputGridPane2,"EFEKTOR_JEZDNY_FK", "EFEKTOR_JEZDNY_FK", 11, efektorJezdbyList);
+        controller.generateChoiceBox(inputGridPane2,"EFEKTOR_JEZDNY_FK", "EFEKTOR_JEZDNY_FK", 11, efektorJezdnyList);
         controller.generateButton(inputGridPane2, "EFEKTOR_JEZDNY_FK", "#", Views.INPUTEFEKTORJEZDN.getValue(), 2, 11);
         controller.generateChoiceBox(inputGridPane2,"EFEKTOR_PLYWANIA_FK", "EFEKTOR_PLYWANIA_FK", 12,efektorPlywaniaList);
         controller.generateButton(inputGridPane2, "EFEKTOR_PLYWANIA_FK", "#", Views.INPUTEFEKTORPLYWANIA.getValue(), 2, 12);
@@ -161,7 +118,6 @@ public class InputSpwController {
         // - Walidacja danych wejściowych
         // - Dodawanie danych do listy lub tabeli
         // - Komunikacja z bazą danych
-        // - itp.
         SprzetWojDto item;
         Stage stage = (Stage) addButton.getScene().getWindow();
 

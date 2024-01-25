@@ -2,6 +2,7 @@ package pl.edu.wat.mspw_frontend.inputcontrollers;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -26,12 +27,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static pl.edu.wat.mspw_frontend.interfaces.ChoiceList.spwList;
+import static pl.edu.wat.mspw_frontend.interfaces.ChoiceList.sysOgnList;
 import static pl.edu.wat.mspw_frontend.util.Toast.showToast;
 
 public class InputSpwSystemOgnController {
     private SpwSysOgnService spwSysOgnService = new SpwSysOgnService();
-    private SprzetWojService sprzetWojService = new SprzetWojService();
-
     private SystemOgnService systemOgnService = new SystemOgnService();
     private TableSpwSysOgnController tableController;
     @FXML
@@ -79,13 +80,7 @@ public class InputSpwSystemOgnController {
     }
 
     private void setupDynamicControls() {
-        List<Item> sysOgnList = systemOgnService.getAll().stream()
-                .map(object -> new Item(object.getId(), object.getNazwa()))
-                .collect(Collectors.toList());
 
-        List<Item> spwList = sprzetWojService.getAll().stream()
-                .map(object -> new Item(object.getId(), object.getNazwa()))
-                .collect(Collectors.toList());
 
         InputControllerStatic.generateDynamicControl("SYSTEM_OGN_FK", "SYSTEM_OGN_FK", dynamicControls, 0, ChoiceBox.class, sysOgnList,controller,inputGridPane);
         controller.generateButton(inputGridPane, "SYSTEM_OGN_FK", "#", Views.INPUTSYSOGNVIEW.getValue(), 2, 0);

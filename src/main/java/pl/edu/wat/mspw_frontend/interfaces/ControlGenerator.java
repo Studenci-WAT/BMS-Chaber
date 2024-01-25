@@ -1,6 +1,7 @@
 package pl.edu.wat.mspw_frontend.interfaces;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -8,9 +9,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import javafx.stage.Window;
+import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 import java.util.List;
+
+import static pl.edu.wat.mspw_frontend.interfaces.ChoiceList.refreshDataToChoiceBox;
 
 public class ControlGenerator {
 
@@ -44,7 +49,7 @@ public class ControlGenerator {
         return textField;
     }
 
-    public ChoiceBox<Item> generateChoiceBox(GridPane gridPane, String namePrefix, String labelText, int row, List<Item> choices) {
+    public ChoiceBox<Item> generateChoiceBox(GridPane gridPane, String namePrefix, String labelText, int row, ObservableList<Item> choices) {
         Label label = new Label(labelText);
         ChoiceBox<Item> choiceBox = new ChoiceBox<>();
 
@@ -53,7 +58,7 @@ public class ControlGenerator {
         choiceBox.setId(namePrefix+ "ChoiceBox");
 
         // Ustawienie opcji wyboru w ChoiceBox
-        choiceBox.setItems(FXCollections.observableArrayList(choices));
+        choiceBox.setItems(choices);
 
         // Dodajemy kontrolki do GridPane
         gridPane.add(label, 0, row); // Kolumna 0, wiersz row
@@ -87,10 +92,15 @@ public class ControlGenerator {
             Parent view = fxmlLoader.load();
             Stage newWindow = new Stage();
             newWindow.setScene(new Scene(view));
+            newWindow.setOnCloseRequest(windowEvent -> onInputClose());
             newWindow.show();
         } catch (IOException e) {
             e.printStackTrace(); // Logowanie błędów
         }
+    }
+
+    public void onInputClose() {
+        refreshDataToChoiceBox();
     }
 
     public Node findControlById(GridPane gridPane, String controlId) {
@@ -101,4 +111,5 @@ public class ControlGenerator {
         }
         return null;
     }
+
 }

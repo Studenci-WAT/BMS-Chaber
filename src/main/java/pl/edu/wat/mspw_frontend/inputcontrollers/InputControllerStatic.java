@@ -1,6 +1,7 @@
 package pl.edu.wat.mspw_frontend.inputcontrollers;
 
 import javafx.beans.property.BooleanProperty;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -28,7 +29,7 @@ public class InputControllerStatic {
             Map<String, Control> container,
             int rowIndex,
             Class<? extends Control> controlType,
-            List<Item> options,
+            ObservableList<Item> options,
             ControlGenerator controller,
             GridPane inputGridPane
     ) {
@@ -40,7 +41,6 @@ public class InputControllerStatic {
                 throw new IllegalArgumentException("ChoiceBox requires options");
             }
             ChoiceBox<Item> choiceBox = controller.generateChoiceBox(inputGridPane, id, label, rowIndex, options);
-            choiceBox.getItems().addAll(options);
             control = choiceBox;
         } else if (controlType.equals(CheckBox.class)) {
             control = controller.generateCheckBox(inputGridPane, id, label, rowIndex);
