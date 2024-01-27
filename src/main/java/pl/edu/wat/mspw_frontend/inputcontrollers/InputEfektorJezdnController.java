@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static pl.edu.wat.mspw_frontend.interfaces.ChoiceList.kategoryList;
+import static pl.edu.wat.mspw_frontend.interfaces.ChoiceList.kategoryRodzajPodwoziaList;
 import static pl.edu.wat.mspw_frontend.util.Toast.showToast;
 
 public class InputEfektorJezdnController {
@@ -91,7 +91,7 @@ public class InputEfektorJezdnController {
         InputControllerStatic.generateDynamicControl("SZEROK_POKONYW_ROWOW", "SZEROK_POKONYW_ROWÓW", dynamicControls, 7, TextField.class,null,controller,inputGridPane);
         InputControllerStatic.generateDynamicControl("GLEBOK_BRODZ", "GLEBOK_BRODZ", dynamicControls, 8, TextField.class,null,controller,inputGridPane);
 
-        InputControllerStatic.generateDynamicControl("RODZAJ_PODWOZIA_FK", "RODZAJ_PODWOZIA", dynamicControls, 9, ChoiceBox.class, kategoryList ,controller,inputGridPane);
+        InputControllerStatic.generateDynamicControl("RODZAJ_PODWOZIA_FK", "RODZAJ_PODWOZIA", dynamicControls, 9, ChoiceBox.class, kategoryRodzajPodwoziaList ,controller,inputGridPane);
         controller.generateButton(inputGridPane, "RODZAJ_PODWOZIA_FK", "#", Views.INPUTRODZAJPODWOZIA.getValue(), 2, 9);
 
     }

@@ -60,6 +60,9 @@ public class ControlGenerator {
         // Ustawienie opcji wyboru w ChoiceBox
         choiceBox.setItems(choices);
 
+        // Ustawienie stałej szerokości dla ChoiceBox
+        choiceBox.setPrefWidth(150.0);
+
         // Dodajemy kontrolki do GridPane
         gridPane.add(label, 0, row); // Kolumna 0, wiersz row
         gridPane.add(choiceBox, 1, row); // Kolumna 1, wiersz row

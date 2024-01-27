@@ -88,7 +88,7 @@ public class InputAmoController {
         InputControllerStatic.generateDynamicControl("WYM_PACZKI_Y", "WYM_PACZKI_Y", dynamicControls, 7, TextField.class,null,controller,inputGridPane);
         InputControllerStatic.generateDynamicControl("WYM_PACZKI_Z", "WYM_PACZKI_Z", dynamicControls, 8, TextField.class,null,controller,inputGridPane);
 
-        InputControllerStatic.generateDynamicControl("KATEG_FK", "KATEGORIA", dynamicControls, 9, ChoiceBox.class, kategoryList ,controller,inputGridPane);
+        InputControllerStatic.generateDynamicControl("KATEG_FK", "KATEGORIA", dynamicControls, 9, ChoiceBox.class, kategoryAmoList ,controller,inputGridPane);
         controller.generateButton(inputGridPane, "KATEG_FK", "#", Views.INPUTKATEGORIAAMOVIEW.getValue(), 2, 9);
 
         InputControllerStatic.generateDynamicControl("RODZAJ_GLOWICY_BOJ_FK", "RODZAJ_GLOWICY_BOJ_FK", dynamicControls, 10, ChoiceBox.class, rodzajGlowicyList ,controller,inputGridPane);

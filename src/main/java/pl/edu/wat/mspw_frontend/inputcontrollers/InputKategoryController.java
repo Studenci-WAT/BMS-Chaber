@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static pl.edu.wat.mspw_frontend.interfaces.ChoiceList.kategoryList;
+import static pl.edu.wat.mspw_frontend.interfaces.ChoiceList.kategoryCeluRazeniaList;
 import static pl.edu.wat.mspw_frontend.util.Toast.showToast;
 import static pl.edu.wat.mspw_frontend.util.Util.getSelectedItemId;
 import static pl.edu.wat.mspw_frontend.util.Util.refreshData;
@@ -68,7 +68,7 @@ public class InputKategoryController {
     private void setupDynamicTextFields() {
         generateDynamicControl("NAZWA", "NAZWA", dynamicControls, 0, TextField.class, null);
         generateDynamicControl("SKROT", "SKRÓT", dynamicControls, 1, TextField.class, null);
-        generateDynamicControl("KATEGORIA_CELU_RAZENIA_FK", "KATEGORIA_CELU_RAŻENIA_FK", dynamicControls, 2, ChoiceBox.class, kategoryList);
+        generateDynamicControl("KATEGORIA_CELU_RAZENIA_FK", "KATEGORIA_CELU_RAŻENIA_FK", dynamicControls, 2, ChoiceBox.class, kategoryCeluRazeniaList);
     }
 
     private void loadTableView(String path) {
