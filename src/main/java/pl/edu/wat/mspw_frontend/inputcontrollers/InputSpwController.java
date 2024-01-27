@@ -101,7 +101,7 @@ public class InputSpwController {
         controller.generateButton(inputGridPane3, "PARAM_KADLUBA_FK", "#", Views.INPUTKADLUB.getValue(), 2, 1);
         controller.generateChoiceBox(inputGridPane3,"EFEKTOR_TRANSP_FK","EFEKTOR_TRANSP_FK", 2, efektorTranspList);
         controller.generateButton(inputGridPane3, "EFEKTOR_TRANSP_FK", "#", Views.INPUTEFEKTORTRANSP.getValue(), 2, 2);
-        controller.generateChoiceBox(inputGridPane3,"KATEG_FK","KATEG_FK",  3, kategoryList);
+        controller.generateChoiceBox(inputGridPane3,"KATEG_FK","KATEG_FK",  3, kategorySpwList);
         controller.generateButton(inputGridPane3, "KATEG_FK", "#", Views.INPUTKATEGORY.getValue(), 2, 3);
         controller.generateChoiceBox(inputGridPane3,"EFEKTOR_LATANIA_FK","EFEKTOR_LATANIA_FK", 4, efektorLataniaList);
         controller.generateButton(inputGridPane3, "EFEKTOR_LATANIA_FK", "#", Views.INPUTEFEKTORLATANIA.getValue(), 2, 4);

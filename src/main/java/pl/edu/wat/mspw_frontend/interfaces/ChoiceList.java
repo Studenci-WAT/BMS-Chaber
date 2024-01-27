@@ -9,7 +9,11 @@ import java.util.stream.Collectors;
 
 public class ChoiceList {
 
-    public static ObservableList<Item> kategoryList = FXCollections.observableArrayList();
+    public static ObservableList<Item> kategoryAmoList = FXCollections.observableArrayList();
+    public static ObservableList<Item> kategorySpwList = FXCollections.observableArrayList();
+    public static ObservableList<Item> kategoryRodzajPodwoziaList = FXCollections.observableArrayList();
+
+    public static ObservableList<Item> kategoryCeluRazeniaList = FXCollections.observableArrayList();
     public static ObservableList<Item> efektorLacznList = FXCollections.observableArrayList();
     public static ObservableList<Item> efektorJezdnyList = FXCollections.observableArrayList();
     public static ObservableList<Item> efektorPlywaniaList = FXCollections.observableArrayList();
@@ -26,6 +30,10 @@ public class ChoiceList {
     public static ObservableList<Item> rodzajGlowicyList = FXCollections.observableArrayList();
     public static ObservableList<Item> rodzajGlowicyNaprawList = FXCollections.observableArrayList();
     public static ObservableList<Item> rodzajNaprawList = FXCollections.observableArrayList();
+    private static final KategoriaCeluRazeniaService kategoriaCeluRazeniaService = new KategoriaCeluRazeniaService();
+
+    private static final RodzajPodwoziaService rodzajPodwoziaService = new RodzajPodwoziaService();
+    private static final KategoriaAmoService kategoriaAmoService = new KategoriaAmoService();
     private static final KategoriaSpwService kategoriaSpwService = new KategoriaSpwService();
     private static final EfektorLacznService efektorLacznService = new EfektorLacznService();
     private static final EfektorJezdnyService efektorJezdnyService = new EfektorJezdnyService();
@@ -46,7 +54,19 @@ public class ChoiceList {
 
     public static void refreshDataToChoiceBox(){
         Platform.runLater(() -> {
-            kategoryList.setAll(FXCollections.observableArrayList(kategoriaSpwService.getAll().stream()
+            kategoryRodzajPodwoziaList.setAll(FXCollections.observableArrayList(rodzajPodwoziaService.getAll().stream()
+                    .map(object -> new Item(object.getId(), object.getNazwa()))
+                    .collect(Collectors.toList())));
+
+            kategoryCeluRazeniaList.setAll(FXCollections.observableArrayList(kategoriaCeluRazeniaService.getAll().stream()
+                    .map(object -> new Item(object.getId(), object.getNazwa()))
+                    .collect(Collectors.toList())));
+
+            kategoryAmoList.setAll(FXCollections.observableArrayList(kategoriaAmoService.getAll().stream()
+                    .map(object -> new Item(object.getId(), object.getNazwa()))
+                    .collect(Collectors.toList())));
+
+            kategorySpwList.setAll(FXCollections.observableArrayList(kategoriaSpwService.getAll().stream()
                     .map(object -> new Item(object.getId(), object.getNazwa()))
                     .collect(Collectors.toList())));
 
@@ -78,23 +98,23 @@ public class ChoiceList {
                     .map(object -> new Item(object.getId(), object.getNazwa()))
                     .collect(Collectors.toList())));
 
-            efektorLataniaList.setAll(FXCollections.observableArrayList( efektorLataniaService.getAll().stream()
+            efektorLataniaList.setAll(FXCollections.observableArrayList(efektorLataniaService.getAll().stream()
                     .map(object -> new Item(object.getId(), object.getNazwa()))
                     .collect(Collectors.toList())));
 
-            efektorRozpozList.setAll(FXCollections.observableArrayList( efektorRozpozService.getAll().stream()
+            efektorRozpozList.setAll(FXCollections.observableArrayList(efektorRozpozService.getAll().stream()
                     .map(object -> new Item(object.getId(), object.getNazwa()))
                     .collect(Collectors.toList())));
 
-            rodzajSystemuOgniaList.setAll(FXCollections.observableArrayList( rodzajSystemuOgnService.getAll().stream()
+            rodzajSystemuOgniaList.setAll(FXCollections.observableArrayList(rodzajSystemuOgnService.getAll().stream()
                     .map(object -> new Item(object.getId(), object.getNazwa()))
                     .collect(Collectors.toList())));
 
-           amoList.setAll(FXCollections.observableArrayList( amoService.getAll().stream()
+           amoList.setAll(FXCollections.observableArrayList(amoService.getAll().stream()
                     .map(object -> new Item(object.getId(), object.getNazwa()))
                     .collect(Collectors.toList())));
 
-           spwList.setAll(FXCollections.observableArrayList( sprzetWojService.getAll().stream()
+           spwList.setAll(FXCollections.observableArrayList(sprzetWojService.getAll().stream()
                     .map(object -> new Item(object.getId(), object.getNazwa()))
                     .collect(Collectors.toList())));
 
