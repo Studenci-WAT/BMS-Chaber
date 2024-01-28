@@ -38,10 +38,18 @@ public class MainViewController {
         generateNavigationButton(firstTabGridPane, "KADLUB", "kadlubInputNavigator", 6);
         generateNavigationButton(firstTabGridPane, "KATEGORIA AMO", "kategoriaAmoInputNavigator", 7);
         generateNavigationButton(firstTabGridPane, "STAN MPS SPW ", "stanMpsSpwNavigator", 8);
-        generateNavigationButton(firstTabGridPane, "STREFA RAZ. SPW ", "strefaRazSpw", 9);
+        //generateNavigationButton(firstTabGridPane, "STREFA RAZ. SPW ", "strefaRazSpw", 9);
         //generateNavigationButton(firstTabGridPane, "PRZEBIJAL. RHA ", "przebijalPanRha", 9);
         //generateNavigationButton(firstTabGridPane, "PARAM OG BEZP ", "paramStrzelOgBezp", 9);
         //generateNavigationButton(firstTabGridPane, "PARAM OG POSR ", "paramStrzelOgPosr", 10);
+        //generateNavigationButton(firstTabGridPane, "FUN PSTWO ZNISZCZ OP ", "funPstwoZniszczOp", 9);
+        //generateNavigationButton(firstTabGridPane, "FUN PSTWO ZNISZCZ TRAF OB ", "funPstwoZniszczTrafOb", 9);
+        //generateNavigationButton(firstTabGridPane, "WSP MOBIL DLA STRZEL ", "funWspMobilDlaStrzel", 9);
+        //generateNavigationButton(firstTabGridPane, "WSP MOBIL DLA WYKR ", "funWspMobilDlaWykr", 9);
+        //generateNavigationButton(firstTabGridPane, "WSP OBEZWLAD ", "funWspObezwlad", 9);
+        //generateNavigationButton(firstTabGridPane, "WSP UKRYCIA ", "funWspUkrycia", 9);
+        //generateNavigationButton(firstTabGridPane, "WSP WIDOCZ DLA STRZEL ", "funWspWidoczDlaStrzel", 9);
+        generateNavigationButton(firstTabGridPane, "WSP WIDOCZ DLA WYKR ", "funWspWidoczDlaWykr", 9);
 
         // Tworzenie przycisków dynamicznie w drugiej zakładce
         GridPane secondTabGridPane = (GridPane) ((AnchorPane) tabPane.getTabs().get(1).getContent()).getChildren().get(0);
@@ -155,6 +163,38 @@ public class MainViewController {
 
             case "strefaRazSpw":
                 loadView(Views.STREFARAZENIASPW.getValue());
+                break;
+
+            case "funPstwoZniszczOp":
+                loadView(Views.INPUTFUNPSTWOZNISZCZOP.getValue());
+                break;
+
+            case "funPstwoZniszczTrafOb":
+                loadView(Views.INPUTFUNPSTWOZNISZCZTRAFOB.getValue());
+                break;
+
+            case "funWspMobilDlaStrzel":
+                loadView(Views.INPUTWSPMOBILDLASTRZEL.getValue());
+                break;
+
+            case "funWspMobilDlaWykr":
+                loadView(Views.INPUTWSPMOBILDLAWYKR.getValue());
+                break;
+
+            case "funWspObezwlad":
+                loadView(Views.INPUTWSPOBEZWLAD.getValue());
+                break;
+
+            case "funWspUkrycia":
+                loadView(Views.INPUTWSPUKRYCIA.getValue());
+                break;
+
+            case "funWspWidoczDlaStrzel":
+                loadView(Views.INPUTWSPWIDOCZDLASTRZEL.getValue());
+                break;
+
+            case "funWspWidoczDlaWykr":
+                loadView(Views.INPUTWSPWIDOCZDLAWYKR.getValue());
                 break;
 
             case "tablesNavigator":

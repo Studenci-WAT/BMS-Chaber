@@ -18,27 +18,27 @@ public class FunPstwoZniszczOpEntity {
     @Basic
     @Column(name = "POZIOM_FORT_CELU", nullable = true)
     private Integer poziomFortCelu;
-    @Basic
-    @Column(name = "KATEG_STRZEL_FK", nullable = true)
-    private Integer kategStrzelFk;
+    //@Basic
+    //@Column(name = "KATEG_STRZEL_FK", nullable = true)
+    //private Integer kategStrzelFk;
     @Basic
     @Column(name = "KLASA_STRZEL", nullable = true)
     private Integer klasaStrzel;
-    @Basic
-    @Column(name = "KATEG_CELU_FK", nullable = true)
-    private Integer kategCeluFk;
+    //@Basic
+    //@Column(name = "KATEG_CELU_FK", nullable = true)
+    //private Integer kategCeluFk;
     @Basic
     @Column(name = "KLASA_CELU", nullable = true)
     private Integer klasaCelu;
     @Basic
     @Column(name = "POZIOM_WYSZK_STRZEL", nullable = true)
     private Integer poziomWyszkStrzel;
-    @Basic
-    @Column(name = "SPW_STRZEL_FK", nullable = true)
-    private Integer spwStrzelFk;
-    @Basic
-    @Column(name = "SPW_CEL_FK", nullable = true)
-    private Integer spwCelFk;
+    //@Basic
+    //@Column(name = "SPW_STRZEL_FK", nullable = true)
+    //private Integer spwStrzelFk;
+    //@Basic
+    //@Column(name = "SPW_CEL_FK", nullable = true)
+    //private Integer spwCelFk;
     @Basic
     @Column(name = "PSTWO", nullable = true, precision = 0)
     private Double pstwo;
@@ -62,13 +62,9 @@ public class FunPstwoZniszczOpEntity {
         this.poziomFortCelu = poziomFortCelu;
     }
 
-    public Integer getKategStrzelFk() {
-        return kategStrzelFk;
-    }
+    //public Integer getKategStrzelFk() {return kategStrzelFk;}
 
-    public void setKategStrzelFk(Integer kategStrzelFk) {
-        this.kategStrzelFk = kategStrzelFk;
-    }
+    //public void setKategStrzelFk(Integer kategStrzelFk) {this.kategStrzelFk = kategStrzelFk;}
 
     public Integer getKlasaStrzel() {
         return klasaStrzel;
@@ -78,13 +74,9 @@ public class FunPstwoZniszczOpEntity {
         this.klasaStrzel = klasaStrzel;
     }
 
-    public Integer getKategCeluFk() {
-        return kategCeluFk;
-    }
+    //public Integer getKategCeluFk() {return kategCeluFk;}
 
-    public void setKategCeluFk(Integer kategCeluFk) {
-        this.kategCeluFk = kategCeluFk;
-    }
+    //public void setKategCeluFk(Integer kategCeluFk) {this.kategCeluFk = kategCeluFk;}
 
     public Integer getKlasaCelu() {
         return klasaCelu;
@@ -102,21 +94,13 @@ public class FunPstwoZniszczOpEntity {
         this.poziomWyszkStrzel = poziomWyszkStrzel;
     }
 
-    public Integer getSpwStrzelFk() {
-        return spwStrzelFk;
-    }
+    //public Integer getSpwStrzelFk() {return spwStrzelFk;}
 
-    public void setSpwStrzelFk(Integer spwStrzelFk) {
-        this.spwStrzelFk = spwStrzelFk;
-    }
+    //public void setSpwStrzelFk(Integer spwStrzelFk) {this.spwStrzelFk = spwStrzelFk;}
 
-    public Integer getSpwCelFk() {
-        return spwCelFk;
-    }
+    //public Integer getSpwCelFk() {return spwCelFk;}
 
-    public void setSpwCelFk(Integer spwCelFk) {
-        this.spwCelFk = spwCelFk;
-    }
+    //public void setSpwCelFk(Integer spwCelFk) {this.spwCelFk = spwCelFk;}
 
     public Double getPstwo() {
         return pstwo;
@@ -144,15 +128,15 @@ public class FunPstwoZniszczOpEntity {
         if (id != that.id) return false;
         if (poziomFortCelu != null ? !poziomFortCelu.equals(that.poziomFortCelu) : that.poziomFortCelu != null)
             return false;
-        if (kategStrzelFk != null ? !kategStrzelFk.equals(that.kategStrzelFk) : that.kategStrzelFk != null)
-            return false;
+        //if (kategStrzelFk != null ? !kategStrzelFk.equals(that.kategStrzelFk) : that.kategStrzelFk != null)
+        //    return false;
         if (klasaStrzel != null ? !klasaStrzel.equals(that.klasaStrzel) : that.klasaStrzel != null) return false;
-        if (kategCeluFk != null ? !kategCeluFk.equals(that.kategCeluFk) : that.kategCeluFk != null) return false;
+        //if (kategCeluFk != null ? !kategCeluFk.equals(that.kategCeluFk) : that.kategCeluFk != null) return false;
         if (klasaCelu != null ? !klasaCelu.equals(that.klasaCelu) : that.klasaCelu != null) return false;
         if (poziomWyszkStrzel != null ? !poziomWyszkStrzel.equals(that.poziomWyszkStrzel) : that.poziomWyszkStrzel != null)
             return false;
-        if (spwStrzelFk != null ? !spwStrzelFk.equals(that.spwStrzelFk) : that.spwStrzelFk != null) return false;
-        if (spwCelFk != null ? !spwCelFk.equals(that.spwCelFk) : that.spwCelFk != null) return false;
+        //if (spwStrzelFk != null ? !spwStrzelFk.equals(that.spwStrzelFk) : that.spwStrzelFk != null) return false;
+        //if (spwCelFk != null ? !spwCelFk.equals(that.spwCelFk) : that.spwCelFk != null) return false;
         if (pstwo != null ? !pstwo.equals(that.pstwo) : that.pstwo != null) return false;
         if (odleg != null ? !odleg.equals(that.odleg) : that.odleg != null) return false;
 
@@ -163,13 +147,13 @@ public class FunPstwoZniszczOpEntity {
     public int hashCode() {
         int result = id;
         result = 31 * result + (poziomFortCelu != null ? poziomFortCelu.hashCode() : 0);
-        result = 31 * result + (kategStrzelFk != null ? kategStrzelFk.hashCode() : 0);
+        //result = 31 * result + (kategStrzelFk != null ? kategStrzelFk.hashCode() : 0);
         result = 31 * result + (klasaStrzel != null ? klasaStrzel.hashCode() : 0);
-        result = 31 * result + (kategCeluFk != null ? kategCeluFk.hashCode() : 0);
+        //result = 31 * result + (kategCeluFk != null ? kategCeluFk.hashCode() : 0);
         result = 31 * result + (klasaCelu != null ? klasaCelu.hashCode() : 0);
         result = 31 * result + (poziomWyszkStrzel != null ? poziomWyszkStrzel.hashCode() : 0);
-        result = 31 * result + (spwStrzelFk != null ? spwStrzelFk.hashCode() : 0);
-        result = 31 * result + (spwCelFk != null ? spwCelFk.hashCode() : 0);
+        //result = 31 * result + (spwStrzelFk != null ? spwStrzelFk.hashCode() : 0);
+        //result = 31 * result + (spwCelFk != null ? spwCelFk.hashCode() : 0);
         result = 31 * result + (pstwo != null ? pstwo.hashCode() : 0);
         result = 31 * result + (odleg != null ? odleg.hashCode() : 0);
         return result;

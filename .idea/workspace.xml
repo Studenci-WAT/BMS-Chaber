@@ -5,21 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cd0cd9d-27c0-41c8-892b-2f3158cac233" name="Changes" comment="added all efectors views">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputParamStrzelOgBezpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputParamStrzelOgPosrController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputPrzebijalPancRhaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputStanMpsSpwController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputStrefaRazeniaSpwController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-param-strzel-og-bezp-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-param-strzel-og-posr-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-przebijal-pan-rha-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-stan-mps-spw-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-strefa-razenia-spw-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputFunPstwoZniszczOp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputFunPstwoZniszczTrafOb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputFunWspMobilDlaStrzel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputFunWspMobilDlaWykr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputFunWspObezwlad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputFunWspUkrycia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputFunWspWidoczDlaStrzel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputFunWspWidoczDlaWykr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-fun-pstwo-zniszcz-op-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-fun-pstwo-zniszcz-traf-ob-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-fun-wsp-mobil-dla-strzel-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-fun-wsp-mobil-dla-wykr-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-fun-wsp-obezwlad-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-fun-wsp-ukrycia-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-fun-wsp-widocz-dla-strzel-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-fun-wsp-widocz-dla-wykr-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MSPW_PROJEKT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MSPW_PROJEKT.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_backend/model/FunPstwoZniszczOpEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_backend/model/FunPstwoZniszczOpEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_backend/service/FunPstwoZniszczOpService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_backend/service/FunPstwoZniszczOpService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/MainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/enums/Views.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/enums/Views.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/model/FunPstwoZniszczOpDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/model/FunPstwoZniszczOpDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/MainViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/MainViewController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/enums/Views.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/enums/Views.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/inputcontrollers/InputAmoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/inputcontrollers/InputAmoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/inputcontrollers/InputSpwController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/inputcontrollers/InputSpwController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/interfaces/ControlGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/interfaces/ControlGenerator.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +50,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -48,12 +63,26 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;szybkaKreweta&quot;
+  }
+}</component>
   <component name="GithubProjectSettings">
     <option name="branchProtectionPatterns">
       <list>
         <option value="develop" />
         <option value="master" />
       </list>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="0ca4eac7-9298-44ca-95a3-54eaf6a68dde" />
+        <option name="url" value="https://github.com/Studenci-WAT/BMS-Chaber.git" />
+      </UrlAndAccount>
     </option>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -82,6 +111,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.ApplicationController.executor": "Run",
     "Downloaded.Files.Path.Enabled": "true",
     "JPA.DatabaseSchemaImportDialog": "7218111c-182c-43ca-9ff1-f64f36945602",
     "Repository.Attach.Annotations": "false",
@@ -95,7 +125,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "corretto-21",
     "last_directory_selection": "C:/Users/wojci/IdeaProjects/BMS-Chaber/src/main/java/pl/edu/wat/mspw_projekt",
-    "last_opened_file_path": "D:/Users/podla/IdeaProjects/BMS-Chaber/src/main/resources/pl/edu/wat/mspw_projekt/readviews",
+    "last_opened_file_path": "C:/Users/Kuba9/IdeaProjects/BMS-Chaber/src/main/resources/pl/edu/wat/mspw_projekt/inputviews",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -115,11 +145,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Kuba9\IdeaProjects\BMS-Chaber\src\main\resources\pl\edu\wat\mspw_projekt\inputviews" />
       <recent name="D:\Users\podla\IdeaProjects\BMS-Chaber\src\main\resources\pl\edu\wat\mspw_projekt\readviews" />
       <recent name="D:\Users\podla\IdeaProjects\BMS-Chaber\src\main\resources\pl\edu\wat\mspw_projekt\inputviews" />
       <recent name="D:\Users\podla\IdeaProjects\BMS-Chaber\src\main\java\pl\edu\wat\mspw_frontend\model" />
       <recent name="E:\sem_IX\Mspw\BMS-Chaber\src\main\java\pl\edu\wat\mspw_backend" />
-      <recent name="E:\sem_IX\Mspw\BMS-Chaber\frontend\src\main\java\mspwfe\wat" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\wojci\IdeaProjects\BMS-Chaber\db-test" />
@@ -187,6 +217,13 @@
         <item itemvalue="JUnit.AmmoTest.test1" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-corretto-21.0.2-4caba194b151-51586f01" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -327,7 +364,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706098052115</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="added all efectors views">
+      <option name="closed" value="true" />
+      <created>1706371852096</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1706371852096</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,6 +443,30 @@
           <properties class="java.lang.ClassNotFoundException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputStanMpsSpwController.java</url>
+          <line>30</line>
+          <properties field="stanMpsSpwService" class="pl.edu.wat.mspw_frontend.inputcontrollers.InputStanMpsSpwController" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputStanMpsSpwController.java</url>
+          <line>33</line>
+          <properties field="tableStanMpsSpwController" class="pl.edu.wat.mspw_frontend.inputcontrollers.InputStanMpsSpwController" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputStanMpsSpwController.java</url>
+          <line>36</line>
+          <properties field="sprzetWojService" class="pl.edu.wat.mspw_frontend.inputcontrollers.InputStanMpsSpwController" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputStanMpsSpwController.java</url>
+          <line>38</line>
+          <properties field="mpsService" class="pl.edu.wat.mspw_frontend.inputcontrollers.InputStanMpsSpwController" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

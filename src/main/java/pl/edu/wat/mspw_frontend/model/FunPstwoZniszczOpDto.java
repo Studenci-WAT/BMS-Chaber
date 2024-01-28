@@ -15,19 +15,19 @@ public class FunPstwoZniszczOpDto implements Serializable {
 
     private Integer poziomFortCelu;
 
-    private Integer kategStrzelFk;
+    //private Integer kategStrzelFk;
 
     private Integer klasaStrzel;
 
-    private Integer kategCeluFk;
+    //private Integer kategCeluFk;
 
     private Integer klasaCelu;
 
     private Integer poziomWyszkStrzel;
 
-    private Integer spwStrzelFk;
+    //private Integer spwStrzelFk;
 
-    private Integer spwCelFk;
+    //private Integer spwCelFk;
 
     private Double pstwo;
 

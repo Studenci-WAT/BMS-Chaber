@@ -30,6 +30,15 @@ public enum Views {
     INPUTPARAMSTRZELOGBEZP("/pl/edu/wat/mspw_projekt/inputviews/input-param-strzel-og-bezp-view.fxml"),
     INPUTPARAMSTRZELOGPOSR("/pl/edu/wat/mspw_projekt/inputviews/input-param-strzel-og-posr-view.fxml"),
     INPUTPRZEBIJALPANRHA("/pl/edu/wat/mspw_projekt/inputviews/input-przebijal-pan-rha-view.fxml"),
+    INPUTFUNPSTWOZNISZCZOP("/pl/edu/wat/mspw_projekt/inputviews/input-fun-pstwo-zniszcz-op-view.fxml"),
+    INPUTFUNPSTWOZNISZCZTRAFOB("/pl/edu/wat/mspw_projekt/inputviews/input-fun-pstwo-zniszcz-traf-ob-view.fxml"),
+    INPUTWSPMOBILDLASTRZEL("/pl/edu/wat/mspw_projekt/inputviews/input-fun-wsp-mobil-dla-strzel-view.fxml"),
+    INPUTWSPMOBILDLAWYKR("/pl/edu/wat/mspw_projekt/inputviews/input-fun-wsp-mobil-dla-wykr-view.fxml"),
+    INPUTWSPOBEZWLAD("/pl/edu/wat/mspw_projekt/inputviews/input-fun-wsp-obezwlad-view.fxml"),
+    INPUTWSPUKRYCIA("/pl/edu/wat/mspw_projekt/inputviews/input-fun-wsp-ukrycia-view.fxml"),
+    INPUTWSPWIDOCZDLASTRZEL("/pl/edu/wat/mspw_projekt/inputviews/input-fun-wsp-widocz-dla-strzel-view.fxml"),
+    INPUTWSPWIDOCZDLAWYKR("/pl/edu/wat/mspw_projekt/inputviews/input-fun-wsp-widocz-dla-wykr-view.fxml"),
+
     STREFARAZENIASPW("/pl/edu/wat/mspw_projekt/inputviews/input-strefa-razenia-spw-view.fxml");
     private final String value;
 
