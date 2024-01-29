@@ -5,7 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cd0cd9d-27c0-41c8-892b-2f3158cac233" name="Changes" comment="Matyszkiel: added 8 Controllers and Views">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputFunNiszczObSymController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputKategoriaCeluRazeniaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputMiaraZdolnosciRazeniaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputPoziomOddzialOgnController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputSystemRazeniaSilyZywejController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputTypKlimatuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputTypTerenuWidoczController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputWagiWspUsredIntensNiszczController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-fun-niszcz-ob-sym-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-kategoria-celu-razenia-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-miara-zdolnosci-razenia-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-poziom-oddzial-ogn-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-system-razenia-sily-zywej-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-typ-klimatu-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-typ-terenu-widocz-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/wat/mspw_projekt/inputviews/input-wagi-wsp-usred-intens-niszcz-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/MainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/enums/TableViews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/enums/TableViews.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/enums/Views.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/enums/Views.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/interfaces/ChoiceList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/interfaces/ChoiceList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/model/FunNiszczObSymDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/model/FunNiszczObSymDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/MainViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/MainViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/enums/Views.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/enums/Views.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/inputcontrollers/InputAmoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/inputcontrollers/InputAmoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/inputcontrollers/InputSpwController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/inputcontrollers/InputSpwController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/interfaces/ControlGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wat/mspw_frontend/interfaces/ControlGenerator.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +47,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -83,6 +109,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.ApplicationController.executor": "Run",
+    "Application.pl.edu.wat.ApplicationController.executor": "Run",
     "Downloaded.Files.Path.Enabled": "true",
     "JPA.DatabaseSchemaImportDialog": "7218111c-182c-43ca-9ff1-f64f36945602",
     "Repository.Attach.Annotations": "false",
@@ -96,7 +123,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "corretto-21",
     "last_directory_selection": "C:/Users/wojci/IdeaProjects/BMS-Chaber/src/main/java/pl/edu/wat/mspw_projekt",
-    "last_opened_file_path": "C:/Users/Kuba9/IdeaProjects/BMS-Chaber/src/main/resources/pl/edu/wat/mspw_projekt/inputviews",
+    "last_opened_file_path": "C:/Users/Szymon/Desktop/WAT/Chaber/src/main/resources/pl/edu/wat/mspw_projekt/inputviews",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -116,11 +143,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Szymon\Desktop\WAT\Chaber\src\main\resources\pl\edu\wat\mspw_projekt\inputviews" />
       <recent name="C:\Users\Kuba9\IdeaProjects\BMS-Chaber\src\main\resources\pl\edu\wat\mspw_projekt\inputviews" />
       <recent name="D:\Users\podla\IdeaProjects\BMS-Chaber\src\main\resources\pl\edu\wat\mspw_projekt\readviews" />
       <recent name="D:\Users\podla\IdeaProjects\BMS-Chaber\src\main\resources\pl\edu\wat\mspw_projekt\inputviews" />
       <recent name="D:\Users\podla\IdeaProjects\BMS-Chaber\src\main\java\pl\edu\wat\mspw_frontend\model" />
-      <recent name="E:\sem_IX\Mspw\BMS-Chaber\src\main\java\pl\edu\wat\mspw_backend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\wojci\IdeaProjects\BMS-Chaber\db-test" />
@@ -135,12 +162,13 @@
       <recent name="pl.edu.wat.mspw_projekt" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pl.edu.wat.mspw_frontend.inputcontrollers" />
       <recent name="pl.edu.wat.mspw_frontend.readcontrollers" />
       <recent name="pl.edu.wat.mspw_backend.service" />
       <recent name="pl.edu.wat.mspw_frontend.model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ApplicationController">
+  <component name="RunManager" selected="Application.pl.edu.wat.ApplicationController">
     <configuration name="ApplicationController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pl.edu.wat.ApplicationController" />
       <module name="MSPW_PROJEKT" />
@@ -423,12 +451,6 @@
           <properties class="java.lang.ClassNotFoundException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputStanMpsSpwController.java</url>
-          <line>30</line>
-          <properties field="stanMpsSpwService" class="pl.edu.wat.mspw_frontend.inputcontrollers.InputStanMpsSpwController" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/pl/edu/wat/mspw_frontend/inputcontrollers/InputStanMpsSpwController.java</url>
           <line>33</line>

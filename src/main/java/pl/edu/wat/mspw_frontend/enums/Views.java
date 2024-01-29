@@ -38,6 +38,14 @@ public enum Views {
     INPUTWSPUKRYCIA("/pl/edu/wat/mspw_projekt/inputviews/input-fun-wsp-ukrycia-view.fxml"),
     INPUTWSPWIDOCZDLASTRZEL("/pl/edu/wat/mspw_projekt/inputviews/input-fun-wsp-widocz-dla-strzel-view.fxml"),
     INPUTWSPWIDOCZDLAWYKR("/pl/edu/wat/mspw_projekt/inputviews/input-fun-wsp-widocz-dla-wykr-view.fxml"),
+    INPUTWAGINISZCZ("/pl/edu/wat/mspw_projekt/inputviews/input-wagi-wsp-usred-intens-niszcz-view.fxml"),
+    INPUTTYPTERENUWIDOCZ("/pl/edu/wat/mspw_projekt/inputviews/input-typ-terenu-widocz-view.fxml"),
+    INPUTTYPKLIMATU("/pl/edu/wat/mspw_projekt/inputviews/input-typ-klimatu-view.fxml"),
+    INPUTSYSTEMRAZENIASILYPODWODNEJ("/pl/edu/wat/mspw_projekt/inputviews/input-system-razenia-sily-zywej-view.fxml"),
+    INPUTPOZIOMODDZIALOGN("/pl/edu/wat/mspw_projekt/inputviews/input-poziom-oddzial-ogn-view.fxml"),
+    INPUTKATEGORIACELURAZENIA("/pl/edu/wat/mspw_projekt/inputviews/input-kategoria-celu-razenia-view.fxml"),
+    INPUTMIARAZDOLNOSCIRAZENIA("/pl/edu/wat/mspw_projekt/inputviews/input-miara-zdolnosci-razenia-view.fxml"),
+    INPUTFUNNISZCZOBSYM("/pl/edu/wat/mspw_projekt/inputviews/input-fun-niszcz-ob-sym-view.fxml"),
 
     STREFARAZENIASPW("/pl/edu/wat/mspw_projekt/inputviews/input-strefa-razenia-spw-view.fxml");
     private final String value;

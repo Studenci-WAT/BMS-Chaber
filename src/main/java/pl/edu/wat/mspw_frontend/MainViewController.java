@@ -29,11 +29,17 @@ public class MainViewController {
 
         // Tworzenie przycisków dynamicznie w pierwszej zakładce
         GridPane firstTabGridPane = (GridPane) ((AnchorPane) tabPane.getTabs().get(0).getContent()).getChildren().get(0);
-        generateNavigationButton(firstTabGridPane, "RODZAJ AMUNICJI", "amoInputNavigator", 0);
-        generateNavigationButton(firstTabGridPane, "SYSTEM OGNIA", "sysOgnInputNavigator", 1);
-        generateNavigationButton(firstTabGridPane, "SPW", "spwInputNavigator", 2);
-        generateNavigationButton(firstTabGridPane, "MPS", "mpsInputNavigator", 3);
-        generateNavigationButton(firstTabGridPane, "SPW - SYSTEM OGNIA", "spwSysOgnInputNavigator", 4);
+        //generateNavigationButton(firstTabGridPane, "RODZAJ AMUNICJI", "amoInputNavigator", 0);
+
+        generateNavigationButton(firstTabGridPane, "WAGI NISZCZENIA", "wagiNiszczNavigator", 0);
+        generateNavigationButton(firstTabGridPane, "SYS RAŻ SIŁY PODW", "sysRazeniaSilyPodwodnejNavigator", 1);
+        generateNavigationButton(firstTabGridPane, "MIARA ZDOLN RAŻ", "miaraZdolnosciRazeniaNavigator", 2);
+        generateNavigationButton(firstTabGridPane, "FUN NISZCZ OB SYM", "funNiszczObSymNavigator", 3);
+
+        //generateNavigationButton(firstTabGridPane, "SYSTEM OGNIA", "sysOgnInputNavigator", 1);
+        //generateNavigationButton(firstTabGridPane, "SPW", "spwInputNavigator", 2);
+        //generateNavigationButton(firstTabGridPane, "MPS", "mpsInputNavigator", 3);
+        //generateNavigationButton(firstTabGridPane, "SPW - SYSTEM OGNIA", "spwSysOgnInputNavigator", 4);
         generateNavigationButton(firstTabGridPane, "STAN AMO - SPW", "stanAmoSpwInputNavigator", 5);
         generateNavigationButton(firstTabGridPane, "KADLUB", "kadlubInputNavigator", 6);
         generateNavigationButton(firstTabGridPane, "KATEGORIA AMO", "kategoriaAmoInputNavigator", 7);
@@ -199,6 +205,18 @@ public class MainViewController {
 
             case "tablesNavigator":
                 loadView(Views.READTABLES.getValue());
+                break;
+            case "wagiNiszczNavigator":
+                loadView(Views.INPUTWAGINISZCZ.getValue());
+                break;
+            case "sysRazeniaSilyPodwodnejNavigator":
+                loadView(Views.INPUTSYSTEMRAZENIASILYPODWODNEJ.getValue());
+                break;
+            case "miaraZdolnosciRazeniaNavigator":
+                loadView(Views.INPUTMIARAZDOLNOSCIRAZENIA.getValue());
+                break;
+            case "funNiszczObSymNavigator":
+                loadView(Views.INPUTFUNNISZCZOBSYM.getValue());
                 break;
 
         }

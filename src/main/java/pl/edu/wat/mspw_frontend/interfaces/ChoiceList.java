@@ -3,7 +3,28 @@ package pl.edu.wat.mspw_frontend.interfaces;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import pl.edu.wat.mspw_backend.service.*;
+import pl.edu.wat.mspw_backend.service.AmoService;
+import pl.edu.wat.mspw_backend.service.EfektorInzService;
+import pl.edu.wat.mspw_backend.service.EfektorJezdnyService;
+import pl.edu.wat.mspw_backend.service.EfektorLacznService;
+import pl.edu.wat.mspw_backend.service.EfektorLataniaService;
+import pl.edu.wat.mspw_backend.service.EfektorPlywaniaService;
+import pl.edu.wat.mspw_backend.service.EfektorRozpozService;
+import pl.edu.wat.mspw_backend.service.EfektorTranspService;
+import pl.edu.wat.mspw_backend.service.EfektorWeService;
+import pl.edu.wat.mspw_backend.service.KadlubService;
+import pl.edu.wat.mspw_backend.service.KategoriaAmoService;
+import pl.edu.wat.mspw_backend.service.KategoriaCeluRazeniaService;
+import pl.edu.wat.mspw_backend.service.KategoriaSpwService;
+import pl.edu.wat.mspw_backend.service.PoziomOddzialOgnService;
+import pl.edu.wat.mspw_backend.service.RodzajGlowicyBojService;
+import pl.edu.wat.mspw_backend.service.RodzajGlowicyNaprowService;
+import pl.edu.wat.mspw_backend.service.RodzajNaprowService;
+import pl.edu.wat.mspw_backend.service.RodzajPodwoziaService;
+import pl.edu.wat.mspw_backend.service.RodzajSystemuOgnService;
+import pl.edu.wat.mspw_backend.service.SprzetWojService;
+import pl.edu.wat.mspw_backend.service.SystemOgnService;
+import pl.edu.wat.mspw_backend.service.TypKlimatuService;
 
 import java.util.stream.Collectors;
 
@@ -30,8 +51,10 @@ public class ChoiceList {
     public static ObservableList<Item> rodzajGlowicyList = FXCollections.observableArrayList();
     public static ObservableList<Item> rodzajGlowicyNaprawList = FXCollections.observableArrayList();
     public static ObservableList<Item> rodzajNaprawList = FXCollections.observableArrayList();
-    private static final KategoriaCeluRazeniaService kategoriaCeluRazeniaService = new KategoriaCeluRazeniaService();
+    public static ObservableList<Item> typKlimatuList = FXCollections.observableArrayList();
+    public static ObservableList<Item> poziomOddzialOgnPkaList = FXCollections.observableArrayList();
 
+    private static final KategoriaCeluRazeniaService kategoriaCeluRazeniaService = new KategoriaCeluRazeniaService();
     private static final RodzajPodwoziaService rodzajPodwoziaService = new RodzajPodwoziaService();
     private static final KategoriaAmoService kategoriaAmoService = new KategoriaAmoService();
     private static final KategoriaSpwService kategoriaSpwService = new KategoriaSpwService();
@@ -51,6 +74,8 @@ public class ChoiceList {
     private static final RodzajGlowicyBojService rodzajGlowicyBojService = new RodzajGlowicyBojService();
     private static final RodzajGlowicyNaprowService rodzajGlowicyNaprowService = new RodzajGlowicyNaprowService();
     private static final RodzajNaprowService rodzajNaprowService = new RodzajNaprowService();
+    private static final TypKlimatuService typKlimatuService = new TypKlimatuService();
+    private static final PoziomOddzialOgnService poziomOddzialOgnPkaService = new PoziomOddzialOgnService();
 
     public static void refreshDataToChoiceBox(){
         Platform.runLater(() -> {
@@ -131,6 +156,14 @@ public class ChoiceList {
                     .collect(Collectors.toList())));
 
            rodzajNaprawList.setAll(FXCollections.observableArrayList( rodzajNaprowService.getAll().stream()
+                    .map(object -> new Item(object.getId(), object.getNazwa()))
+                    .collect(Collectors.toList())));
+
+            typKlimatuList.setAll(FXCollections.observableArrayList( typKlimatuService.getAll().stream()
+                    .map(object -> new Item(object.getId(), object.getNazwa()))
+                    .collect(Collectors.toList())));
+
+            poziomOddzialOgnPkaList.setAll(FXCollections.observableArrayList( poziomOddzialOgnPkaService.getAll().stream()
                     .map(object -> new Item(object.getId(), object.getNazwa()))
                     .collect(Collectors.toList())));
 
