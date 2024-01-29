@@ -46,6 +46,9 @@ public enum Views {
     INPUTKATEGORIACELURAZENIA("/pl/edu/wat/mspw_projekt/inputviews/input-kategoria-celu-razenia-view.fxml"),
     INPUTMIARAZDOLNOSCIRAZENIA("/pl/edu/wat/mspw_projekt/inputviews/input-miara-zdolnosci-razenia-view.fxml"),
     INPUTFUNNISZCZOBSYM("/pl/edu/wat/mspw_projekt/inputviews/input-fun-niszcz-ob-sym-view.fxml"),
+    INPUTFUNINTENSSTRZELOP("/pl/edu/wat/mspw_projekt/inputviews/input-fun-intens-strzel-op-view.fxml"),
+    INPUTFUNINTENSNISZCZNOSICSYM("/pl/edu/wat/mspw_projekt/inputviews/input-fun-intens-niszcz-nosic-sym-view.fxml"),
+    INPUTFUNINTENSNISZCZNOSICSYM2("/pl/edu/wat/mspw_projekt/inputviews/input-fun-intens-niszcz-nosic-sym2-view.fxml"),
 
     STREFARAZENIASPW("/pl/edu/wat/mspw_projekt/inputviews/input-strefa-razenia-spw-view.fxml");
     private final String value;

@@ -16,7 +16,7 @@ public enum TableViews {
     TABLE_EFEKTOR_WE("/pl/edu/wat/mspw_projekt/readviews/table-efektor-we-view.fxml"),
     TABLE_FUN_INTENS_NISZCZ_NOSIC_SYM2("/pl/edu/wat/mspw_projekt/readviews/table-fun-intens-niszcz-nosic-sym2-view.fxml"),
     TABLE_FUN_INTENS_NISZCZ_NOSIC_SYM("/pl/edu/wat/mspw_projekt/readviews/table-fun-intens-niszcz-nosic-sym-view.fxml"),
-    TABLE_FUN_INTENS_STRZEL_OP("/pl/edu/wat/mspw_projekt/readviews/table-fun-intens-strzel-op-view.fxml"),//
+    TABLE_FUN_INTENS_STRZEL_OP("/pl/edu/wat/mspw_projekt/readviews/table-fun-intens-strzel-op-view.fxml"),
     TABLE_FUN_NISZCZ_OB_SYM("/pl/edu/wat/mspw_projekt/readviews/table-fun-niszcz-ob-sym-view.fxml"),
     TABLE_FUN_PSTWO_ZNISZCZ_OP("/pl/edu/wat/mspw_projekt/readviews/table-fun-pstwo-zniszcz-op-view.fxml"),
     TABLE_FUN_PSTWO_ZNISZCZ_TRAF_OB("/pl/edu/wat/mspw_projekt/readviews/table-fun-pstwo-zniszcz-traf-ob-view.fxml"),

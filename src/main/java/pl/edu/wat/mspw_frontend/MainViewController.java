@@ -29,17 +29,11 @@ public class MainViewController {
 
         // Tworzenie przycisków dynamicznie w pierwszej zakładce
         GridPane firstTabGridPane = (GridPane) ((AnchorPane) tabPane.getTabs().get(0).getContent()).getChildren().get(0);
-        //generateNavigationButton(firstTabGridPane, "RODZAJ AMUNICJI", "amoInputNavigator", 0);
-
-        generateNavigationButton(firstTabGridPane, "WAGI NISZCZENIA", "wagiNiszczNavigator", 0);
-        generateNavigationButton(firstTabGridPane, "SYS RAŻ SIŁY PODW", "sysRazeniaSilyPodwodnejNavigator", 1);
-        generateNavigationButton(firstTabGridPane, "MIARA ZDOLN RAŻ", "miaraZdolnosciRazeniaNavigator", 2);
-        generateNavigationButton(firstTabGridPane, "FUN NISZCZ OB SYM", "funNiszczObSymNavigator", 3);
-
-        //generateNavigationButton(firstTabGridPane, "SYSTEM OGNIA", "sysOgnInputNavigator", 1);
-        //generateNavigationButton(firstTabGridPane, "SPW", "spwInputNavigator", 2);
-        //generateNavigationButton(firstTabGridPane, "MPS", "mpsInputNavigator", 3);
-        //generateNavigationButton(firstTabGridPane, "SPW - SYSTEM OGNIA", "spwSysOgnInputNavigator", 4);
+        generateNavigationButton(firstTabGridPane, "RODZAJ AMUNICJI", "amoInputNavigator", 0);
+        generateNavigationButton(firstTabGridPane, "SYSTEM OGNIA", "sysOgnInputNavigator", 1);
+        generateNavigationButton(firstTabGridPane, "SPW", "spwInputNavigator", 2);
+        generateNavigationButton(firstTabGridPane, "MPS", "mpsInputNavigator", 3);
+        generateNavigationButton(firstTabGridPane, "SPW - SYSTEM OGNIA", "spwSysOgnInputNavigator", 4);
         generateNavigationButton(firstTabGridPane, "STAN AMO - SPW", "stanAmoSpwInputNavigator", 5);
         generateNavigationButton(firstTabGridPane, "KADLUB", "kadlubInputNavigator", 6);
         generateNavigationButton(firstTabGridPane, "KATEGORIA AMO", "kategoriaAmoInputNavigator", 7);
@@ -56,6 +50,15 @@ public class MainViewController {
         //generateNavigationButton(firstTabGridPane, "WSP UKRYCIA ", "funWspUkrycia", 9);
         //generateNavigationButton(firstTabGridPane, "WSP WIDOCZ DLA STRZEL ", "funWspWidoczDlaStrzel", 9);
         generateNavigationButton(firstTabGridPane, "WSP WIDOCZ DLA WYKR ", "funWspWidoczDlaWykr", 9);
+
+        //Widoki Szymona
+        //generateNavigationButton(firstTabGridPane, "WAGI NISZCZENIA", "wagiNiszczNavigator", 0);
+        //generateNavigationButton(firstTabGridPane, "SYS RAŻ SIŁY PODW", "sysRazeniaSilyPodwodnejNavigator", 1);
+        //generateNavigationButton(firstTabGridPane, "MIARA ZDOLN RAŻ", "miaraZdolnosciRazeniaNavigator", 2);
+        //generateNavigationButton(firstTabGridPane, "FUN NISZCZ OB SYM", "funNiszczObSymNavigator", 3);
+        //generateNavigationButton(firstTabGridPane, "FUN INTENS STRZEL OP", "funIntensStrzelOpNavigator", 4);
+        //generateNavigationButton(firstTabGridPane, "FUN INTENS NISZCZ SYM", "funIntensNiszczNosicSymNavigator", 5);
+        //generateNavigationButton(firstTabGridPane, "FUN INTENS NISZCZ SYM 2", "funIntensNiszczNosicSym2Navigator", 5);
 
         // Tworzenie przycisków dynamicznie w drugiej zakładce
         GridPane secondTabGridPane = (GridPane) ((AnchorPane) tabPane.getTabs().get(1).getContent()).getChildren().get(0);
@@ -218,7 +221,15 @@ public class MainViewController {
             case "funNiszczObSymNavigator":
                 loadView(Views.INPUTFUNNISZCZOBSYM.getValue());
                 break;
-
+            case "funIntensStrzelOpNavigator":
+                loadView(Views.INPUTFUNINTENSSTRZELOP.getValue());
+                break;
+            case "funIntensNiszczNosicSymNavigator":
+                loadView(Views.INPUTFUNINTENSNISZCZNOSICSYM.getValue());
+                break;
+            case "funIntensNiszczNosicSym2Navigator":
+                loadView(Views.INPUTFUNINTENSNISZCZNOSICSYM2.getValue());
+                break;
         }
     }
 
